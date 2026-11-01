@@ -1,0 +1,2 @@
+# CPU teaching labs only. Capture the installed environment with tools/course.py doctor.
+numpy>=1.26,<3

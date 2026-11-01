@@ -1,0 +1,13 @@
+services:
+  foundations-log-demo:
+    profiles: ["practice"]
+    build:
+      context: ../..
+      dockerfile: labs/foundations/Dockerfile
+    image: llm-course-foundations:local
+    network_mode: none
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 256m
+    cpus: 1.0

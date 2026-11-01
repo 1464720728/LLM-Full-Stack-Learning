@@ -1,0 +1,1299 @@
+{
+  "checked_at_utc": "2026-11-01T07:28:13.924246+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "os": "Linux",
+    "architecture": "x86_64",
+    "optional_dependencies": {
+      "torch": false,
+      "triton": false,
+      "faiss": false
+    },
+    "gpu_visibility": "disabled for this CPU validation"
+  },
+  "statistics": {
+    "tracks": 6,
+    "chapters": 113,
+    "registered_labs": 209,
+    "book_markdown_files": 130,
+    "book_chinese_characters": 273040,
+    "lab_code_files": 109,
+    "lab_code_lines": 7303
+  },
+  "structural_errors": [],
+  "tests": {
+    "run": 374,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "successful": true
+  },
+  "lab_commands": [
+    {
+      "id": "F01-L1",
+      "command": "python -m labs.foundations.environment",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F02-L1",
+      "command": "python -m labs.foundations.paths",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F03-L1",
+      "command": "python -m labs.foundations.text_pipeline",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F04-L1",
+      "command": "python -m labs.foundations.permissions",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F04-L2",
+      "command": "python -m labs.foundations.process_runner",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F05-L1",
+      "command": "python -m labs.foundations.http_message",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F05-L2",
+      "command": "python -m labs.foundations.json_contract",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F06-L1",
+      "command": "python -m labs.foundations.python_values",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F06-L2",
+      "command": "python -m labs.foundations.functions",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F07-L1",
+      "command": "python -m labs.foundations.objects",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F07-L2",
+      "command": "python -m labs.foundations.iterators",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F08-L1",
+      "command": "python -m labs.foundations.file_io",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F08-L2",
+      "command": "python -m labs.foundations.sqlite_lab",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F09-L1",
+      "command": "python -m labs.foundations.debugging",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F10-L1",
+      "command": "python -m labs.foundations.cli",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F11-L1",
+      "command": "python -m labs.foundations.concurrency",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F12-L1",
+      "command": "python -m labs.foundations.git_model",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F13-L1",
+      "command": "python -m labs.foundations.container_model",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F14-L1",
+      "command": "python -m labs.foundations.tensors",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F14-L2",
+      "command": "python -m labs.foundations.numerics",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F15-L1",
+      "command": "python -m labs.foundations.log_project",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F16-L1",
+      "command": "python -m labs.foundations.task_service",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L1",
+      "command": "python -m labs.foundations.workshop.step01_loop",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L2",
+      "command": "python -m labs.foundations.workshop.step02_function",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L3",
+      "command": "python -m labs.foundations.workshop.step03_json",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L4",
+      "command": "python -m labs.foundations.workshop.step04_pipeline",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L5",
+      "command": "python -m labs.foundations.workshop.step05_cli",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L1",
+      "command": "python -m labs.foundations.workshop.step06_memory_tasks",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L2",
+      "command": "python -m labs.foundations.workshop.step07_persistence",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L3",
+      "command": "python -m labs.foundations.workshop.step08_routing",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "F21-L1",
+      "command": "python -m labs.foundations.linear_regression",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A01-L1",
+      "command": "python -m labs.agents.experiments 01-loop",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A02-L1",
+      "command": "python -m labs.agents.experiments 03-chat",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A02-L2",
+      "command": "python -m labs.agents.experiments 04-responses",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A02-L3",
+      "command": "python -m labs.agents.experiments 05-messages",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A03-L1",
+      "command": "python -m labs.agents.experiments 02-contract",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A03-L2",
+      "command": "python -m labs.agents.experiments 08-errors",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A04-L1",
+      "command": "python -m labs.agents.experiments 16-checkpoint",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A04-L2",
+      "command": "python -m labs.agents.experiments 17-conflict",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A05-L1",
+      "command": "python -m labs.agents.experiments 06-sse",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A05-L2",
+      "command": "python -m labs.agents.experiments 07-deltas",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A06-L1",
+      "command": "python -m labs.agents.experiments 09-budget",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A06-L2",
+      "command": "python -m labs.agents.experiments 10-retry",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A06-L3",
+      "command": "python -m labs.agents.experiments 19-cancellation",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A07-L1",
+      "command": "python -m labs.agents.experiments 11-context",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A07-L2",
+      "command": "python -m labs.agents.experiments 12-provenance",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A08-L1",
+      "command": "python -m labs.agents.experiments 13-paths",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A08-L2",
+      "command": "python -m labs.agents.experiments 14-edit",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A09-L1",
+      "command": "python -m labs.agents.experiments 20-fanout",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A10-L1",
+      "command": "python -m labs.agents.experiments 15-idempotency",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A10-L2",
+      "command": "python -m labs.agents.experiments 18-uncertain",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A11-L1",
+      "command": "python -m labs.agents.experiments 21-approval",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A11-L2",
+      "command": "python -m labs.agents.experiments 25-ticket-project",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A12-L1",
+      "command": "python -m labs.agents.experiments 22-multi-agent",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A13-L1",
+      "command": "python -m labs.agents.experiments 23-metrics",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A13-L2",
+      "command": "python -m labs.agents.experiments 24-redaction",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A13-L3",
+      "command": "python -m labs.agents.evaluation",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A14-L1",
+      "command": "python -m labs.agents.experiments 26-coding-project",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A15-L1",
+      "command": "python -m labs.agents.experiments 27-tool-rpc",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A16-L1",
+      "command": "python -m unittest tests.test_agents_core -v",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A17-L1",
+      "command": "python -m labs.agents.advanced_solutions",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "A18-L1",
+      "command": "python -m unittest tests.test_agents_advanced tests.test_agents_evaluation -v",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R01-L1",
+      "command": "python -m labs.knowledge.lab 19-rag",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R01-L2",
+      "command": "python -m labs.knowledge.lab 20-refusal",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R02-L1",
+      "command": "python -m labs.knowledge.lab 01-tokenize",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R02-L2",
+      "command": "python -m labs.knowledge.lab 02-chunks",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R02-L3",
+      "command": "python -m labs.knowledge.lab 03-identity",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R03-L1",
+      "command": "python -m labs.knowledge.lab 04-bm25",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R03-L2",
+      "command": "python -m labs.knowledge.lab 05-bm25-parameters",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R04-L1",
+      "command": "python -m labs.knowledge.lab 06-vectors",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R04-L2",
+      "command": "python -m labs.knowledge.lab 07-tfidf",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R04-L3",
+      "command": "python -m labs.knowledge.lab 08-ann",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R04-L4",
+      "command": "python -m labs.knowledge.neural_encoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R05-L1",
+      "command": "python -m labs.knowledge.lab 09-fusion",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R05-L2",
+      "command": "python -m labs.knowledge.lab 10-rerank",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R05-L3",
+      "command": "python -m labs.knowledge.lab 11-metrics",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R05-L4",
+      "command": "python -m labs.knowledge.lab 12-compare",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R05-L5",
+      "command": "python -m labs.knowledge.lab 27-diversity",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R06-L1",
+      "command": "python -m labs.knowledge.lab 17-packing",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R06-L2",
+      "command": "python -m labs.knowledge.lab 18-citation",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R07-L1",
+      "command": "python -m labs.knowledge.lab 21-multihop",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R08-L1",
+      "command": "python -m labs.knowledge.lab 13-acl",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R08-L2",
+      "command": "python -m labs.knowledge.lab 14-revision",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R08-L3",
+      "command": "python -m labs.knowledge.lab 15-idempotency",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R08-L4",
+      "command": "python -m labs.knowledge.lab 16-deletion",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R08-L5",
+      "command": "python -m labs.knowledge.lab 28-persistence",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R09-L1",
+      "command": "python -m labs.knowledge.lab 22-memory",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R09-L2",
+      "command": "python -m labs.knowledge.lab 23-ttl",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R09-L3",
+      "command": "python -m labs.knowledge.lab 24-forget",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R10-L1",
+      "command": "python -m labs.knowledge.lab 25-graph",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R11-L1",
+      "command": "python -m labs.knowledge.lab 26-graph-stale",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R13-L1",
+      "command": "python -m labs.knowledge.assistant ask \"KV cache\" --demo",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R13-L2",
+      "command": "python -m labs.knowledge.memory_assistant demo",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L1",
+      "command": "python -m labs.knowledge.walkthrough --stage 1",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L2",
+      "command": "python -m labs.knowledge.walkthrough --stage 2",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L3",
+      "command": "python -m labs.knowledge.walkthrough --stage 3",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L4",
+      "command": "python -m labs.knowledge.walkthrough --stage 4",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L5",
+      "command": "python -m labs.knowledge.walkthrough --stage 5",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L6",
+      "command": "python -m labs.knowledge.walkthrough --stage 6",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L7",
+      "command": "python -m labs.knowledge.walkthrough --stage 7",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R15-L8",
+      "command": "python -m labs.knowledge.walkthrough --stage 8",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R16-L1",
+      "command": "python -m labs.knowledge.embedding_api",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R16-L2",
+      "command": "python -m labs.knowledge.faiss_lab",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "R16-L3",
+      "command": "python -m labs.knowledge.embedding_api --live --batch-size 2 --max-requests 2",
+      "status": "not_executed",
+      "reason": "requires network/API or GPU; no such execution claimed"
+    },
+    {
+      "id": "M01-L1",
+      "command": "python -m labs.models.run_lab tokenization",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M01-L2",
+      "command": "python -m labs.models.run_lab tensor_shapes",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M02-L1",
+      "command": "python -m labs.models.run_lab autograd",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M02-L2",
+      "command": "python -m labs.models.run_lab softmax",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M02-L3",
+      "command": "python -m labs.models.gradient_trace",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M03-L1",
+      "command": "python -m labs.models.run_lab attention",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M04-L1",
+      "command": "python -m labs.models.run_lab transformer",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M05-L1",
+      "command": "python -m labs.models.run_lab decoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M05-L2",
+      "command": "python -m labs.models.run_lab rope",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M06-L1",
+      "command": "python -m labs.models.run_lab kv_cache",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M06-L2",
+      "command": "python -m labs.models.run_lab gqa",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M07-L1",
+      "command": "python -m labs.models.run_lab mla",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M08-L1",
+      "command": "python -m labs.models.run_lab moe",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M09-L1",
+      "command": "python -m labs.models.run_lab sparse",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M09-L2",
+      "command": "python -m labs.models.run_lab compressed",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M10-L1",
+      "command": "python -m labs.models.run_lab linear",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M10-L2",
+      "command": "python -m labs.models.run_lab delta",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M11-L1",
+      "command": "python -m labs.models.run_lab ssm",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M11-L2",
+      "command": "python -m labs.models.run_lab selective_ssm",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L1",
+      "command": "python -m labs.models.run_lab attnres",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L2",
+      "command": "python -m labs.models.run_lab block_attnres",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L3",
+      "command": "python -m labs.models.run_lab hyperconnections",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L4",
+      "command": "python -m labs.models.run_lab ced",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L5",
+      "command": "python -m labs.models.run_lab conditional_memory",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M12-L6",
+      "command": "python -m labs.models.block_attnres_decoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M13-L1",
+      "command": "python -m labs.models.run_lab quantize",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L1",
+      "command": "python -m labs.models.run_lab sampling",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L2",
+      "command": "python -m labs.models.run_lab loss_mask",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L3",
+      "command": "python -m labs.models.run_lab dpo",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L4",
+      "command": "python -m labs.models.run_lab grpo",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L5",
+      "command": "python -m labs.models.run_lab lora",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L6",
+      "command": "python -m labs.models.run_lab multimodal",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M14-L7",
+      "command": "python -m labs.models.run_lab crossmodal",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M15-L1",
+      "command": "python -m labs.models.tiny_lm",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M15-L2",
+      "command": "python -m labs.models.torch_transformer --device cpu --steps 40",
+      "status": "not_executed",
+      "exit_code": 0,
+      "reason": "optional dependency unavailable; program reported SKIP (not a completed validation)"
+    },
+    {
+      "id": "M16-L1",
+      "command": "python -m labs.models.compare",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M17-L1",
+      "command": "python -m labs.models.trace_decoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M17-L2",
+      "command": "python -m labs.models.trace_decoder --active-ffn",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "M17-L3",
+      "command": "python -m labs.models.moe_decoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S01-L1",
+      "command": "python -m labs.serving.experiments --lab lifecycle",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L1",
+      "command": "python -m labs.serving.experiments --lab token_budget",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L2",
+      "command": "python -m labs.serving.experiments --lab chunks",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L3",
+      "command": "python -m labs.serving.experiments --lab continuous",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L4",
+      "command": "python -m labs.serving.experiments --lab fairness",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S03-L1",
+      "command": "python -m labs.serving.experiments --lab cow",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S03-L2",
+      "command": "python -m labs.serving.experiments --lab allocation_atomic",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L1",
+      "command": "python -m labs.serving.experiments --lab prefix",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L2",
+      "command": "python -m labs.serving.experiments --lab namespace",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L3",
+      "command": "python -m labs.serving.experiments --lab cache_eviction",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L1",
+      "command": "python -m labs.serving.experiments --lab cancel",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L2",
+      "command": "python -m labs.serving.experiments --lab preemption",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L3",
+      "command": "python -m labs.serving.experiments --lab fault_injection",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S06-L1",
+      "command": "python -m labs.serving.experiments --lab runner_swap",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S06-L2",
+      "command": "python -m labs.serving.experiments --lab batch_equivalence",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S07-L1",
+      "command": "python -m labs.serving.experiments --lab sampling",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S07-L2",
+      "command": "python -m labs.serving.experiments --lab stream_decoder",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S08-L1",
+      "command": "python -m labs.serving.experiments --lab metrics",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S09-L1",
+      "command": "python -m labs.serving.source_walk --project vllm --show-pin",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S10-L1",
+      "command": "python -m labs.serving.experiments --lab communication",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S11-L1",
+      "command": "python -m labs.serving.experiments --lab pd_transfer",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S12-L1",
+      "command": "python -m labs.serving.experiments --lab deterministic",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S12-L2",
+      "command": "python -m labs.serving.experiments --lab quantization",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S13-L1",
+      "command": "python -m labs.serving.experiments --lab memory_capacity",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S16-L1",
+      "command": "python -m labs.serving.experiments --lab trace_replay",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S16-L2",
+      "command": "python -m labs.serving.replay",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L1",
+      "command": "python -m labs.serving.workbook_trace --case prefix",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L2",
+      "command": "python -m labs.serving.workbook_trace --case cow",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L3",
+      "command": "python -m labs.serving.workbook_trace --case preempt",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "S19-L1",
+      "command": "python -m labs.serving.paged_attention",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K01-L1",
+      "command": "python -m labs.kernels.run --lab 1",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K01-L2",
+      "command": "python -m labs.kernels.run --lab 2",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K02-L1",
+      "command": "python -m labs.kernels.inspect_environment",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K03-L1",
+      "command": "python -m labs.kernels.run --lab 3",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K04-L1",
+      "command": "python -m labs.kernels.run --lab 4",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K04-L2",
+      "command": "python -m labs.kernels.run --lab 5",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L1",
+      "command": "python -m labs.kernels.run --lab 6",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L2",
+      "command": "python -m labs.kernels.run --lab 7",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L3",
+      "command": "python -m labs.kernels.run --lab 8",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L4",
+      "command": "python -m labs.kernels.run --lab 9",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L5",
+      "command": "python -m labs.kernels.run --lab 10",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K05-L6",
+      "command": "python -m labs.kernels.run --lab 16",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K06-L1",
+      "command": "python -m labs.kernels.run --lab 11",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K06-L2",
+      "command": "python -m labs.kernels.run --lab 12",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K07-L1",
+      "command": "python -m labs.kernels.run --lab 13",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K07-L2",
+      "command": "python -m labs.kernels.run --lab 14",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K07-L3",
+      "command": "python -m labs.kernels.run --lab 26",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K07-L4",
+      "command": "python -m labs.kernels.run --lab 27",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K08-L1",
+      "command": "python -m labs.kernels.run --lab 15",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K09-G1",
+      "command": "python -m labs.kernels.gpu_check --run",
+      "status": "not_executed",
+      "reason": "requires network/API or GPU; no such execution claimed"
+    },
+    {
+      "id": "K10-L1",
+      "command": "python -m labs.kernels.custom_autograd",
+      "status": "not_executed",
+      "exit_code": 0,
+      "reason": "optional dependency unavailable; program reported SKIP (not a completed validation)"
+    },
+    {
+      "id": "K11-L1",
+      "command": "python -m labs.kernels.run --lab 17",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K11-L2",
+      "command": "python -m labs.kernels.run --lab 18",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K11-L3",
+      "command": "python -m labs.kernels.run --lab 19",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K11-L4",
+      "command": "python -m labs.kernels.run --lab 20",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K12-L1",
+      "command": "python -m labs.kernels.run --lab 21",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K13-L1",
+      "command": "python -m labs.kernels.run --lab 22",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K14-L1",
+      "command": "python -m labs.kernels.run --lab 23",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K14-G1",
+      "command": "python -m labs.kernels.benchmark --run --op matmul --size 256 --repeats 20",
+      "status": "not_executed",
+      "reason": "requires network/API or GPU; no such execution claimed"
+    },
+    {
+      "id": "K16-G1",
+      "command": "python -m labs.kernels.inspect_environment --gpu",
+      "status": "not_executed",
+      "reason": "requires network/API or GPU; no such execution claimed"
+    },
+    {
+      "id": "K18-L1",
+      "command": "python -m labs.kernels.run --lab 24",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K18-L2",
+      "command": "python -m labs.kernels.run --lab 25",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "K18-L3",
+      "command": "python -m labs.kernels.run --lab 28",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "KW1-L1",
+      "command": "python -m labs.kernels.workbook softmax",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "KW2-L1",
+      "command": "python -m labs.kernels.workbook gemm",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "id": "KW3-L1",
+      "command": "python -m labs.kernels.workbook attention",
+      "status": "passed",
+      "exit_code": 0
+    }
+  ],
+  "not_claimed": [
+    "Windows-native execution",
+    "WSL2 execution",
+    "RTX 5070 Ti execution",
+    "H100/CUDA/Triton execution",
+    "multi-GPU NCCL execution",
+    "real model API calls",
+    "remote GitHub Actions execution"
+  ]
+}

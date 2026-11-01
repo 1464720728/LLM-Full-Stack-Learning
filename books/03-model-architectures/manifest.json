@@ -1,0 +1,487 @@
+{
+  "track_id": "M",
+  "title": "模型结构：从张量到可实现的现代架构",
+  "chapters": [
+    {
+      "id": "M01",
+      "title": "从一个汉字到一块张量",
+      "path": "books/03-model-architectures/01-tokens-tensors.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "M01-L1",
+          "title": "tokenization",
+          "command": "python -m labs.models.run_lab tokenization",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M01-L2",
+          "title": "tensor_shapes",
+          "command": "python -m labs.models.run_lab tensor_shapes",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "损失、链式法则与反向传播",
+      "path": "books/03-model-architectures/02-gradients-training.md",
+      "prerequisites": [
+        "M01"
+      ],
+      "labs": [
+        {
+          "id": "M02-L1",
+          "title": "autograd",
+          "command": "python -m labs.models.run_lab autograd",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M02-L2",
+          "title": "softmax",
+          "command": "python -m labs.models.run_lab softmax",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M02-L3",
+          "title": "gradient_trace",
+          "command": "python -m labs.models.gradient_trace",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "逐项实现稳定注意力",
+      "path": "books/03-model-architectures/03-attention.md",
+      "prerequisites": [
+        "M02"
+      ],
+      "labs": [
+        {
+          "id": "M03-L1",
+          "title": "attention",
+          "command": "python -m labs.models.run_lab attention",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "原始编码器—解码器Transformer",
+      "path": "books/03-model-architectures/04-original-transformer.md",
+      "prerequisites": [
+        "M03"
+      ],
+      "labs": [
+        {
+          "id": "M04-L1",
+          "title": "transformer",
+          "command": "python -m labs.models.run_lab transformer",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "完整稠密解码器",
+      "path": "books/03-model-architectures/05-dense-decoder.md",
+      "prerequisites": [
+        "M04"
+      ],
+      "labs": [
+        {
+          "id": "M05-L1",
+          "title": "decoder",
+          "command": "python -m labs.models.run_lab decoder",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M05-L2",
+          "title": "rope",
+          "command": "python -m labs.models.run_lab rope",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "title": "KV Cache与MHA/GQA/MQA",
+      "path": "books/03-model-architectures/06-kv-gqa.md",
+      "prerequisites": [
+        "M05"
+      ],
+      "labs": [
+        {
+          "id": "M06-L1",
+          "title": "kv_cache",
+          "command": "python -m labs.models.run_lab kv_cache",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M06-L2",
+          "title": "gqa",
+          "command": "python -m labs.models.run_lab gqa",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M07",
+      "title": "低秩、矩阵吸收与MLA",
+      "path": "books/03-model-architectures/07-latent-attention.md",
+      "prerequisites": [
+        "M06"
+      ],
+      "labs": [
+        {
+          "id": "M07-L1",
+          "title": "mla",
+          "command": "python -m labs.models.run_lab mla",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "title": "MoE路由、专家、容量与合并",
+      "path": "books/03-model-architectures/08-moe.md",
+      "prerequisites": [
+        "M07"
+      ],
+      "labs": [
+        {
+          "id": "M08-L1",
+          "title": "moe",
+          "command": "python -m labs.models.run_lab moe",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M09",
+      "title": "局部、块稀疏与压缩注意力",
+      "path": "books/03-model-architectures/09-sparse-attention.md",
+      "prerequisites": [
+        "M08"
+      ],
+      "labs": [
+        {
+          "id": "M09-L1",
+          "title": "sparse",
+          "command": "python -m labs.models.run_lab sparse",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M09-L2",
+          "title": "compressed",
+          "command": "python -m labs.models.run_lab compressed",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "title": "线性注意力与Delta记忆",
+      "path": "books/03-model-architectures/10-linear-attention.md",
+      "prerequisites": [
+        "M09"
+      ],
+      "labs": [
+        {
+          "id": "M10-L1",
+          "title": "linear",
+          "command": "python -m labs.models.run_lab linear",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M10-L2",
+          "title": "delta",
+          "command": "python -m labs.models.run_lab delta",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "title": "状态空间与选择性递推",
+      "path": "books/03-model-architectures/11-state-space.md",
+      "prerequisites": [
+        "M10"
+      ],
+      "labs": [
+        {
+          "id": "M11-L1",
+          "title": "ssm",
+          "command": "python -m labs.models.run_lab ssm",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M11-L2",
+          "title": "selective_ssm",
+          "command": "python -m labs.models.run_lab selective_ssm",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M12",
+      "title": "混合架构、AttnRes与残差变体",
+      "path": "books/03-model-architectures/12-hybrid-residuals.md",
+      "prerequisites": [
+        "M11"
+      ],
+      "labs": [
+        {
+          "id": "M12-L1",
+          "title": "attnres",
+          "command": "python -m labs.models.run_lab attnres",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M12-L2",
+          "title": "block_attnres",
+          "command": "python -m labs.models.run_lab block_attnres",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M12-L3",
+          "title": "hyperconnections",
+          "command": "python -m labs.models.run_lab hyperconnections",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M12-L4",
+          "title": "ced",
+          "command": "python -m labs.models.run_lab ced",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M12-L5",
+          "title": "conditional_memory",
+          "command": "python -m labs.models.run_lab conditional_memory",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M12-L6",
+          "title": "完整Block AttnRes Decoder与缓存等价",
+          "command": "python -m labs.models.block_attnres_decoder",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M13",
+      "title": "模型数值与量化",
+      "path": "books/03-model-architectures/13-quantization.md",
+      "prerequisites": [
+        "M12"
+      ],
+      "labs": [
+        {
+          "id": "M13-L1",
+          "title": "quantize",
+          "command": "python -m labs.models.run_lab quantize",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M14",
+      "title": "采样、SFT、DPO、组优势与多模态",
+      "path": "books/03-model-architectures/14-training-modalities.md",
+      "prerequisites": [
+        "M13"
+      ],
+      "labs": [
+        {
+          "id": "M14-L1",
+          "title": "sampling",
+          "command": "python -m labs.models.run_lab sampling",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L2",
+          "title": "loss_mask",
+          "command": "python -m labs.models.run_lab loss_mask",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L3",
+          "title": "dpo",
+          "command": "python -m labs.models.run_lab dpo",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L4",
+          "title": "grpo",
+          "command": "python -m labs.models.run_lab grpo",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L5",
+          "title": "lora",
+          "command": "python -m labs.models.run_lab lora",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L6",
+          "title": "multimodal",
+          "command": "python -m labs.models.run_lab multimodal",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M14-L7",
+          "title": "crossmodal",
+          "command": "python -m labs.models.run_lab crossmodal",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M15",
+      "title": "综合项目：训练并恢复微型语言模型",
+      "path": "books/03-model-architectures/15-tiny-language-model.md",
+      "prerequisites": [
+        "M14"
+      ],
+      "labs": [
+        {
+          "id": "M15-L1",
+          "title": "tiny_lm",
+          "command": "python -m labs.models.tiny_lm",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M15-L2",
+          "title": "torch_transformer --device cpu --steps 40",
+          "command": "python -m labs.models.torch_transformer --device cpu --steps 40",
+          "hardware": "cpu",
+          "network": false,
+          "optional_dependency": "torch",
+          "validation": "optional dependency absent; skip path checked, training unexecuted"
+        }
+      ]
+    },
+    {
+      "id": "M16",
+      "title": "综合项目：架构比较台与真实源码研究",
+      "path": "books/03-model-architectures/16-architecture-study.md",
+      "prerequisites": [
+        "M15"
+      ],
+      "labs": [
+        {
+          "id": "M16-L1",
+          "title": "compare",
+          "command": "python -m labs.models.compare",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    },
+    {
+      "id": "M17",
+      "title": "深度工作簿：两token逐数追踪与MoE增量实现",
+      "path": "books/03-model-architectures/WORKBOOK.md",
+      "prerequisites": [
+        "M16"
+      ],
+      "labs": [
+        {
+          "id": "M17-L1",
+          "title": "trace_decoder",
+          "command": "python -m labs.models.trace_decoder",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M17-L2",
+          "title": "trace_decoder --active-ffn",
+          "command": "python -m labs.models.trace_decoder --active-ffn",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        },
+        {
+          "id": "M17-L3",
+          "title": "moe_decoder",
+          "command": "python -m labs.models.moe_decoder",
+          "hardware": "cpu",
+          "network": false,
+          "validation": "local CPU executed"
+        }
+      ]
+    }
+  ]
+}

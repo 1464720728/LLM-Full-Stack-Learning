@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-01T07:18:24.033813+00:00",
+  "python": "3.12.14",
+  "unit_test_command": "python -m unittest discover -s tests -p 'test_knowledge*.py' -q",
+  "unittest_total": 77,
+  "passed": 76,
+  "skipped": 1,
+  "skip_reason": "FAISS optional dependency unavailable",
+  "offline_manifest_commands": 41,
+  "offline_commands_passed": 40,
+  "offline_commands_skipped": 1,
+  "live_api_executed": false,
+  "gpu_used": false,
+  "network_default": false,
+  "workbook_stages": 8,
+  "notes": [
+    "NumPy tiny encoder gradient checked by finite differences.",
+    "Mock embeddings test protocol only; live semantic quality unmeasured.",
+    "External framework reading tasks not executed as installed integrations.",
+    "Peer-review regressions cover delete CAS interleaving, durable document/memory counters after purge/forget and migration, extreme finite cosine scales, missing/partial usage."
+  ]
+}

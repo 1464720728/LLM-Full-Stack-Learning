@@ -1,0 +1,146 @@
+[
+  {
+    "id": "S-SRC-01",
+    "title": "vLLM EngineCore",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/v1/engine/core.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "EngineCore.step: schedule, execute, sample, abort queue, update; S09/S17"
+  },
+  {
+    "id": "S-SRC-02",
+    "title": "vLLM Scheduler",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/v1/core/sched/scheduler.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "token budget, running/waiting, computed/in-flight bookkeeping and output update; S02/S05/S09/S17"
+  },
+  {
+    "id": "S-SRC-03",
+    "title": "vLLM KVCacheManager",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/v1/core/kv_cache_manager.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "computed prefix blocks, allocate_slots, free; last prompt token recomputation; S03/S04/S09"
+  },
+  {
+    "id": "S-SRC-04",
+    "title": "vLLM GPUModelRunner",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/v1/worker/gpu_model_runner.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "execute_model and sample_tokens phase protocol; no assertion of every model/backend support"
+  },
+  {
+    "id": "S-SRC-05",
+    "title": "vLLM scheduler tests",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/tests/v1/core/test_scheduler.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "partial prefill 400/400/224, finish/cancel, in-flight preemption tests; course test API basis"
+  },
+  {
+    "id": "S-SRC-06",
+    "title": "vLLM scheduler test helpers",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/tests/v1/core/utils.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "create_scheduler and create_requests signatures/configuration; optional upstream test imports"
+  },
+  {
+    "id": "S-SRC-07",
+    "title": "vLLM SchedulerOutput",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/v1/core/sched/output.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "total_num_scheduled_tokens field and per-request work contracts"
+  },
+  {
+    "id": "S-SRC-08",
+    "title": "SGLang Scheduler",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/managers/scheduler.py",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "normal/overlap event loops; get_next_batch_to_run, run_batch, process_batch_result"
+  },
+  {
+    "id": "S-SRC-09",
+    "title": "SGLang RadixCache",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/mem_cache/radix_cache.py",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "RadixKey/TreeNode, namespace, prefix matching, insert, eviction; not equivalent to course exact-prefix map"
+  },
+  {
+    "id": "S-SRC-10",
+    "title": "SGLang ModelRunner",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/model_executor/model_runner.py",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "ModelRunner.forward source navigation"
+  },
+  {
+    "id": "S-SRC-11",
+    "title": "SGLang deterministic inference",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/docs/docs/advanced_features/deterministic_inference.mdx",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "snapshot-specific flag and backend/radix constraints; no universal reproducibility guarantee"
+  },
+  {
+    "id": "S-SRC-12",
+    "title": "EvalScope Terminal-Bench adapter",
+    "url": "https://github.com/modelscope/evalscope/blob/8df4fd2b9d160495d01def86ab88b222dce6601d/evalscope/benchmarks/terminal_bench/terminal_bench_adapter.py",
+    "accessed": "2026-11-01",
+    "commit": "8df4fd2b9d160495d01def86ab88b222dce6601d",
+    "claim_scope": "Agent/harness/model configuration boundaries, separate agent/verifier timeout parameters and Docker CLI requirement; no Harbor version pin claimed"
+  },
+  {
+    "id": "S-SRC-13",
+    "title": "vLLM reproducibility",
+    "url": "https://docs.vllm.ai/en/latest/usage/reproducibility/",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "Official rolling documentation: seed alone does not guarantee online reproducibility; environment and scheduling constraints apply"
+  },
+  {
+    "id": "S-SRC-14",
+    "title": "vLLM batch invariance",
+    "url": "https://docs.vllm.ai/en/latest/features/batch_invariance/",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "Official rolling documentation on batch-invariant mechanisms and restrictions; do not assume applicable to arbitrary installed version"
+  },
+  {
+    "id": "S-SRC-15",
+    "title": "PagedAttention paper",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "Virtual-memory-inspired KV block management and sharing; no paper benchmark numbers transferred to course simulator"
+  },
+  {
+    "id": "S-SRC-16",
+    "title": "Sarathi-Serve paper",
+    "url": "https://arxiv.org/abs/2403.02310",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "Chunked prefill and scheduling research context; experiment results apply to paper configuration"
+  },
+  {
+    "id": "S-SRC-17",
+    "title": "DistServe paper",
+    "url": "https://arxiv.org/abs/2401.09670",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "Prefill/decode disaggregation research context; course transfer model is an explicitly simplified analytical model"
+  },
+  {
+    "id": "S-SRC-18",
+    "title": "Qwen2.5-0.5B-Instruct pinned config",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/7ae557604adf67be50417f59c2c2f167def9a775/config.json",
+    "accessed": "2026-11-01",
+    "commit": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "claim_scope": "Concrete single-GPU study model identity: Qwen2ForCausalLM, 24 layers, hidden 896, 14 Q heads, 2 KV heads; not an assertion that any chosen image supports this model"
+  }
+]

@@ -1,0 +1,405 @@
+{
+  "track_id": "A",
+  "title": "Agent 工程：执行、状态、协议与可靠性",
+  "chapters": [
+    {
+      "id": "A01",
+      "title": "从最小函数到 Agent 循环",
+      "path": "books/01-agent-engineering/01-loop.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "A01-L1",
+          "title": "01-loop",
+          "command": "python -m labs.agents.experiments 01-loop",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "模型协议与适配器",
+      "path": "books/01-agent-engineering/02-protocols.md",
+      "prerequisites": [
+        "A01"
+      ],
+      "labs": [
+        {
+          "id": "A02-L1",
+          "title": "03-chat",
+          "command": "python -m labs.agents.experiments 03-chat",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A02-L2",
+          "title": "04-responses",
+          "command": "python -m labs.agents.experiments 04-responses",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A02-L3",
+          "title": "05-messages",
+          "command": "python -m labs.agents.experiments 05-messages",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "工具契约、验证与错误语义",
+      "path": "books/01-agent-engineering/03-tools.md",
+      "prerequisites": [
+        "A02"
+      ],
+      "labs": [
+        {
+          "id": "A03-L1",
+          "title": "02-contract",
+          "command": "python -m labs.agents.experiments 02-contract",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A03-L2",
+          "title": "08-errors",
+          "command": "python -m labs.agents.experiments 08-errors",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "状态、事件与检查点",
+      "path": "books/01-agent-engineering/04-state-events.md",
+      "prerequisites": [
+        "A03"
+      ],
+      "labs": [
+        {
+          "id": "A04-L1",
+          "title": "16-checkpoint",
+          "command": "python -m labs.agents.experiments 16-checkpoint",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A04-L2",
+          "title": "17-conflict",
+          "command": "python -m labs.agents.experiments 17-conflict",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "流式分帧与工具增量",
+      "path": "books/01-agent-engineering/05-streaming.md",
+      "prerequisites": [
+        "A04"
+      ],
+      "labs": [
+        {
+          "id": "A05-L1",
+          "title": "06-sse",
+          "command": "python -m labs.agents.experiments 06-sse",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A05-L2",
+          "title": "07-deltas",
+          "command": "python -m labs.agents.experiments 07-deltas",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "容错、预算、取消",
+      "path": "books/01-agent-engineering/06-reliability.md",
+      "prerequisites": [
+        "A05"
+      ],
+      "labs": [
+        {
+          "id": "A06-L1",
+          "title": "09-budget",
+          "command": "python -m labs.agents.experiments 09-budget",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A06-L2",
+          "title": "10-retry",
+          "command": "python -m labs.agents.experiments 10-retry",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A06-L3",
+          "title": "19-cancellation",
+          "command": "python -m labs.agents.experiments 19-cancellation",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "上下文与证据完整性",
+      "path": "books/01-agent-engineering/07-context.md",
+      "prerequisites": [
+        "A06"
+      ],
+      "labs": [
+        {
+          "id": "A07-L1",
+          "title": "11-context",
+          "command": "python -m labs.agents.experiments 11-context",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A07-L2",
+          "title": "12-provenance",
+          "command": "python -m labs.agents.experiments 12-provenance",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "文件、编辑与进程工具",
+      "path": "books/01-agent-engineering/08-workspaces.md",
+      "prerequisites": [
+        "A07"
+      ],
+      "labs": [
+        {
+          "id": "A08-L1",
+          "title": "13-paths",
+          "command": "python -m labs.agents.experiments 13-paths",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A08-L2",
+          "title": "14-edit",
+          "command": "python -m labs.agents.experiments 14-edit",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "并发与资源调度",
+      "path": "books/01-agent-engineering/09-concurrency.md",
+      "prerequisites": [
+        "A08"
+      ],
+      "labs": [
+        {
+          "id": "A09-L1",
+          "title": "20-fanout",
+          "command": "python -m labs.agents.experiments 20-fanout",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "幂等、账本与恢复",
+      "path": "books/01-agent-engineering/10-durability.md",
+      "prerequisites": [
+        "A09"
+      ],
+      "labs": [
+        {
+          "id": "A10-L1",
+          "title": "15-idempotency",
+          "command": "python -m labs.agents.experiments 15-idempotency",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A10-L2",
+          "title": "18-uncertain",
+          "command": "python -m labs.agents.experiments 18-uncertain",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "状态图与人工协作",
+      "path": "books/01-agent-engineering/11-workflows.md",
+      "prerequisites": [
+        "A10"
+      ],
+      "labs": [
+        {
+          "id": "A11-L1",
+          "title": "21-approval",
+          "command": "python -m labs.agents.experiments 21-approval",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A11-L2",
+          "title": "25-ticket-project",
+          "command": "python -m labs.agents.experiments 25-ticket-project",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "多 Agent 分工与证据合并",
+      "path": "books/01-agent-engineering/12-multi-agent.md",
+      "prerequisites": [
+        "A11"
+      ],
+      "labs": [
+        {
+          "id": "A12-L1",
+          "title": "22-multi-agent",
+          "command": "python -m labs.agents.experiments 22-multi-agent",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "评测、追踪与统计",
+      "path": "books/01-agent-engineering/13-evaluation.md",
+      "prerequisites": [
+        "A12"
+      ],
+      "labs": [
+        {
+          "id": "A13-L1",
+          "title": "23-metrics",
+          "command": "python -m labs.agents.experiments 23-metrics",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A13-L2",
+          "title": "24-redaction",
+          "command": "python -m labs.agents.experiments 24-redaction",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "A13-L3",
+          "title": "可验证成功与统计估计",
+          "command": "python -m labs.agents.evaluation",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "编码助手综合项目",
+      "path": "books/01-agent-engineering/14-coding-agent.md",
+      "prerequisites": [
+        "A13"
+      ],
+      "labs": [
+        {
+          "id": "A14-L1",
+          "title": "26-coding-project",
+          "command": "python -m labs.agents.experiments 26-coding-project",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "MCP、A2A 与真实框架",
+      "path": "books/01-agent-engineering/15-integrations.md",
+      "prerequisites": [
+        "A14"
+      ],
+      "labs": [
+        {
+          "id": "A15-L1",
+          "title": "27-tool-rpc",
+          "command": "python -m labs.agents.experiments 27-tool-rpc",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "源码工作簿：从四个函数到可恢复 Harness",
+      "path": "books/01-agent-engineering/WORKBOOK-1-build-and-trace.md",
+      "prerequisites": [
+        "A04",
+        "A10"
+      ],
+      "labs": [
+        {
+          "id": "A16-L1",
+          "title": "源码工作簿：从四个函数到可恢复 Harness",
+          "command": "python -m unittest tests.test_agents_core -v",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A17",
+      "title": "源码工作簿：八个崩溃现场",
+      "path": "books/01-agent-engineering/WORKBOOK-2-crash-lab.md",
+      "prerequisites": [
+        "A10",
+        "A11"
+      ],
+      "labs": [
+        {
+          "id": "A17-L1",
+          "title": "源码工作簿：八个崩溃现场",
+          "command": "python -m labs.agents.advanced_solutions",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "A18",
+      "title": "源码工作簿：真实模型、工具与框架迁移",
+      "path": "books/01-agent-engineering/WORKBOOK-3-production-bridge.md",
+      "prerequisites": [
+        "A15",
+        "A16",
+        "A17"
+      ],
+      "labs": [
+        {
+          "id": "A18-L1",
+          "title": "源码工作簿：真实模型、工具与框架迁移",
+          "command": "python -m unittest tests.test_agents_advanced tests.test_agents_evaluation -v",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    }
+  ]
+}

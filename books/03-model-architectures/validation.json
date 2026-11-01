@@ -1,0 +1,322 @@
+{
+  "environment": "local CPU; NumPy; PyTorch not installed",
+  "results": [
+    {
+      "id": "M01-L1",
+      "command": "python -m labs.models.run_lab tokenization",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1067,
+      "output_excerpt": "UTF-8 bytes: [231, 140, 171, 32, 101, 97, 116, 115, 46] roundtrip: 猫 eats.\nBPE: (['abab', 'ab', ' abab'], [('a', 'b'), ('ab', 'ab'), (' ', 'abab')])\n"
+    },
+    {
+      "id": "M01-L2",
+      "command": "python -m labs.models.run_lab tensor_shapes",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1068,
+      "output_excerpt": "X: (3, 8) heads: (2, 3, 4) roundtrip: True\n"
+    },
+    {
+      "id": "M02-L1",
+      "command": "python -m labs.models.run_lab autograd",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.107,
+      "output_excerpt": "y= 6.0 dy/dx= 5.0 expected=5\n"
+    },
+    {
+      "id": "M02-L2",
+      "command": "python -m labs.models.run_lab softmax",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0988,
+      "output_excerpt": "[0.244728 0.665241 0.090031]\nall masked: [0. 0.]\nCE= 1.0986122886681098 gradient= [[ 0.333333  0.333333 -0.666667]]\n"
+    },
+    {
+      "id": "M02-L3",
+      "command": "python -m labs.models.gradient_trace",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.2013,
+      "output_excerpt": "{\n  \"input_ids\": [\n    [\n      1,\n      1\n    ]\n  ],\n  \"embedding_flat\": [\n    [\n      0.5,\n      0.5\n    ]\n  ],\n  \"hidden_pre_activation\": [\n    [\n  "
+    },
+    {
+      "id": "M03-L1",
+      "command": "python -m labs.models.run_lab attention",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1388,
+      "output_excerpt": "weights=\n[[1.       0.      ]\n [0.330238 0.669762]]\noutput=\n[[10.        0.      ]\n [ 3.302385 13.395231]]\n"
+    },
+    {
+      "id": "M04-L1",
+      "command": "python -m labs.models.run_lab transformer",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.149,
+      "output_excerpt": "logits shape (3, 16) earlier-prefix invariant 0.0\n"
+    },
+    {
+      "id": "M05-L1",
+      "command": "python -m labs.models.run_lab decoder",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.138,
+      "output_excerpt": "logits shape (4, 32)\nparameters 5632\n"
+    },
+    {
+      "id": "M05-L2",
+      "command": "python -m labs.models.run_lab rope",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1279,
+      "output_excerpt": "norm before/after 5.477225575051661 5.477225575051661\n[[-1.272233 -1.838865  2.878668  4.088187]]\n"
+    },
+    {
+      "id": "M06-L1",
+      "command": "python -m labs.models.run_lab kv_cache",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1554,
+      "output_excerpt": "max full-vs-step error 8.881784197001252e-16\nK shape per layer (2, 5, 4)\n"
+    },
+    {
+      "id": "M06-L2",
+      "command": "python -m labs.models.run_lab gqa",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0973,
+      "output_excerpt": "4 Q heads / 2 KV heads [[[0. 1.]\n  [1. 2.]]\n\n [[0. 1.]\n  [1. 2.]]\n\n [[4. 5.]\n  [5. 6.]]\n\n [[4. 5.]\n  [5. 6.]]]\nKV elements 16\n"
+    },
+    {
+      "id": "M07-L1",
+      "command": "python -m labs.models.run_lab mla",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.109,
+      "output_excerpt": "factorization error 2.220446049250313e-16\nfull K+V elements 36 latent elements 8\n"
+    },
+    {
+      "id": "M08-L1",
+      "command": "python -m labs.models.run_lab moe",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.099,
+      "output_excerpt": "output\n[[2. 1.]\n [2. 4.]\n [0. 0.]]\nchosen\n[[0]\n [1]\n [0]]\ndropped\n[[False]\n [False]\n [ True]]\n"
+    },
+    {
+      "id": "M09-L1",
+      "command": "python -m labs.models.run_lab sparse",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1273,
+      "output_excerpt": "[[1 0 0 0 0 0 0 0]\n [1 1 0 0 0 0 0 0]\n [1 1 1 0 0 0 0 0]\n [1 1 1 1 0 0 0 0]\n [1 0 1 1 1 0 0 0]\n [1 0 0 1 1 1 0 0]\n [1 0 0 0 1 1 1 0]\n [1 0 0 0 1 1 1 1"
+    },
+    {
+      "id": "M09-L2",
+      "command": "python -m labs.models.run_lab compressed",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1003,
+      "output_excerpt": "output shape (8, 4) selected compressed block starts [[], [], [], [0], [0], [0, 2], [0, 2], [4, 0]]\n"
+    },
+    {
+      "id": "M10-L1",
+      "command": "python -m labs.models.run_lab linear",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0907,
+      "output_excerpt": "error 2.220446049250313e-16 state shapes (3, 2) (3,)\n"
+    },
+    {
+      "id": "M10-L2",
+      "command": "python -m labs.models.run_lab delta",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0817,
+      "output_excerpt": "same key overwrite outputs [3. 7.] state [[7.]\n [0.]]\n"
+    },
+    {
+      "id": "M11-L1",
+      "command": "python -m labs.models.run_lab ssm",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0845,
+      "output_excerpt": "recurrence [1.    0.5   0.25  0.125] convolution [1.    0.5   0.25  0.125]\n"
+    },
+    {
+      "id": "M11-L2",
+      "command": "python -m labs.models.run_lab selective_ssm",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0733,
+      "output_excerpt": "input-dependent exact-ZOH scalar state [0.731059 0.365529 1.805166 0.902583]\n"
+    },
+    {
+      "id": "M12-L1",
+      "command": "python -m labs.models.run_lab attnres",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.077,
+      "output_excerpt": "depth weights [0.525216 0.127689 0.347095] sum [1.] output [[1.5665   1.296662]]\n"
+    },
+    {
+      "id": "M12-L2",
+      "command": "python -m labs.models.run_lab block_attnres",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0916,
+      "output_excerpt": "layer 0 candidate count 1 output [[1. 1.]]\nlayer 1 candidate count 2 output [[0.5 1.5]]\nlayer 2 candidate count 2 output [[0.5 2. ]]\nlayer 3 candidate"
+    },
+    {
+      "id": "M12-L3",
+      "command": "python -m labs.models.run_lab hyperconnections",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0852,
+      "output_excerpt": "mixing matrix\n[[0.182426 0.817574]\n [0.817574 0.182426]]\nrow sums\n[1. 1.]\ncol sums\n[1. 1.]\n"
+    },
+    {
+      "id": "M12-L4",
+      "command": "python -m labs.models.run_lab ced",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1034,
+      "output_excerpt": "encoder\n[[0.       0.1      0.2     ]\n [0.165533 0.265533 0.365533]\n [0.371187 0.471187 0.571187]\n [0.631338 0.731338 0.831338]]\ndecoder\n[[0.       0."
+    },
+    {
+      "id": "M12-L5",
+      "command": "python -m labs.models.run_lab conditional_memory",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0895,
+      "output_excerpt": "hash slots\n[2, 5, 5, 5]\nretrieved rows\n[[ 8  9 10 11]\n [20 21 22 23]\n [20 21 22 23]\n [20 21 22 23]]\n"
+    },
+    {
+      "id": "M13-L1",
+      "command": "python -m labs.models.run_lab quantize",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0882,
+      "output_excerpt": "bits 4 q [[-7 -2  0  6]\n [ 0  0  0  0]] scale [0.142857 1.      ] max error 0.05714285714285705\nbits 8 q [[-127  -38    0  102]\n [   0    0    0    0]"
+    },
+    {
+      "id": "M14-L1",
+      "command": "python -m labs.models.run_lab sampling",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.119,
+      "output_excerpt": "greedy 0\ntop-k=2 [0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0]\n"
+    },
+    {
+      "id": "M14-L2",
+      "command": "python -m labs.models.run_lab loss_mask",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0948,
+      "output_excerpt": "assistant-only target loss\n1.0986122886681098\ngradient\n[[ 0.        0.        0.      ]\n [ 0.        0.        0.      ]\n [ 0.166667  0.166667 -0.3333"
+    },
+    {
+      "id": "M14-L3",
+      "command": "python -m labs.models.run_lab dpo",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0809,
+      "output_excerpt": "equal margin 0.6931471805599453 improved margin 0.5981388693815918\nd(loss)/d(chosen_logprob) -0.050000000001437776 expected -0.05\n"
+    },
+    {
+      "id": "M14-L4",
+      "command": "python -m labs.models.run_lab grpo",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0981,
+      "output_excerpt": "group advantages [-1.224745  0.        1.224745] loss -0.0 gradient wrt logprob [ 0.408248 -0.       -0.408248]\n"
+    },
+    {
+      "id": "M14-L5",
+      "command": "python -m labs.models.run_lab lora",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.088,
+      "output_excerpt": "LoRA output [[3. 5.]] merged [[3. 5.]]\n"
+    },
+    {
+      "id": "M14-L6",
+      "command": "python -m labs.models.run_lab multimodal",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0891,
+      "output_excerpt": "image (4, 4, 3) patches (4, 12) first patch [ 0  1  2  3  4  5 12 13 14 15 16 17]\n"
+    },
+    {
+      "id": "M14-L7",
+      "command": "python -m labs.models.run_lab crossmodal",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1305,
+      "output_excerpt": "text reads visual tokens [[1.055781 1.180781]\n [1.055781 1.180781]]\n"
+    },
+    {
+      "id": "M15-L1",
+      "command": "python -m labs.models.tiny_lm",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1565,
+      "output_excerpt": "{\n  \"initial_train_ce\": 2.7450980592306893,\n  \"final_train_ce\": 0.23320800791277468,\n  \"validation_ce\": 0.23444740508179532,\n  \"steps\": 160,\n  \"units\""
+    },
+    {
+      "id": "M15-L2",
+      "command": "python -m labs.models.torch_transformer --device cpu --steps 40",
+      "status": "skip_dependency",
+      "returncode": 0,
+      "duration_seconds": 0.0953,
+      "output_excerpt": "SKIP: optional PyTorch is not installed. NumPy core labs remain available.\n"
+    },
+    {
+      "id": "M16-L1",
+      "command": "python -m labs.models.compare",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0913,
+      "output_excerpt": "{\n  \"length\": 24,\n  \"head_dimension\": 8,\n  \"max_error_sparse_vs_same_dense_mask\": 6.661338147750939e-16,\n  \"max_error_linear_parallel_vs_recurrent\": 2"
+    },
+    {
+      "id": "M17-L1",
+      "command": "python -m labs.models.trace_decoder",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1448,
+      "output_excerpt": "01_embedding shape= (2, 4) \n [[1. 0. 1. 0.]\n [0. 1. 0. 1.]]\n02_rmsnorm shape= (2, 4) \n [[1.414199 0.       1.414199 0.      ]\n [0.       1.414199 0.  "
+    },
+    {
+      "id": "M17-L2",
+      "command": "python -m labs.models.trace_decoder --active-ffn",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1538,
+      "output_excerpt": "01_embedding shape= (2, 4) \n [[1. 0. 1. 0.]\n [0. 1. 0. 1.]]\n02_rmsnorm shape= (2, 4) \n [[1.414199 0.       1.414199 0.      ]\n [0.       1.414199 0.  "
+    },
+    {
+      "id": "M17-L3",
+      "command": "python -m labs.models.moe_decoder",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.0953,
+      "output_excerpt": "{\n  \"variant\": \"GQA/RoPE + token-choice MoE ReLU FFN\",\n  \"experts\": 3,\n  \"top_k\": 2,\n  \"full_vs_step_max_error\": 1.3322676295501878e-15,\n  \"logits_sha"
+    },
+    {
+      "id": "M12-L6",
+      "command": "python -m labs.models.block_attnres_decoder",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.148,
+      "output_excerpt": "{\n  \"model\": \"TinyBlockAttnResDecoder\",\n  \"trained\": false,\n  \"block_sublayers\": 4,\n  \"events\": [\n    {\n      \"sublayer\": 0,\n      \"kind\": \"attention\",\n      \"source_count\": 1,\n      \"labels\": [\n        \"embedding\"\n      ],\n      \"sealed_after_mix\": \"embedding\"\n    },\n    {\n      \"sublayer\": 1,\n      \"kind\": \"mlp\",\n      \"source_count\": 2,\n      \"labels\": [\n        \"embedding\",\n        \"partial[0:1]\"\n      ],\n      \"sealed_after_mix\": null\n    },\n    {\n      \"sublayer\": 2,\n      \"kind\": \"attention\",\n      \"source_count\": 2,\n      \"labels\": [\n        \"embedding\",\n        \"partial[0:2]\"\n      ],\n      \"sealed_after_mix\": null\n    },\n    {\n      \"sublayer\": 3,\n      \"kind\": \"mlp\",\n      \"source_count\": 2,\n      \"labels\": [\n        \"embedding\",\n        \"partial[0:3]\"\n      ],\n      \"sealed_after_mix\": null\n    },\n    {\n      \"sublayer\": 4,\n      \"kind\": \"attention\",\n      \"source_count\": 2,\n      \"labels\": [\n        \"embedding\",\n        \"partial[0:4]\"\n      ],\n      \"sealed_after_mix\": \"block[0:4]\"\n    },\n    {\n      \"sublayer\": 5,\n      \"kind\": \"mlp\",\n      \"source_count\": 3,\n      \"labels\": [\n        \"embedding\",\n        \"block[0:4]\",\n        \"partial[4:5]\"\n      ],\n      \"sealed_after_mix\": null\n    },\n    {\n      \"sublayer\": 6,\n      \"kind\": \"head\",\n      \"source_count\": 3,\n      \"labels\": [\n        \"embedding\",\n        \"block[0:4]\",\n        \"partial[4:6]\"\n      ],\n      \"sealed_after_mix\": null\n    }\n  ],\n  \"full_vs_cached_max_error\": 1.4675760606763788e-15,\n  \"future_token_invariance_max_error\": 0.0,\n  \"zero_query_vs_mean_max_error\": 2.220446049250313e-16,\n  \"logits_shape\": [\n    4,\n    32\n  ]\n}\n"
+    }
+  ],
+  "counts": {
+    "passed": 37,
+    "skip_dependency": 1,
+    "failed": 0
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "track_id": "F",
+  "title": "Linux、Python与工程基础",
+  "chapters": [
+    {
+      "id": "F01",
+      "title": "环境与学习闭环",
+      "path": "books/00-foundations/01-environment-and-learning.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "F01-L1",
+          "title": "environment",
+          "command": "python -m labs.foundations.environment",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "文件路径与编码",
+      "path": "books/00-foundations/02-files-paths-and-encoding.md",
+      "prerequisites": [
+        "F01"
+      ],
+      "labs": [
+        {
+          "id": "F02-L1",
+          "title": "paths",
+          "command": "python -m labs.foundations.paths",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "Shell管道与文本",
+      "path": "books/00-foundations/03-shell-pipes-and-text.md",
+      "prerequisites": [
+        "F02"
+      ],
+      "labs": [
+        {
+          "id": "F03-L1",
+          "title": "text_pipeline",
+          "command": "python -m labs.foundations.text_pipeline",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "进程权限与环境",
+      "path": "books/00-foundations/04-processes-permissions-environment.md",
+      "prerequisites": [
+        "F03"
+      ],
+      "labs": [
+        {
+          "id": "F04-L1",
+          "title": "permissions",
+          "command": "python -m labs.foundations.permissions",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F04-L2",
+          "title": "process_runner",
+          "command": "python -m labs.foundations.process_runner",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "title": "网络SSH与HTTP JSON",
+      "path": "books/00-foundations/05-network-ssh-http-json.md",
+      "prerequisites": [
+        "F04"
+      ],
+      "labs": [
+        {
+          "id": "F05-L1",
+          "title": "http_message",
+          "command": "python -m labs.foundations.http_message",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F05-L2",
+          "title": "json_contract",
+          "command": "python -m labs.foundations.json_contract",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "Python数据与函数",
+      "path": "books/00-foundations/06-python-values-control-functions.md",
+      "prerequisites": [
+        "F01"
+      ],
+      "labs": [
+        {
+          "id": "F06-L1",
+          "title": "python_values",
+          "command": "python -m labs.foundations.python_values",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F06-L2",
+          "title": "functions",
+          "command": "python -m labs.foundations.functions",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "模块对象与迭代器",
+      "path": "books/00-foundations/07-modules-objects-iterators.md",
+      "prerequisites": [
+        "F06"
+      ],
+      "labs": [
+        {
+          "id": "F07-L1",
+          "title": "objects",
+          "command": "python -m labs.foundations.objects",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F07-L2",
+          "title": "iterators",
+          "command": "python -m labs.foundations.iterators",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "异常文件与SQLite",
+      "path": "books/00-foundations/08-files-exceptions-sqlite.md",
+      "prerequisites": [
+        "F07"
+      ],
+      "labs": [
+        {
+          "id": "F08-L1",
+          "title": "file_io",
+          "command": "python -m labs.foundations.file_io",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F08-L2",
+          "title": "sqlite_lab",
+          "command": "python -m labs.foundations.sqlite_lab",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "测试与调试",
+      "path": "books/00-foundations/09-testing-debugging-and-quality.md",
+      "prerequisites": [
+        "F08"
+      ],
+      "labs": [
+        {
+          "id": "F09-L1",
+          "title": "debugging",
+          "command": "python -m labs.foundations.debugging",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "CLI日志与接口",
+      "path": "books/00-foundations/10-cli-logging-and-interfaces.md",
+      "prerequisites": [
+        "F09"
+      ],
+      "labs": [
+        {
+          "id": "F10-L1",
+          "title": "cli",
+          "command": "python -m labs.foundations.cli",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "并发与asyncio",
+      "path": "books/00-foundations/11-concurrency-async-and-cancellation.md",
+      "prerequisites": [
+        "F10"
+      ],
+      "labs": [
+        {
+          "id": "F11-L1",
+          "title": "concurrency",
+          "command": "python -m labs.foundations.concurrency",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Git与源码修改",
+      "path": "books/00-foundations/12-git-from-snapshots-to-contribution.md",
+      "prerequisites": [
+        "F09"
+      ],
+      "labs": [
+        {
+          "id": "F12-L1",
+          "title": "git_model",
+          "command": "python -m labs.foundations.git_model",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Docker镜像容器与卷",
+      "path": "books/00-foundations/13-docker-images-containers-volumes.md",
+      "prerequisites": [
+        "F04",
+        "F05",
+        "F10"
+      ],
+      "labs": [
+        {
+          "id": "F13-L1",
+          "title": "container_model",
+          "command": "python -m labs.foundations.container_model",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "title": "数学张量与数值",
+      "path": "books/00-foundations/14-math-numpy-and-numerics.md",
+      "prerequisites": [
+        "F06",
+        "F09"
+      ],
+      "labs": [
+        {
+          "id": "F14-L1",
+          "title": "tensors",
+          "command": "python -m labs.foundations.tensors",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F14-L2",
+          "title": "numerics",
+          "command": "python -m labs.foundations.numerics",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "title": "项目A日志分析CLI",
+      "path": "books/00-foundations/15-project-log-analysis-cli.md",
+      "prerequisites": [
+        "F10",
+        "F12",
+        "F14"
+      ],
+      "labs": [
+        {
+          "id": "F15-L1",
+          "title": "log_project",
+          "command": "python -m labs.foundations.log_project",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F16",
+      "title": "项目B任务服务",
+      "path": "books/00-foundations/16-project-task-service.md",
+      "prerequisites": [
+        "F05",
+        "F08",
+        "F09",
+        "F15"
+      ],
+      "labs": [
+        {
+          "id": "F16-L1",
+          "title": "task_service",
+          "command": "python -m labs.foundations.task_service",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F17",
+      "title": "工作簿A从空文件到CLI",
+      "path": "books/00-foundations/WORKBOOK-01-from-empty-file-to-cli.md",
+      "prerequisites": [
+        "F06"
+      ],
+      "labs": [
+        {
+          "id": "F17-L1",
+          "title": "workshop.step01_loop",
+          "command": "python -m labs.foundations.workshop.step01_loop",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F17-L2",
+          "title": "workshop.step02_function",
+          "command": "python -m labs.foundations.workshop.step02_function",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F17-L3",
+          "title": "workshop.step03_json",
+          "command": "python -m labs.foundations.workshop.step03_json",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F17-L4",
+          "title": "workshop.step04_pipeline",
+          "command": "python -m labs.foundations.workshop.step04_pipeline",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F17-L5",
+          "title": "workshop.step05_cli",
+          "command": "python -m labs.foundations.workshop.step05_cli",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F18",
+      "title": "工作簿B从状态到HTTP",
+      "path": "books/00-foundations/WORKBOOK-02-from-state-to-http.md",
+      "prerequisites": [
+        "F08"
+      ],
+      "labs": [
+        {
+          "id": "F18-L1",
+          "title": "workshop.step06_memory_tasks",
+          "command": "python -m labs.foundations.workshop.step06_memory_tasks",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F18-L2",
+          "title": "workshop.step07_persistence",
+          "command": "python -m labs.foundations.workshop.step07_persistence",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "F18-L3",
+          "title": "workshop.step08_routing",
+          "command": "python -m labs.foundations.workshop.step08_routing",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "F19",
+      "title": "工作簿C Linux诊断训练场",
+      "path": "books/00-foundations/WORKBOOK-03-linux-diagnostic-lab.md",
+      "prerequisites": [
+        "F05"
+      ],
+      "labs": []
+    },
+    {
+      "id": "F20",
+      "title": "工作簿D Python源码阅读",
+      "path": "books/00-foundations/WORKBOOK-04-reading-python-source.md",
+      "prerequisites": [
+        "F07",
+        "F09"
+      ],
+      "labs": []
+    },
+    {
+      "id": "F21",
+      "title": "工作簿E手算到训练",
+      "path": "books/00-foundations/WORKBOOK-05-math-by-hand-and-training.md",
+      "prerequisites": [
+        "F14"
+      ],
+      "labs": [
+        {
+          "id": "F21-L1",
+          "title": "linear_regression",
+          "command": "python -m labs.foundations.linear_regression",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "scope": "foundations",
+  "verified_date": "2026-11-01",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "offline_lab_count": 31,
+  "offline_labs": [
+    {
+      "id": "F01-L1",
+      "command": "python -m labs.foundations.environment",
+      "exit_code": 0
+    },
+    {
+      "id": "F02-L1",
+      "command": "python -m labs.foundations.paths",
+      "exit_code": 0
+    },
+    {
+      "id": "F03-L1",
+      "command": "python -m labs.foundations.text_pipeline",
+      "exit_code": 0
+    },
+    {
+      "id": "F04-L1",
+      "command": "python -m labs.foundations.permissions",
+      "exit_code": 0
+    },
+    {
+      "id": "F04-L2",
+      "command": "python -m labs.foundations.process_runner",
+      "exit_code": 0
+    },
+    {
+      "id": "F05-L1",
+      "command": "python -m labs.foundations.http_message",
+      "exit_code": 0
+    },
+    {
+      "id": "F05-L2",
+      "command": "python -m labs.foundations.json_contract",
+      "exit_code": 0
+    },
+    {
+      "id": "F06-L1",
+      "command": "python -m labs.foundations.python_values",
+      "exit_code": 0
+    },
+    {
+      "id": "F06-L2",
+      "command": "python -m labs.foundations.functions",
+      "exit_code": 0
+    },
+    {
+      "id": "F07-L1",
+      "command": "python -m labs.foundations.objects",
+      "exit_code": 0
+    },
+    {
+      "id": "F07-L2",
+      "command": "python -m labs.foundations.iterators",
+      "exit_code": 0
+    },
+    {
+      "id": "F08-L1",
+      "command": "python -m labs.foundations.file_io",
+      "exit_code": 0
+    },
+    {
+      "id": "F08-L2",
+      "command": "python -m labs.foundations.sqlite_lab",
+      "exit_code": 0
+    },
+    {
+      "id": "F09-L1",
+      "command": "python -m labs.foundations.debugging",
+      "exit_code": 0
+    },
+    {
+      "id": "F10-L1",
+      "command": "python -m labs.foundations.cli",
+      "exit_code": 0
+    },
+    {
+      "id": "F11-L1",
+      "command": "python -m labs.foundations.concurrency",
+      "exit_code": 0
+    },
+    {
+      "id": "F12-L1",
+      "command": "python -m labs.foundations.git_model",
+      "exit_code": 0
+    },
+    {
+      "id": "F13-L1",
+      "command": "python -m labs.foundations.container_model",
+      "exit_code": 0
+    },
+    {
+      "id": "F14-L1",
+      "command": "python -m labs.foundations.tensors",
+      "exit_code": 0
+    },
+    {
+      "id": "F14-L2",
+      "command": "python -m labs.foundations.numerics",
+      "exit_code": 0
+    },
+    {
+      "id": "F15-L1",
+      "command": "python -m labs.foundations.log_project",
+      "exit_code": 0
+    },
+    {
+      "id": "F16-L1",
+      "command": "python -m labs.foundations.task_service",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L1",
+      "command": "python -m labs.foundations.workshop.step01_loop",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L2",
+      "command": "python -m labs.foundations.workshop.step02_function",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L3",
+      "command": "python -m labs.foundations.workshop.step03_json",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L4",
+      "command": "python -m labs.foundations.workshop.step04_pipeline",
+      "exit_code": 0
+    },
+    {
+      "id": "F17-L5",
+      "command": "python -m labs.foundations.workshop.step05_cli",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L1",
+      "command": "python -m labs.foundations.workshop.step06_memory_tasks",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L2",
+      "command": "python -m labs.foundations.workshop.step07_persistence",
+      "exit_code": 0
+    },
+    {
+      "id": "F18-L3",
+      "command": "python -m labs.foundations.workshop.step08_routing",
+      "exit_code": 0
+    },
+    {
+      "id": "F21-L1",
+      "command": "python -m labs.foundations.linear_regression",
+      "exit_code": 0
+    }
+  ],
+  "unittest_command": "python -m unittest discover -s tests -p 'test_foundations*.py' -v",
+  "unittest_count": 49,
+  "unittest_exit_code": 0,
+  "unexecuted": [
+    "Windows native and WSL host setup",
+    "SSH and tmux sessions",
+    "Docker image build and Compose execution",
+    "real HTTP transport/curl manual exercise"
+  ],
+  "hardware_used": "CPU only",
+  "api_calls": 0,
+  "content_characters": 106505,
+  "content_hanzi": 51076
+}

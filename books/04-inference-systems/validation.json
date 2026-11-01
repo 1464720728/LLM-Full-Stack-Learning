@@ -1,0 +1,182 @@
+{
+  "date": "2026-11-01",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux",
+  "offline_labs": [
+    {
+      "id": "S01-L1",
+      "command": "python -m labs.serving.experiments --lab lifecycle",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L1",
+      "command": "python -m labs.serving.experiments --lab token_budget",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L2",
+      "command": "python -m labs.serving.experiments --lab chunks",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L3",
+      "command": "python -m labs.serving.experiments --lab continuous",
+      "exit_code": 0
+    },
+    {
+      "id": "S02-L4",
+      "command": "python -m labs.serving.experiments --lab fairness",
+      "exit_code": 0
+    },
+    {
+      "id": "S03-L1",
+      "command": "python -m labs.serving.experiments --lab cow",
+      "exit_code": 0
+    },
+    {
+      "id": "S03-L2",
+      "command": "python -m labs.serving.experiments --lab allocation_atomic",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L1",
+      "command": "python -m labs.serving.experiments --lab prefix",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L2",
+      "command": "python -m labs.serving.experiments --lab namespace",
+      "exit_code": 0
+    },
+    {
+      "id": "S04-L3",
+      "command": "python -m labs.serving.experiments --lab cache_eviction",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L1",
+      "command": "python -m labs.serving.experiments --lab cancel",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L2",
+      "command": "python -m labs.serving.experiments --lab preemption",
+      "exit_code": 0
+    },
+    {
+      "id": "S05-L3",
+      "command": "python -m labs.serving.experiments --lab fault_injection",
+      "exit_code": 0
+    },
+    {
+      "id": "S06-L1",
+      "command": "python -m labs.serving.experiments --lab runner_swap",
+      "exit_code": 0
+    },
+    {
+      "id": "S06-L2",
+      "command": "python -m labs.serving.experiments --lab batch_equivalence",
+      "exit_code": 0
+    },
+    {
+      "id": "S07-L1",
+      "command": "python -m labs.serving.experiments --lab sampling",
+      "exit_code": 0
+    },
+    {
+      "id": "S07-L2",
+      "command": "python -m labs.serving.experiments --lab stream_decoder",
+      "exit_code": 0
+    },
+    {
+      "id": "S08-L1",
+      "command": "python -m labs.serving.experiments --lab metrics",
+      "exit_code": 0
+    },
+    {
+      "id": "S09-L1",
+      "command": "python -m labs.serving.source_walk --project vllm --show-pin",
+      "exit_code": 0
+    },
+    {
+      "id": "S10-L1",
+      "command": "python -m labs.serving.experiments --lab communication",
+      "exit_code": 0
+    },
+    {
+      "id": "S11-L1",
+      "command": "python -m labs.serving.experiments --lab pd_transfer",
+      "exit_code": 0
+    },
+    {
+      "id": "S12-L1",
+      "command": "python -m labs.serving.experiments --lab deterministic",
+      "exit_code": 0
+    },
+    {
+      "id": "S12-L2",
+      "command": "python -m labs.serving.experiments --lab quantization",
+      "exit_code": 0
+    },
+    {
+      "id": "S13-L1",
+      "command": "python -m labs.serving.experiments --lab memory_capacity",
+      "exit_code": 0
+    },
+    {
+      "id": "S16-L1",
+      "command": "python -m labs.serving.experiments --lab trace_replay",
+      "exit_code": 0
+    },
+    {
+      "id": "S16-L2",
+      "command": "python -m labs.serving.replay",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L1",
+      "command": "python -m labs.serving.workbook_trace --case prefix",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L2",
+      "command": "python -m labs.serving.workbook_trace --case cow",
+      "exit_code": 0
+    },
+    {
+      "id": "S18-L3",
+      "command": "python -m labs.serving.workbook_trace --case preempt",
+      "exit_code": 0
+    },
+    {
+      "id": "S19-L1",
+      "command": "python -m labs.serving.paged_attention",
+      "exit_code": 0
+    }
+  ],
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -p 'test_serving*.py' -q",
+    "passed": 48
+  },
+  "not_executed": [
+    "upstream vLLM pytest",
+    "H100/RTX 5070 Ti",
+    "Docker GPU server",
+    "remote paid API",
+    "Terminal-Bench/Harbor evaluation"
+  ],
+  "local_http_smoke": {
+    "status": "passed",
+    "checks": [
+      "GET /health",
+      "POST completion token equality",
+      "invalid body 400",
+      "GET /metrics counts and active release"
+    ]
+  },
+  "syntax_checks": [
+    "Python compileall including optional upstream test",
+    "bash -n labs/serving/h100_server.sh"
+  ]
+}

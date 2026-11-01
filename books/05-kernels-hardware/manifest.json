@@ -1,0 +1,480 @@
+{
+  "track_id": "K",
+  "title": "算子、编译器与GPU硬件",
+  "chapters": [
+    {
+      "id": "K01",
+      "title": "张量不是表格：从一个地址开始理解布局",
+      "path": "books/05-kernels-hardware/01-addresses-layout.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "K01-L1",
+          "title": "CPU实验 K01",
+          "command": "python -m labs.kernels.run --lab 1",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K01-L2",
+          "title": "CPU实验 K02",
+          "command": "python -m labs.kernels.run --lab 2",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K02",
+      "title": "为读 Kernel 学 C++：值、地址、生命周期与编译",
+      "path": "books/05-kernels-hardware/02-cpp-memory.md",
+      "prerequisites": [
+        "K01"
+      ],
+      "labs": [
+        {
+          "id": "K02-L1",
+          "title": "只读环境检查",
+          "command": "python -m labs.kernels.inspect_environment",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K03",
+      "title": "CUDA 的执行组织：从一个线程到整个 Grid",
+      "path": "books/05-kernels-hardware/03-cuda-execution.md",
+      "prerequisites": [
+        "K02"
+      ],
+      "labs": [
+        {
+          "id": "K03-L1",
+          "title": "CPU实验 K03",
+          "command": "python -m labs.kernels.run --lab 3",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K04",
+      "title": "访存：合并访问、缓存、共享内存与 Bank",
+      "path": "books/05-kernels-hardware/04-memory-hierarchy.md",
+      "prerequisites": [
+        "K03"
+      ],
+      "labs": [
+        {
+          "id": "K04-L1",
+          "title": "CPU实验 K04",
+          "command": "python -m labs.kernels.run --lab 4",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K04-L2",
+          "title": "CPU实验 K05",
+          "command": "python -m labs.kernels.run --lab 5",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K05",
+      "title": "归约、Softmax、RMSNorm：第一次把数值与并行一起考虑",
+      "path": "books/05-kernels-hardware/05-reductions-normalization.md",
+      "prerequisites": [
+        "K04"
+      ],
+      "labs": [
+        {
+          "id": "K05-L1",
+          "title": "CPU实验 K06",
+          "command": "python -m labs.kernels.run --lab 6",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K05-L2",
+          "title": "CPU实验 K07",
+          "command": "python -m labs.kernels.run --lab 7",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K05-L3",
+          "title": "CPU实验 K08",
+          "command": "python -m labs.kernels.run --lab 8",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K05-L4",
+          "title": "CPU实验 K09",
+          "command": "python -m labs.kernels.run --lab 9",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K05-L5",
+          "title": "CPU实验 K10",
+          "command": "python -m labs.kernels.run --lab 10",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K05-L6",
+          "title": "CPU实验 K16",
+          "command": "python -m labs.kernels.run --lab 16",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K06",
+      "title": "GEMM：从三个循环到分块复用与 Tensor Core",
+      "path": "books/05-kernels-hardware/06-gemm.md",
+      "prerequisites": [
+        "K05"
+      ],
+      "labs": [
+        {
+          "id": "K06-L1",
+          "title": "CPU实验 K11",
+          "command": "python -m labs.kernels.run --lab 11",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K06-L2",
+          "title": "CPU实验 K12",
+          "command": "python -m labs.kernels.run --lab 12",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K07",
+      "title": "把 FlashAttention 的核心算法亲手推出来",
+      "path": "books/05-kernels-hardware/07-online-attention.md",
+      "prerequisites": [
+        "K06"
+      ],
+      "labs": [
+        {
+          "id": "K07-L1",
+          "title": "CPU实验 K13",
+          "command": "python -m labs.kernels.run --lab 13",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K07-L2",
+          "title": "CPU实验 K14",
+          "command": "python -m labs.kernels.run --lab 14",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K07-L3",
+          "title": "CPU实验 K26",
+          "command": "python -m labs.kernels.run --lab 26",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K07-L4",
+          "title": "CPU实验 K27",
+          "command": "python -m labs.kernels.run --lab 27",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K08",
+      "title": "Triton 的思维方式：一个 Program 处理一块数据",
+      "path": "books/05-kernels-hardware/08-triton-model.md",
+      "prerequisites": [
+        "K07"
+      ],
+      "labs": [
+        {
+          "id": "K08-L1",
+          "title": "CPU实验 K15",
+          "command": "python -m labs.kernels.run --lab 15",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K09",
+      "title": "把 Softmax、RMSNorm、GEMM 和流式注意力搬到 Triton",
+      "path": "books/05-kernels-hardware/09-triton-kernels.md",
+      "prerequisites": [
+        "K08"
+      ],
+      "labs": [
+        {
+          "id": "K09-G1",
+          "title": "六种Triton算子正确性（显式GPU）",
+          "command": "python -m labs.kernels.gpu_check --run",
+          "hardware": "cuda",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K10",
+      "title": "Kernel 进入框架以后：算子契约、反向传播与编译",
+      "path": "books/05-kernels-hardware/10-custom-ops-autograd.md",
+      "prerequisites": [
+        "K09"
+      ],
+      "labs": [
+        {
+          "id": "K10-L1",
+          "title": "PyTorch CPU自定义反向",
+          "command": "python -m labs.kernels.custom_autograd",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K11",
+      "title": "量化算子：值的编码、缩放、打包与累加",
+      "path": "books/05-kernels-hardware/11-quantized-kernels.md",
+      "prerequisites": [
+        "K10"
+      ],
+      "labs": [
+        {
+          "id": "K11-L1",
+          "title": "CPU实验 K17",
+          "command": "python -m labs.kernels.run --lab 17",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K11-L2",
+          "title": "CPU实验 K18",
+          "command": "python -m labs.kernels.run --lab 18",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K11-L3",
+          "title": "CPU实验 K19",
+          "command": "python -m labs.kernels.run --lab 19",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K11-L4",
+          "title": "CPU实验 K20",
+          "command": "python -m labs.kernels.run --lab 20",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K12",
+      "title": "MoE 算子：路由之后，数据怎样交给专家",
+      "path": "books/05-kernels-hardware/12-moe-grouped-gemm.md",
+      "prerequisites": [
+        "K11"
+      ],
+      "labs": [
+        {
+          "id": "K12-L1",
+          "title": "CPU实验 K21",
+          "command": "python -m labs.kernels.run --lab 21",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K13",
+      "title": "Stream、Event 与 CUDA Graph：时间关系也是程序的一部分",
+      "path": "books/05-kernels-hardware/13-streams-events-graphs.md",
+      "prerequisites": [
+        "K12"
+      ],
+      "labs": [
+        {
+          "id": "K13-L1",
+          "title": "CPU实验 K22",
+          "command": "python -m labs.kernels.run --lab 22",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K14",
+      "title": "性能工程：先提出可证伪的解释，再优化",
+      "path": "books/05-kernels-hardware/14-performance-method.md",
+      "prerequisites": [
+        "K13"
+      ],
+      "labs": [
+        {
+          "id": "K14-L1",
+          "title": "CPU实验 K23",
+          "command": "python -m labs.kernels.run --lab 23",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K14-G1",
+          "title": "有界GPU GEMM基准",
+          "command": "python -m labs.kernels.benchmark --run --op matmul --size 256 --repeats 20",
+          "hardware": "cuda",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K15",
+      "title": "从 Python/CUDA/Triton 到硬件：编译链的可观察边界",
+      "path": "books/05-kernels-hardware/15-compilation.md",
+      "prerequisites": [
+        "K14"
+      ],
+      "labs": []
+    },
+    {
+      "id": "K16",
+      "title": "H100 与你的 5070 Ti：同样写 CUDA，不同的硬件契约",
+      "path": "books/05-kernels-hardware/16-hopper-blackwell.md",
+      "prerequisites": [
+        "K15"
+      ],
+      "labs": [
+        {
+          "id": "K16-G1",
+          "title": "实际设备能力查询",
+          "command": "python -m labs.kernels.inspect_environment --gpu",
+          "hardware": "cuda",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "K17",
+      "title": "Warp 分工、Persistent Kernel 与 MegaKernel",
+      "path": "books/05-kernels-hardware/17-warp-persistent-megakernel.md",
+      "prerequisites": [
+        "K16"
+      ],
+      "labs": []
+    },
+    {
+      "id": "K18",
+      "title": "通信算子与算子工程综合项目",
+      "path": "books/05-kernels-hardware/18-communication-capstone.md",
+      "prerequisites": [
+        "K17"
+      ],
+      "labs": [
+        {
+          "id": "K18-L1",
+          "title": "CPU实验 K24",
+          "command": "python -m labs.kernels.run --lab 24",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K18-L2",
+          "title": "CPU实验 K25",
+          "command": "python -m labs.kernels.run --lab 25",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "K18-L3",
+          "title": "CPU实验 K28",
+          "command": "python -m labs.kernels.run --lab 28",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "KW1",
+      "title": "工作簿 W1：从空白文件写出可靠的 Softmax",
+      "path": "books/05-kernels-hardware/workbook-softmax.md",
+      "prerequisites": [
+        "K05",
+        "K08",
+        "K09"
+      ],
+      "labs": [
+        {
+          "id": "KW1-L1",
+          "title": "softmax逐步trace与故障注入",
+          "command": "python -m labs.kernels.workbook softmax",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "KW2",
+      "title": "工作簿 W2：从三重循环到 CUDA/Triton GEMM",
+      "path": "books/05-kernels-hardware/workbook-gemm.md",
+      "prerequisites": [
+        "K06",
+        "K09"
+      ],
+      "labs": [
+        {
+          "id": "KW2-L1",
+          "title": "gemm逐步trace与故障注入",
+          "command": "python -m labs.kernels.workbook gemm",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "KW3",
+      "title": "工作簿 W3：从 Dense Attention 到在线注意力，再读真实 FlashAttention",
+      "path": "books/05-kernels-hardware/workbook-attention.md",
+      "prerequisites": [
+        "K07",
+        "K09"
+      ],
+      "labs": [
+        {
+          "id": "KW3-L1",
+          "title": "attention逐步trace与故障注入",
+          "command": "python -m labs.kernels.workbook attention",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "KS1",
+      "title": "固定版本真实源码研读",
+      "path": "books/05-kernels-hardware/source-reading.md",
+      "prerequisites": [
+        "KW1",
+        "KW2",
+        "KW3",
+        "K17"
+      ],
+      "labs": []
+    }
+  ]
+}

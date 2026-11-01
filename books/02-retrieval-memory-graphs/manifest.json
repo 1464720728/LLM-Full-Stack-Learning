@@ -1,0 +1,480 @@
+{
+  "track_id": "R",
+  "title": "检索增强、记忆与知识图谱工程",
+  "chapters": [
+    {
+      "id": "R01",
+      "title": "检索与证据对象",
+      "path": "books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "R01-L1",
+          "title": "19-rag",
+          "command": "python -m labs.knowledge.lab 19-rag",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R01-L2",
+          "title": "20-refusal",
+          "command": "python -m labs.knowledge.lab 20-refusal",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "切块、身份与摄入契约",
+      "path": "books/02-retrieval-memory-graphs/02-chunking-and-identities.md",
+      "prerequisites": [
+        "R01"
+      ],
+      "labs": [
+        {
+          "id": "R02-L1",
+          "title": "01-tokenize",
+          "command": "python -m labs.knowledge.lab 01-tokenize",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R02-L2",
+          "title": "02-chunks",
+          "command": "python -m labs.knowledge.lab 02-chunks",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R02-L3",
+          "title": "03-identity",
+          "command": "python -m labs.knowledge.lab 03-identity",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "BM25 从计数到公式",
+      "path": "books/02-retrieval-memory-graphs/03-bm25-from-counts.md",
+      "prerequisites": [
+        "R02"
+      ],
+      "labs": [
+        {
+          "id": "R03-L1",
+          "title": "04-bm25",
+          "command": "python -m labs.knowledge.lab 04-bm25",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R03-L2",
+          "title": "05-bm25-parameters",
+          "command": "python -m labs.knowledge.lab 05-bm25-parameters",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "向量、索引与微型双编码器",
+      "path": "books/02-retrieval-memory-graphs/04-vectors-and-indexes.md",
+      "prerequisites": [
+        "R03"
+      ],
+      "labs": [
+        {
+          "id": "R04-L1",
+          "title": "06-vectors",
+          "command": "python -m labs.knowledge.lab 06-vectors",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R04-L2",
+          "title": "07-tfidf",
+          "command": "python -m labs.knowledge.lab 07-tfidf",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R04-L3",
+          "title": "08-ann",
+          "command": "python -m labs.knowledge.lab 08-ann",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R04-L4",
+          "title": "训练微型双编码器并检查梯度",
+          "command": "python -m labs.knowledge.neural_encoder",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "混合检索、重排与评价",
+      "path": "books/02-retrieval-memory-graphs/05-hybrid-rerank-evaluation.md",
+      "prerequisites": [
+        "R04"
+      ],
+      "labs": [
+        {
+          "id": "R05-L1",
+          "title": "09-fusion",
+          "command": "python -m labs.knowledge.lab 09-fusion",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R05-L2",
+          "title": "10-rerank",
+          "command": "python -m labs.knowledge.lab 10-rerank",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R05-L3",
+          "title": "11-metrics",
+          "command": "python -m labs.knowledge.lab 11-metrics",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R05-L4",
+          "title": "12-compare",
+          "command": "python -m labs.knowledge.lab 12-compare",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R05-L5",
+          "title": "27-diversity",
+          "command": "python -m labs.knowledge.lab 27-diversity",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R06",
+      "title": "RAG、预算与引用",
+      "path": "books/02-retrieval-memory-graphs/06-rag-and-citations.md",
+      "prerequisites": [
+        "R05"
+      ],
+      "labs": [
+        {
+          "id": "R06-L1",
+          "title": "17-packing",
+          "command": "python -m labs.knowledge.lab 17-packing",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R06-L2",
+          "title": "18-citation",
+          "command": "python -m labs.knowledge.lab 18-citation",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "查询规划与多跳",
+      "path": "books/02-retrieval-memory-graphs/07-query-planning-and-multihop.md",
+      "prerequisites": [
+        "R06"
+      ],
+      "labs": [
+        {
+          "id": "R07-L1",
+          "title": "21-multihop",
+          "command": "python -m labs.knowledge.lab 21-multihop",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R08",
+      "title": "摄入、权限、版本与删除",
+      "path": "books/02-retrieval-memory-graphs/08-ingestion-access-lifecycle.md",
+      "prerequisites": [
+        "R07"
+      ],
+      "labs": [
+        {
+          "id": "R08-L1",
+          "title": "13-acl",
+          "command": "python -m labs.knowledge.lab 13-acl",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R08-L2",
+          "title": "14-revision",
+          "command": "python -m labs.knowledge.lab 14-revision",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R08-L3",
+          "title": "15-idempotency",
+          "command": "python -m labs.knowledge.lab 15-idempotency",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R08-L4",
+          "title": "16-deletion",
+          "command": "python -m labs.knowledge.lab 16-deletion",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R08-L5",
+          "title": "28-persistence",
+          "command": "python -m labs.knowledge.lab 28-persistence",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R09",
+      "title": "Agent 记忆生命周期",
+      "path": "books/02-retrieval-memory-graphs/09-memory-lifecycle.md",
+      "prerequisites": [
+        "R08"
+      ],
+      "labs": [
+        {
+          "id": "R09-L1",
+          "title": "22-memory",
+          "command": "python -m labs.knowledge.lab 22-memory",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R09-L2",
+          "title": "23-ttl",
+          "command": "python -m labs.knowledge.lab 23-ttl",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R09-L3",
+          "title": "24-forget",
+          "command": "python -m labs.knowledge.lab 24-forget",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R10",
+      "title": "有证据的知识图谱",
+      "path": "books/02-retrieval-memory-graphs/10-knowledge-graphs.md",
+      "prerequisites": [
+        "R09"
+      ],
+      "labs": [
+        {
+          "id": "R10-L1",
+          "title": "25-graph",
+          "command": "python -m labs.knowledge.lab 25-graph",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R11",
+      "title": "图检索与全局问题",
+      "path": "books/02-retrieval-memory-graphs/11-graph-rag-and-global-questions.md",
+      "prerequisites": [
+        "R10"
+      ],
+      "labs": [
+        {
+          "id": "R11-L1",
+          "title": "26-graph-stale",
+          "command": "python -m labs.knowledge.lab 26-graph-stale",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R12",
+      "title": "Agentic RAG 受控行动",
+      "path": "books/02-retrieval-memory-graphs/12-agentic-retrieval.md",
+      "prerequisites": [
+        "R11"
+      ],
+      "labs": []
+    },
+    {
+      "id": "R13",
+      "title": "证据助手与记忆助手项目",
+      "path": "books/02-retrieval-memory-graphs/13-two-capstone-projects.md",
+      "prerequisites": [
+        "R12"
+      ],
+      "labs": [
+        {
+          "id": "R13-L1",
+          "title": "本地证据助手",
+          "command": "python -m labs.knowledge.assistant ask \"KV cache\" --demo",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R13-L2",
+          "title": "记忆生命周期助手",
+          "command": "python -m labs.knowledge.memory_assistant demo",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R14",
+      "title": "开源源码与前沿研读",
+      "path": "books/02-retrieval-memory-graphs/14-open-source-reading-and-frontiers.md",
+      "prerequisites": [
+        "R13"
+      ],
+      "labs": []
+    },
+    {
+      "id": "R15",
+      "title": "长工作簿：一条输入穿过知识系统",
+      "path": "books/02-retrieval-memory-graphs/WORKBOOK-source-to-running-system.md",
+      "prerequisites": [
+        "R14"
+      ],
+      "labs": [
+        {
+          "id": "R15-L1",
+          "title": "源码检查站1",
+          "command": "python -m labs.knowledge.walkthrough --stage 1",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L2",
+          "title": "源码检查站2",
+          "command": "python -m labs.knowledge.walkthrough --stage 2",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L3",
+          "title": "源码检查站3",
+          "command": "python -m labs.knowledge.walkthrough --stage 3",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L4",
+          "title": "源码检查站4",
+          "command": "python -m labs.knowledge.walkthrough --stage 4",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L5",
+          "title": "源码检查站5",
+          "command": "python -m labs.knowledge.walkthrough --stage 5",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L6",
+          "title": "源码检查站6",
+          "command": "python -m labs.knowledge.walkthrough --stage 6",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L7",
+          "title": "源码检查站7",
+          "command": "python -m labs.knowledge.walkthrough --stage 7",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R15-L8",
+          "title": "源码检查站8",
+          "command": "python -m labs.knowledge.walkthrough --stage 8",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "R16",
+      "title": "真实Embeddings API与可选FAISS实操",
+      "path": "books/02-retrieval-memory-graphs/LAB-real-embeddings-and-faiss.md",
+      "prerequisites": [
+        "R04",
+        "R08"
+      ],
+      "labs": [
+        {
+          "id": "R16-L1",
+          "title": "离线Embeddings响应链路",
+          "command": "python -m labs.knowledge.embedding_api",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "R16-L2",
+          "title": "可选FAISS Flat/HNSW",
+          "command": "python -m labs.knowledge.faiss_lab",
+          "hardware": "cpu",
+          "network": false,
+          "requires": [
+            "numpy",
+            "faiss"
+          ],
+          "optional": true
+        },
+        {
+          "id": "R16-L3",
+          "title": "显式真实Embedding模型调用",
+          "command": "python -m labs.knowledge.embedding_api --live --batch-size 2 --max-requests 2",
+          "hardware": "cpu",
+          "network": true,
+          "requires": [
+            "EMBEDDING_API_KEY",
+            "EMBEDDING_BASE_URL",
+            "EMBEDDING_MODEL"
+          ],
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "workbooks": [
+    {
+      "title": "一条输入穿过知识系统",
+      "path": "books/02-retrieval-memory-graphs/WORKBOOK-source-to-running-system.md",
+      "command": "python -m labs.knowledge.walkthrough --stage all"
+    },
+    {
+      "title": "真实Embeddings API与FAISS",
+      "path": "books/02-retrieval-memory-graphs/LAB-real-embeddings-and-faiss.md",
+      "command": "python -m labs.knowledge.embedding_api"
+    }
+  ]
+}

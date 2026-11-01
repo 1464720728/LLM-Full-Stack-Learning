@@ -1,0 +1,401 @@
+{
+  "track_id": "S",
+  "title": "推理系统与框架源码工程",
+  "chapters": [
+    {
+      "id": "S01",
+      "title": "一次请求怎样穿过推理系统",
+      "path": "books/04-inference-systems/01-request-lifecycle.md",
+      "prerequisites": [],
+      "labs": [
+        {
+          "id": "S01-L1",
+          "title": "lifecycle",
+          "command": "python -m labs.serving.experiments --lab lifecycle",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "调度器：把请求变成每一轮可执行的工作",
+      "path": "books/04-inference-systems/02-scheduling.md",
+      "prerequisites": [
+        "S01"
+      ],
+      "labs": [
+        {
+          "id": "S02-L1",
+          "title": "token_budget",
+          "command": "python -m labs.serving.experiments --lab token_budget",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S02-L2",
+          "title": "chunks",
+          "command": "python -m labs.serving.experiments --lab chunks",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S02-L3",
+          "title": "continuous",
+          "command": "python -m labs.serving.experiments --lab continuous",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S02-L4",
+          "title": "fairness",
+          "command": "python -m labs.serving.experiments --lab fairness",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "分页 KV：从地址翻译到引用计数",
+      "path": "books/04-inference-systems/03-paged-kv.md",
+      "prerequisites": [
+        "S02"
+      ],
+      "labs": [
+        {
+          "id": "S03-L1",
+          "title": "cow",
+          "command": "python -m labs.serving.experiments --lab cow",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S03-L2",
+          "title": "allocation_atomic",
+          "command": "python -m labs.serving.experiments --lab allocation_atomic",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "title": "前缀复用：缓存命中必须先保证语义正确",
+      "path": "books/04-inference-systems/04-prefix-cache.md",
+      "prerequisites": [
+        "S03"
+      ],
+      "labs": [
+        {
+          "id": "S04-L1",
+          "title": "prefix",
+          "command": "python -m labs.serving.experiments --lab prefix",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S04-L2",
+          "title": "namespace",
+          "command": "python -m labs.serving.experiments --lab namespace",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S04-L3",
+          "title": "cache_eviction",
+          "command": "python -m labs.serving.experiments --lab cache_eviction",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "title": "抢占、取消与故障：让系统在坏情况中仍然前进",
+      "path": "books/04-inference-systems/05-preemption-cancellation.md",
+      "prerequisites": [
+        "S04"
+      ],
+      "labs": [
+        {
+          "id": "S05-L1",
+          "title": "cancel",
+          "command": "python -m labs.serving.experiments --lab cancel",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S05-L2",
+          "title": "preemption",
+          "command": "python -m labs.serving.experiments --lab preemption",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S05-L3",
+          "title": "fault_injection",
+          "command": "python -m labs.serving.experiments --lab fault_injection",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "title": "Model Runner：把调度计划翻译成张量与 Kernel",
+      "path": "books/04-inference-systems/06-runner-backends.md",
+      "prerequisites": [
+        "S05"
+      ],
+      "labs": [
+        {
+          "id": "S06-L1",
+          "title": "runner_swap",
+          "command": "python -m labs.serving.experiments --lab runner_swap",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S06-L2",
+          "title": "batch_equivalence",
+          "command": "python -m labs.serving.experiments --lab batch_equivalence",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "title": "采样、停止与流式输出：模型之后仍然有很多正确性工作",
+      "path": "books/04-inference-systems/07-sampling-streaming.md",
+      "prerequisites": [
+        "S06"
+      ],
+      "labs": [
+        {
+          "id": "S07-L1",
+          "title": "sampling",
+          "command": "python -m labs.serving.experiments --lab sampling",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S07-L2",
+          "title": "stream_decoder",
+          "command": "python -m labs.serving.experiments --lab stream_decoder",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "title": "测量与排队：让性能结论可以被复核",
+      "path": "books/04-inference-systems/08-measurement.md",
+      "prerequisites": [
+        "S07"
+      ],
+      "labs": [
+        {
+          "id": "S08-L1",
+          "title": "metrics",
+          "command": "python -m labs.serving.experiments --lab metrics",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "title": "从教学引擎进入 vLLM 与 SGLang 源码",
+      "path": "books/04-inference-systems/09-source-reading.md",
+      "prerequisites": [
+        "S08"
+      ],
+      "labs": [
+        {
+          "id": "S09-L1",
+          "title": "显示vLLM固定源码坐标",
+          "command": "python -m labs.serving.source_walk --project vllm --show-pin",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "TP、PP、DP、EP、CP：先切清楚数据，再讨论卡数",
+      "path": "books/04-inference-systems/10-parallelism.md",
+      "prerequisites": [
+        "S09"
+      ],
+      "labs": [
+        {
+          "id": "S10-L1",
+          "title": "communication",
+          "command": "python -m labs.serving.experiments --lab communication",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "title": "Prefill/Decode 分离：搬走计算，也搬来了状态协议",
+      "path": "books/04-inference-systems/11-pd-disaggregation.md",
+      "prerequisites": [
+        "S10"
+      ],
+      "labs": [
+        {
+          "id": "S11-L1",
+          "title": "pd_transfer",
+          "command": "python -m labs.serving.experiments --lab pd_transfer",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "title": "数值、量化与确定性：定位第一处分歧",
+      "path": "books/04-inference-systems/12-numerics-determinism.md",
+      "prerequisites": [
+        "S11"
+      ],
+      "labs": [
+        {
+          "id": "S12-L1",
+          "title": "deterministic",
+          "command": "python -m labs.serving.experiments --lab deterministic",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S12-L2",
+          "title": "quantization",
+          "command": "python -m labs.serving.experiments --lab quantization",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "title": "容量模型：先算出每个 rank 的账，再启动模型",
+      "path": "books/04-inference-systems/13-capacity.md",
+      "prerequisites": [
+        "S12"
+      ],
+      "labs": [
+        {
+          "id": "S13-L1",
+          "title": "memory_capacity",
+          "command": "python -m labs.serving.experiments --lab memory_capacity",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "title": "服务诊断：从现象到最小复现",
+      "path": "books/04-inference-systems/14-diagnostics.md",
+      "prerequisites": [
+        "S13"
+      ],
+      "labs": []
+    },
+    {
+      "id": "S15",
+      "title": "从个人PC到共享H100：把真实硬件用于明确问题",
+      "path": "books/04-inference-systems/15-hardware-labs.md",
+      "prerequisites": [
+        "S14"
+      ],
+      "labs": []
+    },
+    {
+      "id": "S16",
+      "title": "综合工程：交付一个能解释、能测试、能诊断的推理系统",
+      "path": "books/04-inference-systems/16-capstones.md",
+      "prerequisites": [
+        "S15"
+      ],
+      "labs": [
+        {
+          "id": "S16-L1",
+          "title": "trace_replay",
+          "command": "python -m labs.serving.experiments --lab trace_replay",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S16-L2",
+          "title": "九配置轨迹对照",
+          "command": "python -m labs.serving.replay",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S17",
+      "title": "源码工作坊：从一条真实请求计划到一个回归测试",
+      "path": "books/04-inference-systems/17-source-workbook.md",
+      "prerequisites": [
+        "S16"
+      ],
+      "labs": []
+    },
+    {
+      "id": "S18",
+      "title": "状态工作坊：亲手跟踪prefix、COW与抢占",
+      "path": "books/04-inference-systems/18-state-workbook.md",
+      "prerequisites": [
+        "S17"
+      ],
+      "labs": [
+        {
+          "id": "S18-L1",
+          "title": "prefix逐状态快照",
+          "command": "python -m labs.serving.workbook_trace --case prefix",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S18-L2",
+          "title": "cow逐状态快照",
+          "command": "python -m labs.serving.workbook_trace --case cow",
+          "hardware": "cpu",
+          "network": false
+        },
+        {
+          "id": "S18-L3",
+          "title": "preempt逐状态快照",
+          "command": "python -m labs.serving.workbook_trace --case preempt",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    },
+    {
+      "id": "S19",
+      "title": "把真实K/V放进页里：实现可验证的分页注意力",
+      "path": "books/04-inference-systems/19-numeric-paged-kv.md",
+      "prerequisites": [
+        "S18"
+      ],
+      "labs": [
+        {
+          "id": "S19-L1",
+          "title": "真实数值分页KV",
+          "command": "python -m labs.serving.paged_attention",
+          "hardware": "cpu",
+          "network": false
+        }
+      ]
+    }
+  ]
+}
