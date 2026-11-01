@@ -8,7 +8,7 @@
 
 每章按“预测 → 运行 → 解释 → 修改 → 故障注入 → 独立复写”完成。只看参考答案或让另一个模型替你写完，不足以通过验收。保存自己的实验笔记，至少记录输入、预测、实际结果、产生差异的代码位置、修复与回归测试。代码已经提供参考实现；练习要求你修改或从空文件重建一个组件，并证明它的边界。
 
-本卷共有 15 章正文、3 本源码工作簿，27 个编号离线实验、独立评测与进阶解法程序，2 个完整的集成项目；每章另有递进练习和参考解题过程。离线脚本模型是可控测试替身，验证 Harness 的行为，**不代表真实语言模型的能力测量**。所有命令从仓库根目录执行：
+本卷十五章已逐章深写，去代码正文约十八点九万汉字，每章十三至十五个递进主课，合计 287 个 Python 教学代码块实际执行；字数与执行证据见 [深度审计](DEPTH_AUDIT.md)。本卷另有 3 本源码工作簿，27 个编号离线实验、独立评测与进阶解法程序，2 个完整的集成项目；每章另有递进练习和参考解题过程。离线脚本模型是可控测试替身，验证 Harness 的行为，**不代表真实语言模型的能力测量**。所有命令从仓库根目录执行：
 
 ```bash
 python -m labs.agents.experiments --list
@@ -16,7 +16,7 @@ python -m labs.agents.experiments 01-loop
 python -m unittest tests.test_agents_core -v
 ```
 
-如你的 Linux 环境只提供 `python3`，将上述 `python` 换成 `python3`。Windows PowerShell 可以原生运行这些标准库实验；推荐也在 WSL/Linux 做一遍文件与进程相关练习，比较环境差别。无需安装外部 Python 包。真实 API 入口是 `python -m labs.agents.live --help`，只有显式添加 `--allow-live` 才能执行网络请求。
+如你的 Linux 环境只提供 `python3`，将上述 `python` 换成 `python3`。Windows PowerShell 可以原生运行这些标准库实验；推荐也在 WSL/Linux 做一遍文件与进程相关练习，比较环境差别。标准库主线无需安装外部 Python 包；A15 的真实 SDK 对照实验使用独立环境和锁定依赖，已提供完整程序。真实 API 入口是 `python -m labs.agents.live --help`，只有显式添加 `--allow-live` 才能执行网络请求。
 
 | 章 | 核心能力 | 主实验 |
 |---|---|---|
@@ -56,3 +56,8 @@ python -m unittest tests.test_agents_core -v
 - [跨卷综合项目](../../projects/README.md)：把本卷 Harness 接入知识、权限与证据验证。
 
 进阶解法不是空白方向提示：`labs/agents/advanced_solutions.py` 提供状态验证、输出契约、固定任务上下文、序列去重、原子预算、资源键调度、持久图与 Outbox 的完整参考实现；对应 `tests/test_agents_advanced.py` 验证故障与边界。
+
+
+## 真实 SDK 离线对照
+
+A15 提供完整 [sdk_bridge.py](../../labs/agents/sdk_bridge.py)，分别运行 MCP 工具注册与调用、LangGraph 中断恢复、Agents SDK 的真实 runner 与脚本模型。使用 [锁定依赖](sdk-requirements-lock.txt) 建立独立环境后运行 `python -m labs.agents.sdk_bridge all`。这些实验不调用模型 API、不监听公网端口、不使用 GPU；进程内 SDK 通过不代表网络部署或生产认证已验收。

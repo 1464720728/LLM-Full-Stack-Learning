@@ -24,10 +24,14 @@
 
 ```bash
 python -m projects.evidence_agent
+python -m projects.evidence_workshop all
 python -m unittest tests.test_projects.EvidenceProjectTest -v
+python -m unittest tests.test_projects_workshop -v
 ```
 
-这个项目实际连接 A 卷 Harness、SQLite 状态账本和 R 卷知识库。模型是明确的确定性测试替身，检索和状态管理是真实代码；不调用外部 API。项目把检索前权限过滤、工具参数验证、执行持久化、引用复验组合起来。
+这个项目实际连接 A 卷 Harness、SQLite 状态账本和 R 卷知识库。模型是明确的确定性测试替身，检索和状态管理是真实代码；上述命令不调用外部 API。长教程从一份文档与一次搜索开始，逐步解释权限过滤、分块身份、BM25／RRF、工具参数验证、每一步状态写入和引用复验。
+
+`evidence_workshop` 把权限范围、检索排名、状态轨迹、文档删除／更新／清理后重建、身份伪造、引用伪造和进程重开分别做成可以观察的场景。先选择 `trace` 跟踪正常请求，再运行 `delete` 观察失效历史在下一次模型调用前被拒绝；`auth-boundary` 证明旧任务不能改绑身份、同一主体撤权后也不会继续发送旧证据。完整教程另演示模型完成后、交付前的复验，并提供真实模型接入代码与显式启动条件。
 
 ## 跨卷项目 P2：模型、调度与在线注意力
 
@@ -35,10 +39,15 @@ python -m unittest tests.test_projects.EvidenceProjectTest -v
 
 ```bash
 python -m projects.model_runtime
+python -m projects.incremental_runtime
+python -m projects.incremental_runtime --online
 python -m unittest tests.test_projects.ModelRuntimeProjectTest -v
+python -m unittest tests.test_projects_incremental -v
 ```
 
-这个项目把 M 卷完整小型 decoder 的真实 NumPy 前向接入 S 卷调度接口，同时用 K 卷独立实现验证在线 attention。页池仍存 token 元数据，模型重算数值上下文；时间是调度模拟值。项目让你看清“模型计算”“调度策略”“内存表示”可以分别验证，不能因为输出正确就宣称已经实现生产级分页 KV。
+教程从两维手算模型开始，带你逐步接通 M 卷模型、S 卷请求调度和 K 卷在线注意力。保留两个可比较的运行路径：`model_runtime` 使用完整上下文重算与页元数据调度器；`incremental_runtime` 为每个请求保存真实 NumPy K/V 数组，交错执行增量解码，并在完成或取消时释放缓存。
+
+`--online` 将逐块在线注意力实际替换进完整 decoder 的每一层，比较完整前向、缓存前向和调度输出。教程还跟踪数值分页缓存、共享页和写时复制，但没有将连续 NumPy 缓存冒充生产 GPU 页池。调度器报告的合成时间与实际数组字节量分别标注；GPU 性能实验需要按教程在真实硬件上另行执行。
 
 ## 综合验收如何交付
 

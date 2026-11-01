@@ -35,6 +35,20 @@
 | S-SRC-16 | [Sarathi-Serve paper](https://arxiv.org/abs/2403.02310) | Chunked prefill and scheduling research context; experiment results apply to paper configuration |
 | S-SRC-17 | [DistServe paper](https://arxiv.org/abs/2401.09670) | Prefill/decode disaggregation research context; course transfer model is an explicitly simplified analytical model |
 | S-SRC-18 | [Qwen2.5-0.5B-Instruct pinned config](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/7ae557604adf67be50417f59c2c2f167def9a775/config.json) | Concrete single-GPU study model identity: Qwen2ForCausalLM, 24 layers, hidden 896, 14 Q heads, 2 KV heads; not an assertion that any chosen image supports this model |
+| S-SRC-19 | [PyTorch CUDA Graph semantics](https://docs.pytorch.org/docs/stable/notes/cuda.html#cuda-graphs) | S06 graph replay pointer/address constraints; rolling documentation, no GPU execution claim |
+| S-SRC-20 | [NCCL collective semantics](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html) | S10 collective dataflow, rank order and compatible participation contracts |
+| S-SRC-21 | [NCCL collective API](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/api/colls.html) | S10 per-operation count and dtype parameter semantics |
+| S-SRC-22 | [PyTorch process groups](https://docs.pytorch.org/docs/stable/distributed.html) | S10 consistent collective ordering across process groups; no NCCL benchmark claim |
+| S-SRC-23 | [vLLM parallel linear layers](https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/model_executor/layers/linear.py) | S10 ColumnParallelLinear/RowParallelLinear local apply, conditional gather/reduce and rank-local bias |
+| S-SRC-24 | [vLLM KV connector base](https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/distributed/kv_transfer/kv_connector/v1/base.py) | S11 scheduler/worker metadata, external-token matching, load/save and deferred freeing contracts |
+| S-SRC-25 | [SGLang disaggregated prefill](https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/disaggregation/prefill.py) | S11 bootstrap and in-flight prefill queues; static source review only |
+| S-SRC-26 | [SGLang disaggregated decode](https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/disaggregation/decode.py) | S11 preallocation/transfer queues, metadata commit, abort readiness and device deadline fallback distinction |
+| S-SRC-27 | [PyTorch numerical accuracy](https://docs.pytorch.org/docs/main/notes/numerical_accuracy.html) | S12 nonassociativity and backend/internal precision boundaries; rolling documentation |
+| S-SRC-28 | [vLLM GPU installation](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/) | S15 Linux/WSL route and version-specific binary compatibility; no blanket RTX 5070 Ti support assertion |
+| S-SRC-29 | [NVIDIA CUDA on WSL](https://docs.nvidia.com/cuda/wsl-user-guide/) | S15 Windows-host driver mapping and WSL toolkit/driver distinction |
+| S-SRC-30 | [Docker resource constraints](https://docs.docker.com/engine/containers/resource_constraints/) | S15 CPU quota, host memory and swap constraints; these are not GPU memory isolation |
+| S-SRC-31 | [PyTorch CUDA Event](https://docs.pytorch.org/docs/stable/generated/torch.cuda.Event.html) | S15 event timing, completion synchronization and millisecond units |
+| S-SRC-32 | [PyTorch peak allocated memory](https://docs.pytorch.org/docs/stable/generated/torch.cuda.memory.max_memory_allocated.html) | S15 tensor allocation peak semantics; not total device usage |
 
 ## 怎样复核，而不是只收集链接
 

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-01T07:18:24.033813+00:00",
+  "checked_at_utc": "2026-11-01T11:02:55.999041+00:00",
   "python": "3.12.14",
   "unit_test_command": "python -m unittest discover -s tests -p 'test_knowledge*.py' -q",
   "unittest_total": 77,
@@ -17,6 +17,13 @@
     "NumPy tiny encoder gradient checked by finite differences.",
     "Mock embeddings test protocol only; live semantic quality unmeasured.",
     "External framework reading tasks not executed as installed integrations.",
-    "Peer-review regressions cover delete CAS interleaving, durable document/memory counters after purge/forget and migration, extreme finite cosine scales, missing/partial usage."
-  ]
+    "Peer-review regressions cover delete CAS interleaving, durable document/memory counters after purge/forget and migration, extreme finite cosine scales, missing/partial usage.",
+    "Expanded R01-R14: removed duplicate outline entrances and old exercise sets; all 122 Python fenced blocks executed in chapter namespaces, with fixed-data assertions and fault experiments. Definition-only blocks do not establish untested semantic behavior."
+  ],
+  "depth_main_chapters": 14,
+  "depth_prose_cjk": 176785,
+  "depth_below_minimum": 0,
+  "python_fenced_blocks_executed": 122,
+  "python_fenced_blocks_passed": 122,
+  "depth_evidence": "DEPTH_EXECUTION.json"
 }

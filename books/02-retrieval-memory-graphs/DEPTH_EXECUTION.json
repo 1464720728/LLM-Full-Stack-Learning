@@ -1,0 +1,1218 @@
+{
+  "checked_at_utc": "2026-11-01T11:02:55.999041+00:00",
+  "python": "3.12.14",
+  "scope": "R01-R14 Python fenced blocks, executed in chapter order with a fresh namespace per chapter; definitions alone are not semantic branch coverage.",
+  "network_calls": 0,
+  "gpu_used": false,
+  "snippet_blocks": 122,
+  "snippet_blocks_passed": 122,
+  "snippets": [
+    {
+      "chapter": "01-evidence-and-retrieval.md",
+      "block": 1,
+      "sha256": "0efa3c3baf5ae9940cc521bcfea57b35f694025a1f2eea44f0681e46bab173d1",
+      "status": "PASS",
+      "stdout": "[(2, 'd1', 'kv cache stores keys and values'), (1, 'd2', 'long context increases kv storage'), (1, 'd4', 'cache invalidation follows document revisions')]\n"
+    },
+    {
+      "chapter": "01-evidence-and-retrieval.md",
+      "block": 2,
+      "sha256": "4323aef672d2533bf00db8a0f70e0a7afe8d9508aa4bd1841eac9c51c4eafe22",
+      "status": "PASS",
+      "stdout": "['d1', 'd2', 'd4']\n"
+    },
+    {
+      "chapter": "01-evidence-and-retrieval.md",
+      "block": 3,
+      "sha256": "68dc3ddb6964a5d50a26c761179e61b154690238df59e3cf227d4fc884a920d2",
+      "status": "PASS",
+      "stdout": "{'abstain': False, 'claims': [Extract(text='jade cache capacity is seven', source_id='alpha', source_revision=1), Extract(text='jade cache stores keys and values', source_id='beta', source_revision=1)]}\n"
+    },
+    {
+      "chapter": "01-evidence-and-retrieval.md",
+      "block": 4,
+      "sha256": "394174f226a0f76f89b913df4600bbc8f974f07b16b2dedadb6d932fb122c10c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "01-evidence-and-retrieval.md",
+      "block": 5,
+      "sha256": "4ed15f99b00deb61f10911a3185647bbdbbc8199ff046d0f3564c30527a417c2",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "02-chunking-and-identities.md",
+      "block": 1,
+      "sha256": "3b5444738bb7985817465e6cb21034fa634738574a3f34f8f2adbe52eb5017af",
+      "status": "PASS",
+      "stdout": "4\n11\n0 'A' 1\n1 '中' 3\n2 '文' 3\n3 '🙂' 4\n"
+    },
+    {
+      "chapter": "02-chunking-and-identities.md",
+      "block": 2,
+      "sha256": "dcc215cd1e7a43c2d3e9adf669fb89fdedaf9f663452d59d26b5e25981887b62",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "02-chunking-and-identities.md",
+      "block": 3,
+      "sha256": "e1360a9b031f74b04f91bbd8b1840896146cc5e1fae812a536542b9b6fe1561c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "02-chunking-and-identities.md",
+      "block": 4,
+      "sha256": "942a434775ed01ea581f9198d48ee01ff0476f989a9348d8353941019b5e55e0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "02-chunking-and-identities.md",
+      "block": 5,
+      "sha256": "ae2bfad494600e19e6043fe5f1fb3343211cda534161bc469d50dba1d692e8f2",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 1,
+      "sha256": "7a0e518597af72f4774850e48414a24ff9bbcb7ea1195ec8b082b0f40b798920",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 2,
+      "sha256": "11e3a9eb301f7f46bf289d27c3be1ac1787495787760b28360e82275bd8dea1d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 3,
+      "sha256": "96b812f93f77dd0a5816293b4d947f9a23e5186f2825d327397784bdbb830932",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 4,
+      "sha256": "033c3560ef3b056cce7f13ef33f64d1b0660579ec07427ac0ecc6124b1e6caac",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 5,
+      "sha256": "76dc56527d6d9f69c98db0241e9ac1f507614853088ade8443bbdf5ec0843b19",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 6,
+      "sha256": "bcf72be68d951dc6de9d9259e92881d40303071deecc362a20b465999f2491c5",
+      "status": "PASS",
+      "stdout": "{\n  \"query\": \"cache keys\",\n  \"query_terms\": [\n    \"cache\",\n    \"keys\"\n  ],\n  \"corpus_documents\": 3,\n  \"average_document_length\": 2.6666666666666665,\n  \"parameters\": {\n    \"k1\": 1.2,\n    \"b\": 0.75\n  },\n  \"ranking\": [\n    {\n      \"position\": 0,\n      \"score\": 1.5574199428240534,\n      \"length\": 3,\n      \"text\": \"cache cache keys\",\n      \"terms\": {\n        \"cache\": {\n          \"tf\": 2,\n          \"df\": 2,\n          \"idf\": 0.4700036292457356,\n          \"norm\": 1.3125,\n          \"factor\": 1.328301886792453,\n          \"score\": 0.6243067075264112\n        },\n        \"keys\": {\n          \"tf\": 1,\n          \"df\": 1,\n          \"idf\": 0.9808292530117262,\n          \"norm\": 1.3125,\n          \"factor\": 0.9513513513513514,\n          \"score\": 0.9331132352976422\n        }\n      }\n    },\n    {\n      \"position\": 1,\n      \"score\": 0.5235483465015789,\n      \"length\": 2,\n      \"text\": \"cache values\",\n      \"terms\": {\n        \"cache\": {\n          \"tf\": 1,\n          \"df\": 2,\n          \"idf\": 0.4700036292457356,\n          \"norm\": 0.975,\n          \"factor\": 1.1139240506329113,\n          \"score\": 0.5235483465015789\n        }\n      }\n    }\n  ]\n}\n"
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 7,
+      "sha256": "bafc404a94bffc73120518fcb78965bb170cb99d8686f2c08cf65e7fd4a2fdd5",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "03-bm25-from-counts.md",
+      "block": 8,
+      "sha256": "7d6eeb045168e19416b0a53a12f8a9a130576831696716c52c9744f460c22ce7",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 1,
+      "sha256": "3955e675150b886a9a7544b26943a2a636a36e47a84236d4b7f57df5e600b1ea",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 2,
+      "sha256": "1b993f343fd5beae5e93761d901b85941466f9adac2b42c54df7b4bb98ff2749",
+      "status": "PASS",
+      "stdout": "[[0 2 1]\n [1 2 0]]\n"
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 3,
+      "sha256": "8c537cbae8b6973e195e5818f983351019690c0c578c8adfd30d109fcd1a94da",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 4,
+      "sha256": "7789913c67c89d32c9856faf930915d186ec2b530a74eb527d01142b33531063",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 5,
+      "sha256": "47c045a636a803f61dfd0c063157425d515a423e4a4bcc91832a901ed618edf0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 6,
+      "sha256": "6419e62f3d41c965fba960ad25c4544d921d36b6f3e9c5d319cc72ab3e1a3471",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 7,
+      "sha256": "97852b1c991fbf0def25e76d7777b047413d151e062e0cbe99aafbf042831cf6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "04-vectors-and-indexes.md",
+      "block": 8,
+      "sha256": "f952eecd1fb283d379b6585c071fee6fd31325a75549084ce0c4542ec4a66990",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 1,
+      "sha256": "7cc43eb30ee7035b8678a9c5633d3465ef8852407742e876b96c9c68d7389202",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 2,
+      "sha256": "b0412ebb13b0352746b798189778a15abbb56db451493a8a8d370db17faf7ff6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 3,
+      "sha256": "1e83e03b58c8101c3ababc19ae6c11546aa2e31c502fef084eb4f01c5f477d8f",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 4,
+      "sha256": "ba009e51a9e4a300d748e05e98aa4c7eaa429427c8be92a2db165b79206b4dd7",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 5,
+      "sha256": "d510084fa87d3f68aa2c7071398f8ae134639d923e9c794f1646da573c6a063d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 6,
+      "sha256": "58f33c1990ce0be640dd1f6d3f854dbdbd561464b7655a4d1cc4f01e21eb0d9d",
+      "status": "PASS",
+      "stdout": "{\n  \"lexical\": {\n    \"per_query\": [\n      {\n        \"query_id\": \"q1\",\n        \"ranking\": [\n          \"A\",\n          \"E\",\n          \"B\"\n        ],\n        \"precision\": 0.6666666666666666,\n        \"recall\": 1.0,\n        \"rr\": 1.0,\n        \"ndcg\": 0.9828422279067397,\n        \"kind\": \"answerable\"\n      },\n      {\n        \"query_id\": \"q2\",\n        \"ranking\": [\n          \"E\",\n          \"C\",\n          \"F\"\n        ],\n        \"precision\": 0.3333333333333333,\n        \"recall\": 0.5,\n        \"rr\": 0.5,\n        \"ndcg\": 0.4966392596877323,\n        \"kind\": \"answerable\"\n      },\n      {\n        \"query_id\": \"q3\",\n        \"ranking\": [],\n        \"kind\": \"unanswerable\",\n        \"returned_any\": false\n      }\n    ],\n    \"answerable_mean\": {\n      \"precision\": 0.5,\n      \"recall\": 0.75,\n      \"rr\": 0.75,\n      \"ndcg\": 0.739740743797236\n    }\n  },\n  \"hybrid\": {\n    \"per_query\": [\n      {\n        \"query_id\": \"q1\",\n        \"ranking\": [\n          \"B\",\n          \"A\",\n          \"E\"\n        ],\n        \"precision\": 0.6666666666666666,\n        \"recall\": 1.0,\n        \"rr\": 1.0,\n        \"ndcg\": 0.7098097413968655,\n        \"kind\": \"answerable\"\n      },\n      {\n        \"query_id\": \"q2\",\n        \"ranking\": [\n          \"C\",\n          \"D\",\n          \"F\"\n        ],\n        \"precision\": 0.6666666666666666,\n        \"recall\": 1.0,\n        \"rr\": 1.0,\n        \"ndcg\": 1.0,\n        \"kind\": \"answerable\"\n      },\n      {\n        \"query_id\": \"q3\",\n        \"ranking\": [\n          \"E\"\n        ],\n        \"kind\": \"unanswerable\",\n        \"returned_any\": true\n      }\n    ],\n    \"answerable_mean\": {\n      \"precision\": 0.6666666666666666,\n      \"recall\": 1.0,\n      \"rr\": 1.0,\n      \"ndcg\": 0.8549048706984328\n    }\n  }\n}\n"
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 7,
+      "sha256": "431b7614bff4fd977fc8fb3cb01a5dd706744c2ec70537da17202886f369e8a9",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "05-hybrid-rerank-evaluation.md",
+      "block": 8,
+      "sha256": "e5ae355e779aada81381d374a4cf34a7ccc6d7ae6f748c7765db99cb8fc4a04d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 1,
+      "sha256": "1f80419e5e5c21e54ce5ca75b924805674f3e3d78e18fc20135fa28795152c2d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 2,
+      "sha256": "a37944475942de22d5d76c3e96844ccacd7001fd0ec5557173403de5656f8d34",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 3,
+      "sha256": "0f485d83a3462eadbb1ca1abe339ae6133609d95d7644a447bbde31894d8626e",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 4,
+      "sha256": "f259ec0302af98d76fb579628af417718bee17f4b4ac4ff883744f1bd0aec78c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 5,
+      "sha256": "8664c269038c489066cf0d205ba52e447673f72be5e3da9ea6665c94fad62aa4",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "06-rag-and-citations.md",
+      "block": 6,
+      "sha256": "a899d50a0a2eb849d444a6cb89acefedb894873e4b62d423c371513764ecb25a",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 1,
+      "sha256": "26624218adf1005518c73cc1ae7ef9234ec4213f30c702b6ed88be1ddcd02d1a",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 2,
+      "sha256": "1d69d9e33cb3cba8f2d62e86bd904c4393d2b2753515a382536651a04f362c7f",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 3,
+      "sha256": "eec2e61e2815839109856b9a4c11fefb8d79e143934be90c73fe9e0387dae67e",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 4,
+      "sha256": "1a1d0eb67061df50d60e511d78fce75f1aa40bdd213a5a6279fd444bd4a74335",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 5,
+      "sha256": "302eac89ebac7111e78439e588828058ba4f0b66e30c25ff14314b5403d350fb",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 6,
+      "sha256": "12cfdce77a33a782a010df9f27f35eee56c55d32c0415af6b9847e1457783d9b",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 7,
+      "sha256": "3415c315d5aaa92fbc3902a40a299d94ca8c67276fcad7b62c11233e8f9fae98",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 8,
+      "sha256": "49ff65930bbb3de2b17e918cd5db592dce02024ab5a8ab4abc21ea175988e031",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "07-query-planning-and-multihop.md",
+      "block": 9,
+      "sha256": "3829544a1ac4a2d4c4ca530d6b8ff420c3fea71276dced5fd8656c2c2a8cf5f6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 1,
+      "sha256": "065a335548b9f13422eeb0b547fc6ef1e6e261db127515bcc3f5ce20e940dd3d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 2,
+      "sha256": "0d0cf039cdd44f03586cbc1e8f85ead46698fa862dd1309fbb099feb26b67413",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 3,
+      "sha256": "3b3271b0b9b763976d04e0bc29988430de71b430a14a7e0c3c6f6bda2004b085",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 4,
+      "sha256": "b7043a82ae5a1a88e3d2c3ad14b242075aad9c7684d88d895e7e7d86e6e6eca0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 5,
+      "sha256": "2ff039c5a7d72999d0179d9464fc5cedb8b8b96528f722c042445775a872bb80",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 6,
+      "sha256": "84d010ef085bf33cfeba7914388cfc6740457a021c74205e9234437b22263836",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 7,
+      "sha256": "eba7ed90e66b094730c5224968d8531269dd43c0714793622958799c8dff2217",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 8,
+      "sha256": "6a78878958625ef269cf6cec9b89bfc755eed5cd542168f2e6a1d041899e9515",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 9,
+      "sha256": "1eaba19182ff81160c4af56696233d7f39a5c2d971031b1fe202e0d411e9d7ca",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 10,
+      "sha256": "eea4cb792c476e04868fc76ce7cb57ed9bf166807de841b9c3ca2d8e35e4fb44",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 11,
+      "sha256": "6bfbe7af7200b81eb8725afda44b6bd375779539646b81a46b6abb18fc068832",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "08-ingestion-access-lifecycle.md",
+      "block": 12,
+      "sha256": "516f716fbfbf05b707bd9c2ccda7bacc54308d88b794c577eedd6845ef72cae2",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 1,
+      "sha256": "72db4a4fe4fd2c0da86bdf571c0a32741d09505fcb4af295e7916df6f5f50cf6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 2,
+      "sha256": "569e36a4e89818e19355cca0297c40ecedc43643902062b0e424c08f2e6cced4",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 3,
+      "sha256": "f61249107e7c1e9f000b65c008e25fd41fdcf01eff9879b684f2ea260a7ba26a",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 4,
+      "sha256": "8364ee9ee40d71f1cf7e808c04ef2288217ae9198038b1e4f07eb85d6f208bd9",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 5,
+      "sha256": "fd548b2635b9fe4e704ebf320791031b1b945817ad8fd60fddac4f9a55574c77",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 6,
+      "sha256": "d8b3d9466d43f0548491e7e2e6ea52f3e4fb8cc287a4fb14b559302aa713f624",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 7,
+      "sha256": "a2a0a83a5d5c028eb96670824f32d45b120086c69585c3c1e7ded418243978dc",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 8,
+      "sha256": "135b969f63a673bf3216413cb413d1ff01f96a6faec622a58ae3d40a75a14553",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 9,
+      "sha256": "2bc720b4c4bccf9bbead7f9578dab29d54de9bcb4c2baa4d2e6d843bb41b0012",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 10,
+      "sha256": "7c71dbe547a7f2c0e46eb6a6a3b319899b80f7165e90511df879794cc3211b1b",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 11,
+      "sha256": "a1109ba645d161b241838928e6c9588d39905f863d704532a7c31a2841e7da5c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "09-memory-lifecycle.md",
+      "block": 12,
+      "sha256": "4781efdaf17fb6e9d0c759d7031a1fcb0dffbc8b577cb0c721252628718185fa",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 1,
+      "sha256": "6e697bc87388b99c8de71963c974a24858c2fa505893e4c47deb23cc723f4439",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 2,
+      "sha256": "07fb2f4a20a1df689d935353203a0c5ada2293c443241d1325e409b4e8e78f6d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 3,
+      "sha256": "d9bbad3c6d37e39c92371ca6ea7a94dc7cfeca4bfc5b6dc6341e5307d44dc85c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 4,
+      "sha256": "092ee22e81b565ca986238f54bb95f427a4c1b9b65c2954571fa8fb0e63b3a0c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 5,
+      "sha256": "01bbd14ec8120c4b19e6e57028c67a91739cb5eba8713a2ad4fee5d1859c9512",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 6,
+      "sha256": "9be09dfd49d46023edfa118ce5aeee73357e3074f67d8e2d9309b3b6b8b15de6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 7,
+      "sha256": "2e06d7554dbc07e2878cd94da9ff0e36c9cc5efed54c10d1640afb70973f26a3",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 8,
+      "sha256": "7b27d61d27dc39525a5b05007486992dce7f13b32aa812d63e3d5a3116797b4a",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 9,
+      "sha256": "142f0b6c736da70d3a33352e34ca5be05a613fd4be893c5034401bd913f4d0e0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 10,
+      "sha256": "f7c7a49ff7a82269b1a22d9aab82633409a782d690a4e7e2a8432b6f80af4e4f",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 11,
+      "sha256": "a0727462c8504d2cf0cfe5c1f4e9d552518bb830479b155839cf6cb1df445c8d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 12,
+      "sha256": "30314561f4f1cbde9830d0c2b903488af974944559db00bd347f69fa9ab61e20",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "10-knowledge-graphs.md",
+      "block": 13,
+      "sha256": "884c1ab1dac8f043c25b6f1bb03a6313044a8fdaa72a1fca272f9a522b83cbf8",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 1,
+      "sha256": "2ab95f973d849e3fa99c4e383ada9148c191795ceb16072c493fa3128556a0c1",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 2,
+      "sha256": "81f76375ab5dc7082f6a2fe239d7991c0d4bd4b6978c40f7283b5605366cc2ce",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 3,
+      "sha256": "59ababff273b662cf0fe8d7dd5dce8ace0686efbe8cb441b277d8c683872ccab",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 4,
+      "sha256": "661226194daa9333a6f4264c598b22892cb8603aaad2d1851845fa6b88ce3079",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 5,
+      "sha256": "daffd1aa39b66b47d41bde65d7474027d464378a564c87b970acddac24ca67ae",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 6,
+      "sha256": "4a738607006c75d215c7d7bbfc68cfab1df041bca20ec45c013029be93ecb9e3",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 7,
+      "sha256": "fda4b490186de79aa63a73fcf498d624829b2383ad813aaec5424d8e9299a722",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 8,
+      "sha256": "4b9deed7f0dce6889baa2d2b247bb86a40b40920a09183be402917e4b9540f2f",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 9,
+      "sha256": "1c0b79860590c1cae3342c03e6deb21e5c16e9e54b2069bc09f27e52615fa0fb",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 10,
+      "sha256": "49388f3bdb9a3f7bb0afd7ef6cfd8ce60ebeb64e5842453f776c537e8ccd7df0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "11-graph-rag-and-global-questions.md",
+      "block": 11,
+      "sha256": "88fb9cb725a38ea9e9ea52d61248b4caf2b19d4189aa9b14265d199d089faaeb",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 1,
+      "sha256": "4aa0619c669d259fcf8f9923f4f12a06a8cd7f5205ce7afda040e82d000bd35c",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 2,
+      "sha256": "70a884b2ad98b00f92c387ed4d3b9829d69a0bb4fc93cc831200965d83f5cd46",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 3,
+      "sha256": "130379ed543647d29a898d5bf7ce2a734d22b2a775986588d1bfefdbb7f73970",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 4,
+      "sha256": "c48c0f869ec0bd9656b8cf813724d2b2f97f3d75eca9f04ded37c36d36141ade",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 5,
+      "sha256": "767137a648fe9da3ced640bdd01a0aa7a3c78aefd9722e39feab9320e0402e10",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 6,
+      "sha256": "2fc96f69553d5d603e290bea3697f310058aeabe821bda478797e621b5daa9c2",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 7,
+      "sha256": "96d03c6e3d709fc113db0f68da7ca5b1be90d576f84bee143c159acef9a20adc",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 8,
+      "sha256": "943e3d4a46370d04f6bbfe904015f0aae25f906ff5529a8cf7a3889e0fcecaf0",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 9,
+      "sha256": "595749692fd2bd5605e270f1ca420ef4bdbd2afe658a8f88829e8090689ad9e3",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 10,
+      "sha256": "8da14f0133d55bcf74608b36fa8c6ef8877ea01947aca40b5321454d62729d65",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "12-agentic-retrieval.md",
+      "block": 11,
+      "sha256": "8c97dc251963ff06c4c21fe484c226b4028a311fba74a86f8f2dfa18c31e4285",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 1,
+      "sha256": "5014c77c3bc951789ebdaceb62edbb463c573975e1d26dd1d37eaaf3d5b0bfea",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 2,
+      "sha256": "fa61147128192e1c65d59a835fb25b8d021e9d046828936eb054b1f1444076ce",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 3,
+      "sha256": "bafe48de40ecd7b8d7fc3764491aaef1982aa0f4959ba5760504a2f68e9d8e77",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 4,
+      "sha256": "36ff2d0250b1edc9512f7bb492ef591374744cc2d0dd63f4fbe5886c2e4066a7",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 5,
+      "sha256": "4f26f05676ee26a2dc0ad11f848ff123d992ca39145b3d4998b154558244db73",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 6,
+      "sha256": "9b2eadbc75cb35ee6e811b91cedb6e5dd0c80689b9408b88f32111110545e4a6",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 7,
+      "sha256": "543b8d08beb4f95f8ac1ce6d9570e0a6e0c960052f6d772c78912a959ef14cef",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 8,
+      "sha256": "b6491c503ccec5ac8a198d33d15a3fe82b0d8a600be25202eed9430d4ba79b57",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 9,
+      "sha256": "7de383cd71891afa76fdf3d2ddbfaba0f7c0039635601bda5733e22418fe0fe5",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 10,
+      "sha256": "e90083566075e1fe1f9ad394dc814057345ba4b6fe626578b9ff51203ef0810e",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "13-two-capstone-projects.md",
+      "block": 11,
+      "sha256": "aef0fd1834dd247f0c68025a0fd3c22c9aea883906626f4fef9cd4e108fb7e33",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "14-open-source-reading-and-frontiers.md",
+      "block": 1,
+      "sha256": "1a65e4f87db682a1560ec251cdfd0433960f036b62db2c11004410372c26e544",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "14-open-source-reading-and-frontiers.md",
+      "block": 2,
+      "sha256": "2008239e0bcc51e3917a0178ce3ce68193f53893bb0781f543c27ae9f615250d",
+      "status": "PASS",
+      "stdout": ""
+    },
+    {
+      "chapter": "14-open-source-reading-and-frontiers.md",
+      "block": 3,
+      "sha256": "be532ee8d7de5149718a98e70f9b1f5b81d3b8f9bc355f9bab4f3e47f48192f9",
+      "status": "PASS",
+      "stdout": ""
+    }
+  ],
+  "offline_manifest_commands": [
+    {
+      "id": "R01-L1",
+      "command": "python -m labs.knowledge.lab 19-rag",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"query\": \"How does KV cache help decode?\",\n  \"mode\": \"strict_extractive\",\n  \"abstain\": false,\n  \"claims\": [\n    {\n      \"text\": \"KV cache stores attention keys and values. Decode reuses KV cache for earlier tokens.\",\n      \"doc_id\": \"cache\",\n      \"revision\": 1,\n      \"source\": \"fictional://course/cache\",\n      \"chunk_id\": \"cb2cb79e97ba197edef94ff88b3461fbd5a318158be3791edf40eeb96be5dc28\",\n      \"validation\": \"verified_exact_extract\"\n    },\n    {\n      \"text\": \"Scheduler chooses requests for a batch. A request with no KV capacity must wait or be preempted.\",\n      \"doc_id\": \"scheduler\",\n      \"revision\": 1,\n      \"source\": \"fictional://course/scheduler\",\n      \"chunk_id\": \"fea93993ff7052bba0dfcb6be78a470d859e1844c9c42d3f007405bada07b8df\",\n      \"validation\": \"verified_exact_extract\"\n    }\n  ],\n  \"limitation\": \"Exact-source provenance is verified; relevance and source truth still require judgment.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R01-L2",
+      "command": "python -m labs.knowledge.lab 20-refusal",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"query\": \"unicornmarshmallow\",\n  \"mode\": \"strict_extractive\",\n  \"abstain\": true,\n  \"claims\": [],\n  \"limitation\": \"Exact-source provenance is verified; relevance and source truth still require judgment.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R02-L1",
+      "command": "python -m labs.knowledge.lab 01-tokenize",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"text\": \"KV Cache 缓存：A100 与 a100!\",\n  \"lexical_tokens\": [\n    \"kv\",\n    \"cache\",\n    \"缓\",\n    \"存\",\n    \"a100\",\n    \"与\",\n    \"a100\"\n  ],\n  \"warning\": \"Not LLM tokenizer tokens.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R02-L2",
+      "command": "python -m labs.knowledge.lab 02-chunks",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "[\n  {\n    \"start\": 0,\n    \"end\": 17,\n    \"text\": \"alpha beta gamma.\"\n  },\n  {\n    \"start\": 11,\n    \"end\": 35,\n    \"text\": \"gamma. delta epsilon zet\"\n  },\n  {\n    \"start\": 29,\n    \"end\": 53,\n    \"text\": \"on zeta. eta theta iota.\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "id": "R02-L3",
+      "command": "python -m labs.knowledge.lab 03-identity",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"revision_1\": \"101ceca0d73bb25c7accda30a497a59a38d030fa3dd5fca478ebe2bdcb7f3040\",\n  \"revision_2\": \"a807ffdd82b913fcb8b7d99e9c72b21f328ce181cb1aa49ad7a225acfe58b49e\",\n  \"stable\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R03-L1",
+      "command": "python -m labs.knowledge.lab 04-bm25",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"df\": {\n    \"cat\": 2,\n    \"dog\": 2,\n    \"fish\": 2\n  },\n  \"avgdl\": 2.3333333333333335,\n  \"idf_cat\": 0.4700036292457356,\n  \"scores\": [\n    0.5981864372218453,\n    0.4991762683023675,\n    0\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R03-L2",
+      "command": "python -m labs.knowledge.lab 05-bm25-parameters",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"0\": [\n    0.18232155679395462,\n    0.28650530353335724\n  ],\n  \"0.75\": [\n    0.2875864556221624,\n    0.24041139034660264\n  ],\n  \"1\": [\n    0.35612341467230396,\n    0.22817488245470968\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R04-L1",
+      "command": "python -m labs.knowledge.lab 06-vectors",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"same_direction\": 1.0,\n  \"orthogonal\": 0.0\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R04-L2",
+      "command": "python -m labs.knowledge.lab 07-tfidf",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"query_vector\": {\n    \"cache\": 2.252762968495368\n  },\n  \"hits\": [\n    [\n      \"cache\",\n      0.4533856510411469\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R04-L3",
+      "command": "python -m labs.knowledge.lab 08-ann",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"exact\": [\n    \"c\",\n    \"b\"\n  ],\n  \"pruned\": [\n    \"c\",\n    \"d\"\n  ],\n  \"recall_at_2\": 0.5\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R04-L4",
+      "command": "python -m labs.knowledge.neural_encoder",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"training_pairs\": [\n    [\n      \"feline pet\",\n      \"cat animal\"\n    ],\n    [\n      \"canine pet\",\n      \"dog animal\"\n    ],\n    [\n      \"key value reuse\",\n      \"cache token\"\n    ],\n    [\n      \"queued jobs\",\n      \"scheduler request\"\n    ]\n  ],\n  \"initial_loss\": 1.3533468262650965,\n  \"final_loss\": 0.005484181103341933,\n  \"before\": [\n    [\n      1,\n      0.04293215839614112\n    ],\n    [\n      0,\n      0.02748119389976173\n    ],\n    [\n      3,\n      0.016455974740662765\n    ],\n    [\n      2,\n      -0.01760346506716081\n    ]\n  ],\n  \"after\": [\n    [\n      0,\n      1.1302966571164714\n    ],\n    [\n      1,\n      0.12990811648111497\n    ],\n    [\n      3,\n      -0.3994794106570848\n    ],\n    [\n      2,\n      -0.49530944471920435\n    ]\n  ],\n  \"unknown_query\": [],\n  \"limitation\": \"Tiny fitted vocabulary and training-set demonstration; no general semantic capability claim.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R05-L1",
+      "command": "python -m labs.knowledge.lab 09-fusion",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "[\n  [\n    \"cache\",\n    0.03252247488101534\n  ],\n  [\n    \"agent\",\n    0.01639344262295082\n  ],\n  [\n    \"graph\",\n    0.016129032258064516\n  ]\n]\n",
+      "stderr": ""
+    },
+    {
+      "id": "R05-L2",
+      "command": "python -m labs.knowledge.lab 10-rerank",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"before\": [\n    [\n      \"cache\",\n      0.03278688524590164\n    ],\n    [\n      \"scheduler\",\n      0.03225806451612903\n    ]\n  ],\n  \"after\": [\n    [\n      \"cache\",\n      1.25\n    ],\n    [\n      \"scheduler\",\n      0.5\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R05-L3",
+      "command": "python -m labs.knowledge.lab 11-metrics",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"precision\": 0.6666666666666666,\n  \"recall\": 1.0,\n  \"mrr\": 1.0,\n  \"ndcg\": 0.6885288809404666\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R05-L4",
+      "command": "python -m labs.knowledge.lab 12-compare",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"mean_delta\": 0.1875,\n  \"wins\": 1,\n  \"losses\": 1,\n  \"ties\": 2\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R05-L5",
+      "command": "python -m labs.knowledge.lab 27-diversity",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"before\": [\n    \"cache\",\n    \"graph\",\n    \"scheduler\",\n    \"rag\",\n    \"revision\"\n  ],\n  \"selected\": [\n    \"cache\",\n    \"graph\",\n    \"scheduler\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R06-L1",
+      "command": "python -m labs.knowledge.lab 17-packing",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"characters\": 428,\n  \"payload\": [\n    {\n      \"source_id\": \"cb2cb79e97ba197edef94ff88b3461fbd5a318158be3791edf40eeb96be5dc28\",\n      \"doc_id\": \"cache\",\n      \"revision\": 1,\n      \"text\": \"KV cache stores attention keys and values. Decode reuses KV cache for earlier tokens.\"\n    },\n    {\n      \"source_id\": \"fea93993ff7052bba0dfcb6be78a470d859e1844c9c42d3f007405bada07b8df\",\n      \"doc_id\": \"scheduler\",\n      \"revision\": 1,\n      \"text\": \"Scheduler chooses requests for a batch. A request with no KV capacity must wait or be preempted.\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R06-L2",
+      "command": "python -m labs.knowledge.lab 18-citation",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"exact\": [\n    true,\n    \"verified_exact_extract\"\n  ],\n  \"unsupported\": [\n    false,\n    \"nonextractive_claim_requires_semantic_review\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R07-L1",
+      "command": "python -m labs.knowledge.lab 21-multihop",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"documents\": [\n    \"agent\",\n    \"graph\",\n    \"rag\",\n    \"revision\"\n  ],\n  \"events\": [\n    {\n      \"event\": \"retrieve\",\n      \"query\": \"Agent\",\n      \"new_total\": 2\n    },\n    {\n      \"event\": \"retrieve\",\n      \"query\": \"retrieval\",\n      \"new_total\": 4\n    },\n    {\n      \"event\": \"retrieve\",\n      \"query\": \"index\",\n      \"new_total\": 4\n    },\n    {\n      \"event\": \"stop\",\n      \"reason\": \"query_budget\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R08-L1",
+      "command": "python -m labs.knowledge.lab 13-acl",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"learner_ids\": [],\n  \"admin_ids\": [\n    \"restricted\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R08-L2",
+      "command": "python -m labs.knowledge.lab 14-revision",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"new_revision\": 2,\n  \"old_citation_valid\": false,\n  \"reason\": \"source_missing_stale_or_forbidden\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R08-L3",
+      "command": "python -m labs.knowledge.lab 15-idempotency",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"first\": 1,\n  \"retry\": 1,\n  \"counts\": {\n    \"documents\": 1,\n    \"revisions\": 1,\n    \"chunks\": 1,\n    \"grants\": 1,\n    \"edges\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R08-L4",
+      "command": "python -m labs.knowledge.lab 16-deletion",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"after_soft_delete\": {\n    \"documents\": 8,\n    \"revisions\": 8,\n    \"chunks\": 8,\n    \"grants\": 8,\n    \"edges\": 0\n  },\n  \"after_purge\": {\n    \"documents\": 7,\n    \"revisions\": 7,\n    \"chunks\": 7,\n    \"grants\": 7,\n    \"edges\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R08-L5",
+      "command": "python -m labs.knowledge.lab 28-persistence",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"reopened_database\": true,\n  \"claim_count\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R09-L1",
+      "command": "python -m labs.knowledge.lab 22-memory",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"active\": [\n    {\n      \"tenant\": \"t\",\n      \"owner\": \"alice\",\n      \"key\": \"study.style\",\n      \"revision\": 2,\n      \"kind\": \"semantic\",\n      \"value\": \"code first\",\n      \"evidence\": \"message:2 correction\",\n      \"confidence\": 1.0,\n      \"expires_at\": null\n    }\n  ],\n  \"history_states\": [\n    \"superseded\",\n    \"active\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R09-L2",
+      "command": "python -m labs.knowledge.lab 23-ttl",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"before_expiry\": 1,\n  \"at_expiry\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R09-L3",
+      "command": "python -m labs.knowledge.lab 24-forget",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"all_revisions_removed\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R10-L1",
+      "command": "python -m labs.knowledge.lab 25-graph",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "[\n  {\n    \"edge_id\": \"318a179d33c607f689e9b2540258f55f61dc8754083d8e9adbeca55628472b2d\",\n    \"tenant\": \"course\",\n    \"subject\": \"agent\",\n    \"predicate\": \"uses\",\n    \"object\": \"retrieval\",\n    \"chunk_id\": \"8f903fd794223a907b3ca33745ae026b743e579c7f44727c919eb2b1dde1c4cd\",\n    \"quote\": \"Agent uses retrieval.\"\n  },\n  {\n    \"edge_id\": \"bec480832fea006cc4f458c7630e7e1334a54701174e0ba47721ac5a1864ac67\",\n    \"tenant\": \"course\",\n    \"subject\": \"retrieval\",\n    \"predicate\": \"uses\",\n    \"object\": \"index\",\n    \"chunk_id\": \"8f903fd794223a907b3ca33745ae026b743e579c7f44727c919eb2b1dde1c4cd\",\n    \"quote\": \"Retrieval uses index.\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "id": "R11-L1",
+      "command": "python -m labs.knowledge.lab 26-graph-stale",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"visible_edges_after_source_delete\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R13-L1",
+      "command": "python -m labs.knowledge.assistant ask \"KV cache\" --demo",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"query\": \"KV cache\",\n  \"mode\": \"strict_extractive\",\n  \"abstain\": false,\n  \"claims\": [\n    {\n      \"text\": \"KV cache stores attention keys and values. Decode reuses KV cache for earlier tokens.\",\n      \"doc_id\": \"cache\",\n      \"revision\": 1,\n      \"source\": \"fictional://course/cache\",\n      \"chunk_id\": \"cb2cb79e97ba197edef94ff88b3461fbd5a318158be3791edf40eeb96be5dc28\",\n      \"validation\": \"verified_exact_extract\"\n    },\n    {\n      \"text\": \"Scheduler chooses requests for a batch. A request with no KV capacity must wait or be preempted.\",\n      \"doc_id\": \"scheduler\",\n      \"revision\": 1,\n      \"source\": \"fictional://course/scheduler\",\n      \"chunk_id\": \"fea93993ff7052bba0dfcb6be78a470d859e1844c9c42d3f007405bada07b8df\",\n      \"validation\": \"verified_exact_extract\"\n    }\n  ],\n  \"limitation\": \"Exact-source provenance is verified; relevance and source truth still require judgment.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R13-L2",
+      "command": "python -m labs.knowledge.memory_assistant demo",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"revisions\": [\n    1,\n    2\n  ],\n  \"active\": [\n    {\n      \"tenant\": \"fictional-course\",\n      \"owner\": \"demo-learner\",\n      \"key\": \"demo.preferred_style\",\n      \"revision\": 2,\n      \"kind\": \"semantic\",\n      \"value\": \"worked numeric examples\",\n      \"evidence\": \"fictional correction #2\",\n      \"confidence\": 1.0,\n      \"expires_at\": null\n    }\n  ]\n}\n{\"history_after_forget\": []}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L1",
+      "command": "python -m labs.knowledge.walkthrough --stage 1",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"tables\": {\n    \"documents\": 4,\n    \"revisions\": 4,\n    \"chunks\": 4,\n    \"grants\": 4,\n    \"edges\": 0\n  },\n  \"visible_docs\": [\n    \"d0\",\n    \"d1\",\n    \"d2\"\n  ],\n  \"principals\": [\n    \"*\",\n    \"group:readers\",\n    \"user:learner\"\n  ],\n  \"tokens\": [\n    \"cat\",\n    \"cat\",\n    \"dog\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L2",
+      "command": "python -m labs.knowledge.walkthrough --stage 2",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"tf\": [\n    {\n      \"cat\": 2,\n      \"dog\": 1\n    },\n    {\n      \"cat\": 1,\n      \"fish\": 1\n    },\n    {\n      \"dog\": 1,\n      \"fish\": 1\n    }\n  ],\n  \"df\": {\n    \"cat\": 2,\n    \"dog\": 2,\n    \"fish\": 2\n  },\n  \"lengths\": [\n    3,\n    2,\n    2\n  ],\n  \"avgdl\": 2.3333333333333335,\n  \"contributions\": [\n    {\n      \"cat\": 0.5981864372218453\n    },\n    {\n      \"cat\": 0.4991762683023675\n    },\n    {}\n  ],\n  \"ranking\": [\n    [\n      \"d0\",\n      0.5981864372218453\n    ],\n    [\n      \"d1\",\n      0.4991762683023675\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L3",
+      "command": "python -m labs.knowledge.walkthrough --stage 3",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"bm25\": [\n    [\n      \"d0\",\n      0.5981864372218453\n    ],\n    [\n      \"d1\",\n      0.4991762683023675\n    ]\n  ],\n  \"tfidf\": [\n    [\n      \"d0\",\n      0.8610369959439763\n    ],\n    [\n      \"d1\",\n      0.7071067811865476\n    ]\n  ],\n  \"rrf\": [\n    [\n      \"d0\",\n      0.03278688524590164\n    ],\n    [\n      \"d1\",\n      0.03225806451612903\n    ]\n  ],\n  \"query_vector\": {\n    \"cat\": 1.2876820724517808\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L4",
+      "command": "python -m labs.knowledge.walkthrough --stage 4",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"answer\": {\n    \"query\": \"cat\",\n    \"mode\": \"strict_extractive\",\n    \"abstain\": false,\n    \"claims\": [\n      {\n        \"text\": \"cat cat dog\",\n        \"doc_id\": \"d0\",\n        \"revision\": 1,\n        \"source\": \"fixture\",\n        \"chunk_id\": \"41baebefb911227901af820252dd893fddaf6562061ad15afb04c1bb0c5ebc88\",\n        \"validation\": \"verified_exact_extract\"\n      },\n      {\n        \"text\": \"cat fish\",\n        \"doc_id\": \"d1\",\n        \"revision\": 1,\n        \"source\": \"fixture\",\n        \"chunk_id\": \"0859dafa26a520535ede16754be4898b9fa6a517faff5a1e15ab0c9ef599cebc\",\n        \"validation\": \"verified_exact_extract\"\n      }\n    ],\n    \"limitation\": \"Exact-source provenance is verified; relevance and source truth still require judgment.\"\n  },\n  \"unknown_abstains\": true,\n  \"restricted_abstains\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L5",
+      "command": "python -m labs.knowledge.walkthrough --stage 5",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"before\": [\n    true,\n    \"verified_exact_extract\"\n  ],\n  \"revision\": 2,\n  \"old_after_update\": [\n    false,\n    \"source_missing_stale_or_forbidden\"\n  ],\n  \"stale_write_rejected\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L6",
+      "command": "python -m labs.knowledge.walkthrough --stage 6",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"active\": [\n    {\n      \"tenant\": \"workshop\",\n      \"owner\": \"learner\",\n      \"key\": \"learning.mode\",\n      \"revision\": 2,\n      \"kind\": \"semantic\",\n      \"value\": \"step by step\",\n      \"evidence\": \"fictional correction 2\",\n      \"confidence\": 1.0,\n      \"expires_at\": null\n    }\n  ],\n  \"history_states\": [\n    \"superseded\",\n    \"active\"\n  ],\n  \"after_forget\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L7",
+      "command": "python -m labs.knowledge.walkthrough --stage 7",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"path\": [\n    [\n      \"agent\",\n      \"uses\",\n      \"retrieval\",\n      \"Agent uses retrieval.\"\n    ],\n    [\n      \"retrieval\",\n      \"uses\",\n      \"index\",\n      \"Retrieval uses index.\"\n    ]\n  ],\n  \"depth_one\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R15-L8",
+      "command": "python -m labs.knowledge.walkthrough --stage 8",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"before\": {\n    \"documents\": 5,\n    \"revisions\": 5,\n    \"chunks\": 5,\n    \"grants\": 5,\n    \"edges\": 1\n  },\n  \"visible_edges_after_soft_delete\": 0,\n  \"after_soft_delete\": {\n    \"documents\": 5,\n    \"revisions\": 5,\n    \"chunks\": 5,\n    \"grants\": 5,\n    \"edges\": 1\n  },\n  \"after_purge\": {\n    \"documents\": 4,\n    \"revisions\": 4,\n    \"chunks\": 4,\n    \"grants\": 4,\n    \"edges\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R16-L1",
+      "command": "python -m labs.knowledge.embedding_api",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"metadata\": {\n    \"adapter_version\": \"course-embeddings-v1\",\n    \"mode\": \"injected-offline-transport\",\n    \"base_endpoint\": \"https://offline.invalid/v1/embeddings\",\n    \"requested_model\": \"offline-fixture\",\n    \"response_model\": \"offline-vector-fixture-v1\",\n    \"model_revision_note\": \"provider-alias-unpinned\",\n    \"dimension\": 3,\n    \"encoding_format\": \"float\",\n    \"metric\": \"cosine\",\n    \"request_count\": 2,\n    \"reported_total_tokens\": 0,\n    \"reported_known_tokens\": 0,\n    \"usage_complete\": true,\n    \"created_at_utc\": \"2026-11-01T11:01:44.323764+00:00\",\n    \"text_count\": 4,\n    \"local_character_count\": 119,\n    \"token_limit_note\": \"Character budget is not provider token accounting; tokenizer limits still apply.\"\n  },\n  \"documents\": [\n    \"A feline is a cat.\",\n    \"A canine is a dog.\",\n    \"KV cache stores attention keys and values.\"\n  ],\n  \"query\": \"Which document describes a kitten or cat?\",\n  \"document_vectors\": [\n    [\n      1.0,\n      0.0,\n      0.0\n    ],\n    [\n      0.0,\n      1.0,\n      0.0\n    ],\n    [\n      0.0,\n      0.0,\n      1.0\n    ]\n  ],\n  \"query_vector\": [\n    0.9,\n    0.1,\n    0.0\n  ],\n  \"ranking\": [\n    {\n      \"document_id\": 0,\n      \"text\": \"A feline is a cat.\",\n      \"cosine\": 0.9938837346736189\n    },\n    {\n      \"document_id\": 1,\n      \"text\": \"A canine is a dog.\",\n      \"cosine\": 0.11043152607484655\n    },\n    {\n      \"document_id\": 2,\n      \"text\": \"KV cache stores attention keys and values.\",\n      \"cosine\": 0.0\n    }\n  ],\n  \"notice\": \"Live mode uses provider embeddings; default uses synthetic protocol fixtures only.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "R16-L2",
+      "command": "python -m labs.knowledge.faiss_lab",
+      "returncode": 0,
+      "status": "SKIP",
+      "stdout": "{\n  \"status\": \"SKIP\",\n  \"reason\": \"Optional NumPy/FAISS dependency missing; no install or download attempted.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -p 'test_knowledge*.py' -v",
+    "total": 77,
+    "passed": 76,
+    "skipped": 1,
+    "skip_reason": "Optional FAISS dependency unavailable"
+  },
+  "chapter_sha256": {
+    "01-evidence-and-retrieval.md": "f783dea20ffce671b576b4c38a2460a50eeaaf976cb5c5b4ddea38f953e4ba6f",
+    "02-chunking-and-identities.md": "5fd103cb5420f637bed1bf3a2ed55cca47905363c997fd023d4243bd4ca60b79",
+    "03-bm25-from-counts.md": "dd7ceedc8bf3773dc2bdb955c76cc807c74f8cb6c070e4da54abe460e8a6dfbe",
+    "04-vectors-and-indexes.md": "f027b21e719eaaf9bdab7016c859c403314e95f5657a4291f00b1fc9a4b6ea89",
+    "05-hybrid-rerank-evaluation.md": "2b8cbe397576ac7d0319cae15444329b0b955da4be4286ac7ae93a4d711a534e",
+    "06-rag-and-citations.md": "155c3f7049b3b4ab02d12cf0e641548e6fe4ae36e4a73cee3e4f1a008fc56916",
+    "07-query-planning-and-multihop.md": "a8460fe3a305f63654a622319c66381cfc7d25af962c9e8c5efd05dba332890c",
+    "08-ingestion-access-lifecycle.md": "7a3e82273c30e5cd6f1580179823f16d40939dec78b26001aa07faa19386c7f5",
+    "09-memory-lifecycle.md": "122a1b934b49194594704a40c33131a490d0e44bad4290082f92ba2c80e15b63",
+    "10-knowledge-graphs.md": "9fbf07d40984a50ffe879f04356a2c87ef1d9127c87e51e791dad331441ab0ab",
+    "11-graph-rag-and-global-questions.md": "6c90d8307df0c16238a29c2aa175743a3354a3276bd8e3b0bb9eb80df46f0cc9",
+    "12-agentic-retrieval.md": "e2e74f1cb622e9e3ba4cca3a62794a2813b4dc45bdf8dcff4b9266d012777e5b",
+    "13-two-capstone-projects.md": "3ae30a87ad51f680eb7ae292ae6ba6c549edd8088f7041d34404f4bf5c348fd1",
+    "14-open-source-reading-and-frontiers.md": "5af1028ad3602505109c2c21eb0bc1146bdbb96bc2c1897f5146c3fdde2c7faa"
+  }
+}

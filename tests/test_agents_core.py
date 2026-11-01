@@ -29,6 +29,12 @@ class ContractsTests(unittest.TestCase):
     def test_nested_paths(self):
         with self.assertRaisesRegex(ContractError,r'\$\.xs\[1\]'):
             validate({'xs':[1,'x']},object_schema({'xs':{'type':'array','items':{'type':'integer'}}}))
+    def test_huge_integer_is_finite_number_without_float_conversion(self):
+        value=parse_json("1" + "0" * 1000)
+        validate(value,{"type":"number"})
+        with self.assertRaises(ContractError):
+            validate(value,{"type":"number","maximum":100})
+
     def test_extra_key_rejected(self):
         with self.assertRaises(ContractError):validate({'a':1,'b':2,'unexpected':0},arithmetic_tool().schema)
 
@@ -93,6 +99,17 @@ class RuntimeTests(unittest.TestCase):
         h=Harness(ScriptedModel([]),[],deadline=10,clock=lambda:10);s=h.run(h.new('r','x'));self.assertEqual(s.status,'limit');self.assertEqual(s.model_calls,0)
     def test_cancel_is_terminal(self):
         h=self.make();s=h.new('r','x');h.cancel(s);h.run(s);self.assertEqual(s.model_calls,0)
+    def test_late_cancel_preserves_finished_outcome_and_checkpoint(self):
+        h=Harness(ScriptedModel([Turn(text='done')]),[])
+        s=h.run(h.new('late-cancel','x'));before=deepcopy(s)
+        self.assertIs(h.cancel(s),s)
+        self.assertEqual(s,before)
+        self.assertEqual(h.resume('late-cancel'),before)
+    def test_repeated_cancel_does_not_add_event_or_version(self):
+        h=self.make();s=h.new('repeat-cancel','x');h.cancel(s);before=deepcopy(s)
+        self.assertIs(h.cancel(s),s)
+        self.assertEqual(s,before)
+        self.assertEqual(h.resume('repeat-cancel'),before)
     def test_resume_pending_tool(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'s.db'

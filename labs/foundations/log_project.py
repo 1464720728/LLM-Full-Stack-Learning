@@ -34,7 +34,13 @@ def parse_record(line: str) -> Record:
     if not isinstance(row["request_id"], str) or not row["request_id"].strip():
         raise InvalidRecord("empty request_id")
     latency = row["latency_ms"]
-    if type(latency) not in (int, float) or not math.isfinite(latency) or latency < 0:
+    if type(latency) not in (int, float) or latency < 0:
+        raise InvalidRecord("latency_ms must be finite and non-negative")
+    try:
+        latency = float(latency)
+    except OverflowError as e:
+        raise InvalidRecord("latency_ms must be finite and non-negative") from e
+    if not math.isfinite(latency):
         raise InvalidRecord("latency_ms must be finite and non-negative")
     if type(row["tokens"]) is not int or row["tokens"] < 0:
         raise InvalidRecord("tokens must be a non-negative integer")

@@ -157,7 +157,7 @@
   ],
   "unit_tests": {
     "command": "python -m unittest discover -s tests -p 'test_serving*.py' -q",
-    "passed": 48
+    "passed": 51
   },
   "not_executed": [
     "upstream vLLM pytest",
@@ -178,5 +178,88 @@
   "syntax_checks": [
     "Python compileall including optional upstream test",
     "bash -n labs/serving/h100_server.sh"
-  ]
+  ],
+  "deep_expansion": {
+    "status": "all S01-S19 chapters complete and depth checked",
+    "standalone_cpu_or_loopback_python_blocks_S01_S15": 80,
+    "shared_namespace_workbook_blocks": {
+      "S17": 20,
+      "S18": 19,
+      "S19": 24,
+      "S16": 22
+    },
+    "optional_GPU_block_S15": "syntax checked only; not executed",
+    "new_modules": [
+      "labs/serving/collective_cpu.py",
+      "labs/serving/concurrent_probe.py"
+    ],
+    "new_regression_tests": 3,
+    "preserved_contracts": [
+      "Engine Request Work Backend interfaces",
+      "strict integer resources",
+      "atomic adopt/retain/unpin",
+      "fresh submit",
+      "report output copy"
+    ],
+    "actual_checks": [
+      "CPU spawn 2 and 4 ranks",
+      "bounded two-thread rendezvous and partial failure",
+      "local SSE exact prompt UTF-8 usage",
+      "missing DONE and error events rejected",
+      "HTTP redirects rejected before target request",
+      "bounded prompt-file no silent truncation",
+      "h100 script dry-run 1/2/8 GPU IDs; duplicate/noncanonical/no-opt-in rejected"
+    ],
+    "not_hardware_measurements": [
+      "Engine synthetic time",
+      "analytical capacity/ring/PD values",
+      "NumPy paged KV",
+      "CPU coordinator collectives"
+    ],
+    "executed_complete_python_blocks_total": 165,
+    "prose_cjk_total": 224463,
+    "chapter_prose_cjk": {
+      "S01": 13158,
+      "S02": 13032,
+      "S03": 13013,
+      "S04": 13027,
+      "S05": 13036,
+      "S06": 13028,
+      "S07": 9205,
+      "S08": 9117,
+      "S09": 13129,
+      "S10": 13008,
+      "S11": 13015,
+      "S12": 9282,
+      "S13": 9255,
+      "S14": 9084,
+      "S15": 9266,
+      "S16": 10977,
+      "S17": 13784,
+      "S18": 13163,
+      "S19": 13884
+    },
+    "chapter_python_blocks": {
+      "S01": 7,
+      "S02": 3,
+      "S03": 3,
+      "S04": 3,
+      "S05": 2,
+      "S06": 4,
+      "S07": 7,
+      "S08": 5,
+      "S09": 3,
+      "S10": 7,
+      "S11": 5,
+      "S12": 10,
+      "S13": 9,
+      "S14": 7,
+      "S15": 5,
+      "S16": 22,
+      "S17": 20,
+      "S18": 19,
+      "S19": 24
+    },
+    "independent_review": "S15 redirect bypass reproduced and fixed; S18 full-page invariant fixed; S19 joint KV permutation invariance clarified"
+  }
 }

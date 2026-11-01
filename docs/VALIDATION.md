@@ -1,19 +1,25 @@
-# 第一版验证报告
+# 课程验证报告
 
-验证时间（UTC）：2026-11-01T07:28:13.924246+00:00。课程版本见 VERSION。
+验证时间（UTC）：2026-11-01T11:34:44.138930+00:00。课程版本见 VERSION。
 
 ## 实际执行环境
 
 Python 3.12.14，NumPy 2.3.5，Linux x86_64。本次验证进程隐藏 CUDA 设备，只执行 CPU 路径。
 
-可选依赖安装状态：torch=未安装，triton=未安装，faiss=未安装。
+可选依赖安装状态：torch=未安装，triton=未安装，faiss=未安装，mcp=未安装，langgraph=未安装，agents=未安装。
 
 ## 实际结果
 
-- 自动测试：374 项，失败 0，错误 0，跳过 1。
+- 自动测试：408 项，失败 0，错误 0，跳过 4。
 - 注册实验去重命令：CPU／离线通过 203 条，失败 0 条，依赖 GPU／联网或缺少可选依赖而未执行 6 条。
+- 新增跨卷项目命令：通过 3 条，失败 0 条。
 - 课程路径／先修与本地 Markdown 链接／Python 语法问题：0 项。
 - 教材规模：6 卷，113 个有稳定 ID 的单元，209 个注册实验入口。
+- 主章与综合教程深写篇幅检查：100 篇中 0 篇低于约定下限；此检查不证明教学正确性。
+
+测试跳过明细：`test_real_mcp_strict_arguments_and_structured_result (tests.test_agents_sdk.OptionalAsyncSDKTests.test_real_mcp_strict_arguments_and_structured_result)`：optional mcp absent；`test_real_runner_calls_tool_and_continues (tests.test_agents_sdk.OptionalAsyncSDKTests.test_real_runner_calls_tool_and_continues)`：optional agents SDK absent；`test_graph_interrupt_reenters_before_resuming (tests.test_agents_sdk.OptionalSDKTests.test_graph_interrupt_reenters_before_resuming)`：optional langgraph absent；`test_faiss_optional_run (tests.test_knowledge_embedding_api.EmbeddingAdapterTests.test_faiss_optional_run)`：Optional NumPy/FAISS dependency missing; no install or download attempted.。
+
+正文与示例的审读见 [教学审读记录](EDITORIAL_REVIEW.md) 及各卷 DEPTH_AUDIT；逐章篇幅口径见 [深写对照](DEPTH_REPORT.md)。注册实验执行与正文代码块执行采用不同口径，不能互相替代。A15 的真实 SDK 另在隔离环境完成离线集成验证，见该卷 DEPTH_AUDIT；本报告只记当前基础环境的执行状态。
 
 测试覆盖机制包括状态机与恢复、流式分片、权限与文档版本、引用失效、模型等价性、梯度与数值稳定、分页与 COW、取消与抢占、布局与在线归一化，以及跨卷集成。测试数量不等于覆盖了全部生产故障。
 
@@ -245,3 +251,11 @@ python tools/verify_release.py
 | KW1-L1 | passed | `python -m labs.kernels.workbook softmax` |
 | KW2-L1 | passed | `python -m labs.kernels.workbook gemm` |
 | KW3-L1 | passed | `python -m labs.kernels.workbook attention` |
+
+## 新增跨卷项目命令
+
+| 状态 | 命令 |
+|---|---|
+| passed | `python -m projects.evidence_workshop all` |
+| passed | `python -m projects.incremental_runtime` |
+| passed | `python -m projects.incremental_runtime --online` |

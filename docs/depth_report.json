@@ -1,0 +1,811 @@
+{
+  "version": "1.1.0",
+  "baseline_commit": "0f6a672e50715a724da3e4d57c474ec66c627758",
+  "scope": "all",
+  "chapters": [
+    {
+      "path": "books/00-foundations/01-environment-and-learning.md",
+      "exists": true,
+      "baseline_prose_cjk": 2097,
+      "prose_cjk": 8477,
+      "minimum_prose_cjk": 8000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/02-files-paths-and-encoding.md",
+      "exists": true,
+      "baseline_prose_cjk": 1873,
+      "prose_cjk": 12073,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/03-shell-pipes-and-text.md",
+      "exists": true,
+      "baseline_prose_cjk": 1598,
+      "prose_cjk": 12026,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/04-processes-permissions-environment.md",
+      "exists": true,
+      "baseline_prose_cjk": 1781,
+      "prose_cjk": 12047,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/05-network-ssh-http-json.md",
+      "exists": true,
+      "baseline_prose_cjk": 1889,
+      "prose_cjk": 12029,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/06-python-values-control-functions.md",
+      "exists": true,
+      "baseline_prose_cjk": 1864,
+      "prose_cjk": 12127,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/07-modules-objects-iterators.md",
+      "exists": true,
+      "baseline_prose_cjk": 1948,
+      "prose_cjk": 12071,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/08-files-exceptions-sqlite.md",
+      "exists": true,
+      "baseline_prose_cjk": 1990,
+      "prose_cjk": 12046,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/09-testing-debugging-and-quality.md",
+      "exists": true,
+      "baseline_prose_cjk": 1929,
+      "prose_cjk": 12015,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/10-cli-logging-and-interfaces.md",
+      "exists": true,
+      "baseline_prose_cjk": 1728,
+      "prose_cjk": 8001,
+      "minimum_prose_cjk": 8000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/11-concurrency-async-and-cancellation.md",
+      "exists": true,
+      "baseline_prose_cjk": 1847,
+      "prose_cjk": 12054,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/12-git-from-snapshots-to-contribution.md",
+      "exists": true,
+      "baseline_prose_cjk": 2006,
+      "prose_cjk": 12049,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/13-docker-images-containers-volumes.md",
+      "exists": true,
+      "baseline_prose_cjk": 2122,
+      "prose_cjk": 12022,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/14-math-numpy-and-numerics.md",
+      "exists": true,
+      "baseline_prose_cjk": 2043,
+      "prose_cjk": 12019,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/15-project-log-analysis-cli.md",
+      "exists": true,
+      "baseline_prose_cjk": 2178,
+      "prose_cjk": 8025,
+      "minimum_prose_cjk": 8000,
+      "length_met": true
+    },
+    {
+      "path": "books/00-foundations/16-project-task-service.md",
+      "exists": true,
+      "baseline_prose_cjk": 2514,
+      "prose_cjk": 8011,
+      "minimum_prose_cjk": 8000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/01-loop.md",
+      "exists": true,
+      "baseline_prose_cjk": 2299,
+      "prose_cjk": 10756,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/02-protocols.md",
+      "exists": true,
+      "baseline_prose_cjk": 2195,
+      "prose_cjk": 10086,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/03-tools.md",
+      "exists": true,
+      "baseline_prose_cjk": 2173,
+      "prose_cjk": 14327,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/04-state-events.md",
+      "exists": true,
+      "baseline_prose_cjk": 2399,
+      "prose_cjk": 14075,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/05-streaming.md",
+      "exists": true,
+      "baseline_prose_cjk": 1986,
+      "prose_cjk": 14030,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/06-reliability.md",
+      "exists": true,
+      "baseline_prose_cjk": 2235,
+      "prose_cjk": 14024,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/07-context.md",
+      "exists": true,
+      "baseline_prose_cjk": 2170,
+      "prose_cjk": 14182,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/08-workspaces.md",
+      "exists": true,
+      "baseline_prose_cjk": 2148,
+      "prose_cjk": 10011,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/09-concurrency.md",
+      "exists": true,
+      "baseline_prose_cjk": 2071,
+      "prose_cjk": 10025,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/10-durability.md",
+      "exists": true,
+      "baseline_prose_cjk": 2569,
+      "prose_cjk": 14090,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/11-workflows.md",
+      "exists": true,
+      "baseline_prose_cjk": 2083,
+      "prose_cjk": 14074,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/12-multi-agent.md",
+      "exists": true,
+      "baseline_prose_cjk": 2028,
+      "prose_cjk": 10005,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/13-evaluation.md",
+      "exists": true,
+      "baseline_prose_cjk": 2156,
+      "prose_cjk": 14004,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/14-coding-agent.md",
+      "exists": true,
+      "baseline_prose_cjk": 2141,
+      "prose_cjk": 10004,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/01-agent-engineering/15-integrations.md",
+      "exists": true,
+      "baseline_prose_cjk": 2224,
+      "prose_cjk": 15100,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md",
+      "exists": true,
+      "baseline_prose_cjk": 2480,
+      "prose_cjk": 10019,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/02-chunking-and-identities.md",
+      "exists": true,
+      "baseline_prose_cjk": 2192,
+      "prose_cjk": 10023,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/03-bm25-from-counts.md",
+      "exists": true,
+      "baseline_prose_cjk": 1928,
+      "prose_cjk": 14008,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/04-vectors-and-indexes.md",
+      "exists": true,
+      "baseline_prose_cjk": 3899,
+      "prose_cjk": 14001,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/05-hybrid-rerank-evaluation.md",
+      "exists": true,
+      "baseline_prose_cjk": 2073,
+      "prose_cjk": 14006,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/06-rag-and-citations.md",
+      "exists": true,
+      "baseline_prose_cjk": 2202,
+      "prose_cjk": 14023,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/07-query-planning-and-multihop.md",
+      "exists": true,
+      "baseline_prose_cjk": 1999,
+      "prose_cjk": 10012,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/08-ingestion-access-lifecycle.md",
+      "exists": true,
+      "baseline_prose_cjk": 2528,
+      "prose_cjk": 14029,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/09-memory-lifecycle.md",
+      "exists": true,
+      "baseline_prose_cjk": 2394,
+      "prose_cjk": 14008,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/10-knowledge-graphs.md",
+      "exists": true,
+      "baseline_prose_cjk": 1780,
+      "prose_cjk": 14030,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/11-graph-rag-and-global-questions.md",
+      "exists": true,
+      "baseline_prose_cjk": 2117,
+      "prose_cjk": 14032,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/12-agentic-retrieval.md",
+      "exists": true,
+      "baseline_prose_cjk": 2012,
+      "prose_cjk": 14013,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/13-two-capstone-projects.md",
+      "exists": true,
+      "baseline_prose_cjk": 2141,
+      "prose_cjk": 10016,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/14-open-source-reading-and-frontiers.md",
+      "exists": true,
+      "baseline_prose_cjk": 2646,
+      "prose_cjk": 10565,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/01-tokens-tensors.md",
+      "exists": true,
+      "baseline_prose_cjk": 2090,
+      "prose_cjk": 10274,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/02-gradients-training.md",
+      "exists": true,
+      "baseline_prose_cjk": 1822,
+      "prose_cjk": 14098,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/03-attention.md",
+      "exists": true,
+      "baseline_prose_cjk": 1816,
+      "prose_cjk": 14038,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/04-original-transformer.md",
+      "exists": true,
+      "baseline_prose_cjk": 1898,
+      "prose_cjk": 14080,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/05-dense-decoder.md",
+      "exists": true,
+      "baseline_prose_cjk": 1864,
+      "prose_cjk": 14003,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/06-kv-gqa.md",
+      "exists": true,
+      "baseline_prose_cjk": 1741,
+      "prose_cjk": 14041,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/07-latent-attention.md",
+      "exists": true,
+      "baseline_prose_cjk": 1704,
+      "prose_cjk": 10011,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/08-moe.md",
+      "exists": true,
+      "baseline_prose_cjk": 1727,
+      "prose_cjk": 14016,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/09-sparse-attention.md",
+      "exists": true,
+      "baseline_prose_cjk": 1912,
+      "prose_cjk": 10025,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/10-linear-attention.md",
+      "exists": true,
+      "baseline_prose_cjk": 1731,
+      "prose_cjk": 14010,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/11-state-space.md",
+      "exists": true,
+      "baseline_prose_cjk": 1765,
+      "prose_cjk": 14028,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/12-hybrid-residuals.md",
+      "exists": true,
+      "baseline_prose_cjk": 2175,
+      "prose_cjk": 14011,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/13-quantization.md",
+      "exists": true,
+      "baseline_prose_cjk": 1750,
+      "prose_cjk": 10054,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/14-training-modalities.md",
+      "exists": true,
+      "baseline_prose_cjk": 2029,
+      "prose_cjk": 10126,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/15-tiny-language-model.md",
+      "exists": true,
+      "baseline_prose_cjk": 1845,
+      "prose_cjk": 10018,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/03-model-architectures/16-architecture-study.md",
+      "exists": true,
+      "baseline_prose_cjk": 2141,
+      "prose_cjk": 11209,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/01-request-lifecycle.md",
+      "exists": true,
+      "baseline_prose_cjk": 2069,
+      "prose_cjk": 13158,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/02-scheduling.md",
+      "exists": true,
+      "baseline_prose_cjk": 2112,
+      "prose_cjk": 13032,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/03-paged-kv.md",
+      "exists": true,
+      "baseline_prose_cjk": 2045,
+      "prose_cjk": 13013,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/04-prefix-cache.md",
+      "exists": true,
+      "baseline_prose_cjk": 1908,
+      "prose_cjk": 13027,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/05-preemption-cancellation.md",
+      "exists": true,
+      "baseline_prose_cjk": 2025,
+      "prose_cjk": 13036,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/06-runner-backends.md",
+      "exists": true,
+      "baseline_prose_cjk": 1652,
+      "prose_cjk": 13028,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/07-sampling-streaming.md",
+      "exists": true,
+      "baseline_prose_cjk": 1667,
+      "prose_cjk": 9205,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/08-measurement.md",
+      "exists": true,
+      "baseline_prose_cjk": 1729,
+      "prose_cjk": 9117,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/09-source-reading.md",
+      "exists": true,
+      "baseline_prose_cjk": 1916,
+      "prose_cjk": 13129,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/10-parallelism.md",
+      "exists": true,
+      "baseline_prose_cjk": 1699,
+      "prose_cjk": 13008,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/11-pd-disaggregation.md",
+      "exists": true,
+      "baseline_prose_cjk": 1668,
+      "prose_cjk": 13015,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/12-numerics-determinism.md",
+      "exists": true,
+      "baseline_prose_cjk": 1839,
+      "prose_cjk": 9282,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/13-capacity.md",
+      "exists": true,
+      "baseline_prose_cjk": 1518,
+      "prose_cjk": 9255,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/14-diagnostics.md",
+      "exists": true,
+      "baseline_prose_cjk": 1731,
+      "prose_cjk": 9084,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/15-hardware-labs.md",
+      "exists": true,
+      "baseline_prose_cjk": 2055,
+      "prose_cjk": 9266,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/16-capstones.md",
+      "exists": true,
+      "baseline_prose_cjk": 2099,
+      "prose_cjk": 10977,
+      "minimum_prose_cjk": 9000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/17-source-workbook.md",
+      "exists": true,
+      "baseline_prose_cjk": 4365,
+      "prose_cjk": 13784,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/18-state-workbook.md",
+      "exists": true,
+      "baseline_prose_cjk": 4486,
+      "prose_cjk": 13163,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/04-inference-systems/19-numeric-paged-kv.md",
+      "exists": true,
+      "baseline_prose_cjk": 2823,
+      "prose_cjk": 13884,
+      "minimum_prose_cjk": 13000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/01-addresses-layout.md",
+      "exists": true,
+      "baseline_prose_cjk": 1570,
+      "prose_cjk": 14497,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/02-cpp-memory.md",
+      "exists": true,
+      "baseline_prose_cjk": 1743,
+      "prose_cjk": 14425,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/03-cuda-execution.md",
+      "exists": true,
+      "baseline_prose_cjk": 1410,
+      "prose_cjk": 14052,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/04-memory-hierarchy.md",
+      "exists": true,
+      "baseline_prose_cjk": 1332,
+      "prose_cjk": 14046,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/05-reductions-normalization.md",
+      "exists": true,
+      "baseline_prose_cjk": 1221,
+      "prose_cjk": 14007,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/06-gemm.md",
+      "exists": true,
+      "baseline_prose_cjk": 1318,
+      "prose_cjk": 14029,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/07-online-attention.md",
+      "exists": true,
+      "baseline_prose_cjk": 1486,
+      "prose_cjk": 14017,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/08-triton-model.md",
+      "exists": true,
+      "baseline_prose_cjk": 1248,
+      "prose_cjk": 14019,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/09-triton-kernels.md",
+      "exists": true,
+      "baseline_prose_cjk": 1388,
+      "prose_cjk": 14026,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/10-custom-ops-autograd.md",
+      "exists": true,
+      "baseline_prose_cjk": 1451,
+      "prose_cjk": 14164,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/11-quantized-kernels.md",
+      "exists": true,
+      "baseline_prose_cjk": 1338,
+      "prose_cjk": 10024,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/12-moe-grouped-gemm.md",
+      "exists": true,
+      "baseline_prose_cjk": 1271,
+      "prose_cjk": 10010,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/13-streams-events-graphs.md",
+      "exists": true,
+      "baseline_prose_cjk": 1416,
+      "prose_cjk": 10068,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/14-performance-method.md",
+      "exists": true,
+      "baseline_prose_cjk": 1385,
+      "prose_cjk": 16280,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/15-compilation.md",
+      "exists": true,
+      "baseline_prose_cjk": 1546,
+      "prose_cjk": 15017,
+      "minimum_prose_cjk": 14000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/16-hopper-blackwell.md",
+      "exists": true,
+      "baseline_prose_cjk": 1403,
+      "prose_cjk": 10199,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/17-warp-persistent-megakernel.md",
+      "exists": true,
+      "baseline_prose_cjk": 1558,
+      "prose_cjk": 10008,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "books/05-kernels-hardware/18-communication-capstone.md",
+      "exists": true,
+      "baseline_prose_cjk": 1443,
+      "prose_cjk": 10047,
+      "minimum_prose_cjk": 10000,
+      "length_met": true
+    },
+    {
+      "path": "projects/P1_EVIDENCE_AGENT.md",
+      "exists": true,
+      "baseline_prose_cjk": null,
+      "prose_cjk": 16799,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    },
+    {
+      "path": "projects/P2_MODEL_RUNTIME.md",
+      "exists": true,
+      "baseline_prose_cjk": null,
+      "prose_cjk": 13307,
+      "minimum_prose_cjk": 12000,
+      "length_met": true
+    }
+  ],
+  "total_prose_cjk": 1228216,
+  "below_minimum": 0,
+  "duplicate_paragraphs_for_review": [],
+  "limitation": "Length and exact repeated paragraphs are review signals, not evidence of pedagogical correctness or completeness."
+}

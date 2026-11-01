@@ -142,5 +142,117 @@
     "accessed": "2026-11-01",
     "commit": "7ae557604adf67be50417f59c2c2f167def9a775",
     "claim_scope": "Concrete single-GPU study model identity: Qwen2ForCausalLM, 24 layers, hidden 896, 14 Q heads, 2 KV heads; not an assertion that any chosen image supports this model"
+  },
+  {
+    "id": "S-SRC-19",
+    "title": "PyTorch CUDA Graph semantics",
+    "url": "https://docs.pytorch.org/docs/stable/notes/cuda.html#cuda-graphs",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S06 graph replay pointer/address constraints; rolling documentation, no GPU execution claim"
+  },
+  {
+    "id": "S-SRC-20",
+    "title": "NCCL collective semantics",
+    "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S10 collective dataflow, rank order and compatible participation contracts"
+  },
+  {
+    "id": "S-SRC-21",
+    "title": "NCCL collective API",
+    "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/api/colls.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S10 per-operation count and dtype parameter semantics"
+  },
+  {
+    "id": "S-SRC-22",
+    "title": "PyTorch process groups",
+    "url": "https://docs.pytorch.org/docs/stable/distributed.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S10 consistent collective ordering across process groups; no NCCL benchmark claim"
+  },
+  {
+    "id": "S-SRC-23",
+    "title": "vLLM parallel linear layers",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/model_executor/layers/linear.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "S10 ColumnParallelLinear/RowParallelLinear local apply, conditional gather/reduce and rank-local bias"
+  },
+  {
+    "id": "S-SRC-24",
+    "title": "vLLM KV connector base",
+    "url": "https://github.com/vllm-project/vllm/blob/e0d00e4b8eb0c89ec30921d0695cfdd409e9c211/vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+    "accessed": "2026-11-01",
+    "commit": "e0d00e4b8eb0c89ec30921d0695cfdd409e9c211",
+    "claim_scope": "S11 scheduler/worker metadata, external-token matching, load/save and deferred freeing contracts"
+  },
+  {
+    "id": "S-SRC-25",
+    "title": "SGLang disaggregated prefill",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/disaggregation/prefill.py",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "S11 bootstrap and in-flight prefill queues; static source review only"
+  },
+  {
+    "id": "S-SRC-26",
+    "title": "SGLang disaggregated decode",
+    "url": "https://github.com/sgl-project/sglang/blob/fa5580f6d0e969a3d44c603d215e2139886e8db2/python/sglang/srt/disaggregation/decode.py",
+    "accessed": "2026-11-01",
+    "commit": "fa5580f6d0e969a3d44c603d215e2139886e8db2",
+    "claim_scope": "S11 preallocation/transfer queues, metadata commit, abort readiness and device deadline fallback distinction"
+  },
+  {
+    "id": "S-SRC-27",
+    "title": "PyTorch numerical accuracy",
+    "url": "https://docs.pytorch.org/docs/main/notes/numerical_accuracy.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S12 nonassociativity and backend/internal precision boundaries; rolling documentation"
+  },
+  {
+    "id": "S-SRC-28",
+    "title": "vLLM GPU installation",
+    "url": "https://docs.vllm.ai/en/latest/getting_started/installation/gpu/",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S15 Linux/WSL route and version-specific binary compatibility; no blanket RTX 5070 Ti support assertion"
+  },
+  {
+    "id": "S-SRC-29",
+    "title": "NVIDIA CUDA on WSL",
+    "url": "https://docs.nvidia.com/cuda/wsl-user-guide/",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S15 Windows-host driver mapping and WSL toolkit/driver distinction"
+  },
+  {
+    "id": "S-SRC-30",
+    "title": "Docker resource constraints",
+    "url": "https://docs.docker.com/engine/containers/resource_constraints/",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S15 CPU quota, host memory and swap constraints; these are not GPU memory isolation"
+  },
+  {
+    "id": "S-SRC-31",
+    "title": "PyTorch CUDA Event",
+    "url": "https://docs.pytorch.org/docs/stable/generated/torch.cuda.Event.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S15 event timing, completion synchronization and millisecond units"
+  },
+  {
+    "id": "S-SRC-32",
+    "title": "PyTorch peak allocated memory",
+    "url": "https://docs.pytorch.org/docs/stable/generated/torch.cuda.memory.max_memory_allocated.html",
+    "accessed": "2026-11-01",
+    "commit": null,
+    "claim_scope": "S15 tensor allocation peak semantics; not total device usage"
   }
 ]

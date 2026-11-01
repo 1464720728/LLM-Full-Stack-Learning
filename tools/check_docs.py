@@ -8,6 +8,8 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.check_depth import prose_without_fences
 
 
 def check(root=ROOT):
@@ -16,7 +18,9 @@ def check(root=ROOT):
         if any(part in {".git", ".venv", ".course", ".practice"} for part in path.relative_to(root).parts):
             continue
         text=path.read_text(encoding="utf-8")
-        text=re.sub(r"^```[^\n]*\n.*?^```\s*$", "", text, flags=re.M|re.S)
+        text=prose_without_fences(text)
+        # Inline code such as checks[typ](value) is Python, not a Markdown link.
+        text=re.sub(r"(?<!`)(`+)(?!`)(.*?)\1(?!`)", "", text, flags=re.S)
         for match in re.finditer(r"!?\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)",text):
             value=match.group(1).strip("<>")
             parsed=urlsplit(value)

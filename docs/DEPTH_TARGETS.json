@@ -1,0 +1,406 @@
+{
+  "version": "1.1.0",
+  "measurement": "CJK characters excluding fenced code blocks; length alone does not certify quality",
+  "entries": [
+    {
+      "path": "books/00-foundations/01-environment-and-learning.md",
+      "minimum_prose_cjk": 8000
+    },
+    {
+      "path": "books/00-foundations/02-files-paths-and-encoding.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/03-shell-pipes-and-text.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/04-processes-permissions-environment.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/05-network-ssh-http-json.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/06-python-values-control-functions.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/07-modules-objects-iterators.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/08-files-exceptions-sqlite.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/09-testing-debugging-and-quality.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/10-cli-logging-and-interfaces.md",
+      "minimum_prose_cjk": 8000
+    },
+    {
+      "path": "books/00-foundations/11-concurrency-async-and-cancellation.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/12-git-from-snapshots-to-contribution.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/13-docker-images-containers-volumes.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/14-math-numpy-and-numerics.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "books/00-foundations/15-project-log-analysis-cli.md",
+      "minimum_prose_cjk": 8000
+    },
+    {
+      "path": "books/00-foundations/16-project-task-service.md",
+      "minimum_prose_cjk": 8000
+    },
+    {
+      "path": "books/01-agent-engineering/01-loop.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/02-protocols.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/03-tools.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/04-state-events.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/05-streaming.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/06-reliability.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/07-context.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/08-workspaces.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/09-concurrency.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/10-durability.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/11-workflows.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/12-multi-agent.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/13-evaluation.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/01-agent-engineering/14-coding-agent.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/01-agent-engineering/15-integrations.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/02-chunking-and-identities.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/03-bm25-from-counts.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/04-vectors-and-indexes.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/05-hybrid-rerank-evaluation.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/06-rag-and-citations.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/07-query-planning-and-multihop.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/08-ingestion-access-lifecycle.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/09-memory-lifecycle.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/10-knowledge-graphs.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/11-graph-rag-and-global-questions.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/12-agentic-retrieval.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/13-two-capstone-projects.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/14-open-source-reading-and-frontiers.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/01-tokens-tensors.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/02-gradients-training.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/03-attention.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/04-original-transformer.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/05-dense-decoder.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/06-kv-gqa.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/07-latent-attention.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/08-moe.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/09-sparse-attention.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/10-linear-attention.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/11-state-space.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/12-hybrid-residuals.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/03-model-architectures/13-quantization.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/14-training-modalities.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/15-tiny-language-model.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/03-model-architectures/16-architecture-study.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/04-inference-systems/01-request-lifecycle.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/02-scheduling.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/03-paged-kv.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/04-prefix-cache.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/05-preemption-cancellation.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/06-runner-backends.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/07-sampling-streaming.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/08-measurement.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/09-source-reading.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/10-parallelism.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/11-pd-disaggregation.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/12-numerics-determinism.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/13-capacity.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/14-diagnostics.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/15-hardware-labs.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/16-capstones.md",
+      "minimum_prose_cjk": 9000
+    },
+    {
+      "path": "books/04-inference-systems/17-source-workbook.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/18-state-workbook.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/04-inference-systems/19-numeric-paged-kv.md",
+      "minimum_prose_cjk": 13000
+    },
+    {
+      "path": "books/05-kernels-hardware/01-addresses-layout.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/02-cpp-memory.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/03-cuda-execution.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/04-memory-hierarchy.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/05-reductions-normalization.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/06-gemm.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/07-online-attention.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/08-triton-model.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/09-triton-kernels.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/10-custom-ops-autograd.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/11-quantized-kernels.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/12-moe-grouped-gemm.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/13-streams-events-graphs.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/14-performance-method.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/15-compilation.md",
+      "minimum_prose_cjk": 14000
+    },
+    {
+      "path": "books/05-kernels-hardware/16-hopper-blackwell.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/17-warp-persistent-megakernel.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "books/05-kernels-hardware/18-communication-capstone.md",
+      "minimum_prose_cjk": 10000
+    },
+    {
+      "path": "projects/P1_EVIDENCE_AGENT.md",
+      "minimum_prose_cjk": 12000
+    },
+    {
+      "path": "projects/P2_MODEL_RUNTIME.md",
+      "minimum_prose_cjk": 12000
+    }
+  ]
+}

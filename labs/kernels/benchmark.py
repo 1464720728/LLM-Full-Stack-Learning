@@ -32,7 +32,7 @@ def main():
         for _ in range(args.repeats):
             start=torch.cuda.Event(enable_timing=True);end=torch.cuda.Event(enable_timing=True)
             start.record();out=call();end.record();end.synchronize();samples.append(start.elapsed_time(end))
-        return {'median_ms':statistics.median(samples),'min_ms':min(samples),'max_ms':max(samples),'samples':len(samples)}
+        return {'median_ms':statistics.median(samples),'min_ms':min(samples),'max_ms':max(samples),'samples':len(samples),'samples_ms':samples}
     result={'op':args.op,'shape':list(a.shape),'dtype':str(a.dtype),'gpu':torch.cuda.get_device_name(0),'capability':torch.cuda.get_device_capability(0),'torch':torch.__version__,'max_abs_error':err,'first_call_wall_s':cold,'triton':measure(fn),'torch_baseline':measure(baseline),'scope':'GPU event interval around allocation+launch wrapper; no host-to-device copies, includes any device work in interval; not end-to-end service latency','note':'shared-GPU contention and allocator/cache effects are not controlled'}
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

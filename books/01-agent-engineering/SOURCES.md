@@ -22,6 +22,22 @@
 
 ## 已验证和未验证
 
-本卷标准库离线实验与测试在课程构建环境运行，结果由仓库统一验证报告记录。在线模型调用未使用真实 key，也未产生 API 费用。Windows、WSL、用户 Linux 服务器及真实模型端点需要学习者按环境说明验收。MCP 方法层演示不是完整 MCP 兼容实现；完整 SDK、A2A 与 LangGraph 移植任务需要按锁定版本完成，并在自己的实验记录里标注是否实测。
+本卷标准库离线实验与测试在课程构建环境运行，结果由仓库统一验证报告记录。在线模型调用未使用真实 key，也未产生 API 费用。Windows、WSL、用户 Linux 服务器及真实模型端点需要学习者按环境说明验收。MCP 方法层演示不是完整 MCP 兼容实现；A15 已在独立环境实际验证 MCP 2.3.0、LangGraph 1.2.19、OpenAI Agents SDK 0.24.0 的离线集成，完整依赖见 sdk-requirements-lock.txt，详细执行证据见 DEPTH_AUDIT.md。A2A 仅有概念核查与课程自定义任务状态练习，不宣称标准兼容服务；跨机传输、认证和真实模型 API 未执行。
 
 本卷不声称所有最新模型都支持相同工具参数、不声称所有协议可无损互转、不声称路径守卫等价安全沙箱，也不把离线脚本模型成绩当真实模型能力。对未来提供方行为，以当前官方文档与契约测试为准。
+
+
+## 第二轮深写新增核查
+
+| 一手来源或本地发行源码 | 使用范围 |
+|---|---|
+| [WHATWG Server-sent events](https://html.spec.whatwg.org/multipage/server-sent-events.html) | A05 对照标准与教学 SSE 子集，不把子集当完整 EventSource |
+| [Python codecs](https://docs.python.org/3/library/codecs.html) | A05 增量 UTF-8 解码器状态与 final 参数 |
+| [LangGraph 中断文档](https://docs.langchain.com/oss/python/langgraph/interrupts) | A15 检查点、thread_id、Command 恢复与节点重入 |
+| [LangGraph types 源码](https://github.com/langchain-ai/langgraph/blob/main/libs/langgraph/langgraph/types.py) | 对照已安装 1.2.19 的 interrupt 索引与恢复值路径；未虚构 Git 提交 |
+| [MCP SDK 测试文档](https://py.sdk.modelcontextprotocol.io/get-started/testing/) | A15 进程内 Client/Server 与资源退出 |
+| [Agents SDK runner 文档](https://openai.github.io/openai-agents-python/running_agents/) | 运行入口、模型轮转、max_turns 与工具结果续接 |
+| [Agents SDK 工具 API](https://openai.github.io/openai-agents-python/ref/tool/) | 工具装饰器与调用包装接口，另实际检查安装版本源码 |
+| [A2A 规范](https://a2a-protocol.org/latest/specification/) | 任务、状态、消息、产物与终态边界；课程 TaskBook 明确非标准实现 |
+
+核查日期仍为 2026-11-01。真实 SDK 包是本次安装的发行版本，不声称默认分支始终等于安装版本。课程框架例子、状态表与故障程序为原创；第三方源码仅保留帮助定位机制的短摘录，完整实现通过实际安装环境 inspect 阅读。

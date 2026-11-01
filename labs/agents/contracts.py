@@ -40,7 +40,7 @@ def validate(value: Any, schema: dict, path: str = "$") -> None:
     typ = schema.get("type")
     checks = {"object": lambda x: type(x) is dict, "array": lambda x: type(x) is list,
               "string": lambda x: type(x) is str, "integer": lambda x: type(x) is int,
-              "number": lambda x: type(x) in (int, float) and math.isfinite(x),
+              "number": lambda x: type(x) is int or (type(x) is float and math.isfinite(x)),
               "boolean": lambda x: type(x) is bool, "null": lambda x: x is None}
     if typ not in checks:
         raise ContractError(f"{path}: unsupported or missing type")

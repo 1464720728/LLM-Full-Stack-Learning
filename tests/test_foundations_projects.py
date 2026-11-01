@@ -25,7 +25,8 @@ class LogProjectTests(unittest.TestCase):
     def test_malformed_shapes_are_data_errors(self):
         for row in [[],{}, dict(request_id='x', latency_ms=-1,tokens=0,status='ok'),
                     dict(request_id='x',latency_ms=float('nan'),tokens=1,status='ok'),
-                    dict(request_id='x',latency_ms=1,tokens=True,status='ok')]:
+                    dict(request_id='x',latency_ms=1,tokens=True,status='ok'),
+                    dict(request_id='x',latency_ms=10**400,tokens=1,status='ok')]:
             with self.subTest(row=row):
                 with self.assertRaises(logs.InvalidRecord): logs.parse_record(json.dumps(row))
 

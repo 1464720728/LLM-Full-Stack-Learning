@@ -27,3 +27,21 @@ Python文档中的“Source code”入口能直接定位CPython标准库实现�
 ## 资料边界
 
 本卷没有声称某一Python、NumPy或Docker版本是“最新最佳”；示例选择稳定基础接口。WSL安装与Docker构建可能需要网络和系统权限，按官方当前文档与自己的机器条件执行。任何未公开的公司环境配置、账户地址与密钥都不属于课程源码。
+
+## Shell 深入修订参考（2026-11-01）
+
+- [GNU Bash Shell Expansions](https://www.gnu.org/software/bash/manual/html_node/Shell-Expansions.html)：展开顺序与引用边界。
+- [GNU Bash Pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html)：管道连接、退出状态与pipefail。
+- [GNU Bash Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)：重定向顺序、文件描述符与输入块。
+
+## 网络深入修订参考（2026-11-01）
+
+- [RFC 9110 HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html)：方法、状态、字段与内容语义。
+- [RFC 9112 HTTP/1.1](https://www.rfc-editor.org/rfc/rfc9112.html)：消息边界与HTTP/1.1传输结构。
+- [OpenSSH ssh手册](https://man.openbsd.org/ssh)：认证、会话与端口转发。
+
+- Python 3.12 asyncio 原始文档：[协程、Task、gather、取消与 TaskGroup](https://docs.python.org/3.12/library/asyncio-task.html)，核查日期 2026-11-01。F11 区分 gather 与任务组的失败传播、协作取消与外部副作用，不将当前文档的小版本号写成环境实测版本。
+- Python sqlite3 原始文档：[连接上下文与事务控制](https://docs.python.org/3/library/sqlite3.html)，核查日期 2026-11-01。F08 明确上下文事务不等于关闭连接，事务配置影响行为；实际运行版本在深度审计记录。
+
+- Docker 官方存储说明：[Storage](https://docs.docker.com/engine/storage/)、[Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)、[Volumes](https://docs.docker.com/engine/storage/volumes/)，核查日期 2026-11-01。用于 F13 区分容器可写层与独立挂载生命周期。
+- Docker 官方配置规范：[Dockerfile](https://docs.docker.com/reference/dockerfile/)、[Compose services](https://docs.docker.com/reference/compose-file/services/)、[Profiles](https://docs.docker.com/compose/how-tos/profiles/)，核查日期 2026-11-01。配置已对照仓库实际文件，真实 Docker 执行仍明确列为手动边界。

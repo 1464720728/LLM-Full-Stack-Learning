@@ -18,14 +18,19 @@ done
 [[ "$COURSE_VLLM_IMAGE" == *@sha256:* ]] || { printf 'Pin image by digest.\n' >&2; exit 2; }
 [[ "$COURSE_MODEL_DIR" == /* && -d "$COURSE_MODEL_DIR" ]] || { printf 'Model directory must exist and be absolute.\n' >&2; exit 2; }
 [[ "$tp" =~ ^(1|2|8)$ ]] || { printf 'Supported lesson TP: 1, 2, 8.\n' >&2; exit 2; }
-[[ "$COURSE_GPU_IDS" =~ ^[0-9]+(,[0-9]+)*$ ]] || { printf 'GPU IDs must be numeric.\n' >&2; exit 2; }
+[[ "$COURSE_GPU_IDS" =~ ^(0|[1-9][0-9]*)(,(0|[1-9][0-9]*))*$ ]] || { printf 'GPU IDs must be canonical nonnegative integers.\n' >&2; exit 2; }
 IFS=, read -r -a gpu_ids <<< "$COURSE_GPU_IDS"
+declare -A seen_gpu_ids=()
+for gpu_id in "${gpu_ids[@]}"; do
+  [[ ! -v "seen_gpu_ids[$gpu_id]" ]] || { printf 'GPU IDs must be distinct.\n' >&2; exit 2; }
+  seen_gpu_ids[$gpu_id]=1
+done
 (( ${#gpu_ids[@]} == tp )) || { printf 'GPU count must equal TP.\n' >&2; exit 2; }
 (( tp == 1 || multi == 1 )) || { printf 'Multiple GPUs require --allow-multi-gpu.\n' >&2; exit 2; }
 name="llm-course-${UID}-$$"
 # Docker requires extra quoting for a comma-separated --gpus device selector.
 gpu_spec="\"device=${COURSE_GPU_IDS}\""
-cmd=(docker run --rm --name "$name" --gpus "$gpu_spec"
+cmd=(docker run --rm --pull=never --name "$name" --gpus "$gpu_spec"
   --cpus 4 --memory 24g --shm-size 2g
   -p 127.0.0.1:18080:8000
   -v "$COURSE_MODEL_DIR:/model:ro"

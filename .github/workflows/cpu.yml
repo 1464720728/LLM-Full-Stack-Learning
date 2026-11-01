@@ -21,7 +21,10 @@ jobs:
       - run: python -m pip install -r requirements-cpu.txt
       - run: python tools/course.py check
       - run: python tools/check_docs.py
+      - run: python tools/check_depth.py --check
       - run: python -m unittest discover -s tests -v
       - run: python -m practice.grade --module practice.solutions
       - run: python -m projects.evidence_agent
       - run: python -m projects.model_runtime
+      - run: python -m projects.evidence_workshop all
+      - run: python -m projects.incremental_runtime --online

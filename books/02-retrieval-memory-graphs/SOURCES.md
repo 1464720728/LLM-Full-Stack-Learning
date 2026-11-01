@@ -33,3 +33,18 @@
 如果修改 tokenizer，检查切块指纹与索引缓存版本；如果修改 Chunk 或 Context，运行全部系统和综合项目测试；如果修改引用语义，更新报告状态名与练习答案；如果采用新模型或向量索引，记录模型/索引版本对并重新评测。不要只更新 README 中的“最新”字样而保留旧实现假设。
 
 新增验证：Embeddings 适配器使用注入传输做离线测试，覆盖乱序、缺失、重复、维数、非有限值、预算和授权出口；未执行真实 API。FAISS 实验为可选依赖，当前缺失时测试明确 SKIP。
+
+## 本轮深写的官方文档复查
+
+以下页面于 2026-11-01 在本轮重新读取，用于核对接口职责与研读入口；没有据此声称安装或运行外部框架。
+
+| 页面 | 核对内容 |
+|---|---|
+| [Haystack InMemoryBM25Retriever](https://docs.haystack.deepset.ai/docs/inmemorybm25retriever) | Retriever/store职责、query/top_k/filters与BM25配置位置；具体实验仍需固定实际包版本 |
+| [LlamaIndex Ingestion Pipeline](https://developers.llamaindex.ai/python/framework/module_guides/loading/ingestion_pipeline/) | 摄入、变换、缓存与文档管理阅读入口；旧docs域名会重定向到开发者文档 |
+| [LangGraph Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) | thread检查点与跨thread store的分工、内存后端不跨重启持久化 |
+| [Sentence Transformers Retrieve & Re-Rank](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) | bi-encoder候选与cross-encoder重排职责；课堂词法重排不冒充真实模型 |
+| [GraphRAG Indexing](https://microsoft.github.io/graphrag/index/overview/) | 文本到实体关系、社区报告与向量产物的流程 |
+| [GraphRAG Global Search](https://microsoft.github.io/graphrag/query/global_search/) | 社区报告上的map/reduce与粒度/成本关系 |
+
+本章新增的模块度手算、严格抽取报告、生命周期状态机、Agent故障实验与框架适配练习均为独立教学实现；没有复制上述项目的完整实现，也不以教学替身结果代表其真实质量或性能。

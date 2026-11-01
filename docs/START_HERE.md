@@ -12,7 +12,7 @@ Windows 的 PowerShell、Windows 中的 WSL Linux、SSH 登录后的远端 Linux
 
 ## 2. Windows 原生 CPU 起步
 
-从 Python 官方网站和 Git 官方网站安装适合你的版本：[Python](https://www.python.org/downloads/windows/)、[Git](https://git-scm.com/downloads/win)。课程核心语法目标为 Python 3.10 及以上；初版实际测试解释器版本见验证报告。安装完成后重新打开 PowerShell：
+从 Python 官方网站和 Git 官方网站安装适合你的版本：[Python](https://www.python.org/downloads/windows/)、[Git](https://git-scm.com/downloads/win)。建议新学习环境使用 Python 3.12。课程核心命令与参考库保留 Python 3.10 兼容检查，但 F11 的 TaskGroup／异常组等深写示例需要 Python 3.11 及以上；本次实际测试解释器版本见验证报告。安装完成后重新打开 PowerShell：
 
 ```powershell
 py -3 --version

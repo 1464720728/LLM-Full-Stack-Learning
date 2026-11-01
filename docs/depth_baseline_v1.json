@@ -1,0 +1,496 @@
+{
+  "baseline_commit": "0f6a672e50715a724da3e4d57c474ec66c627758",
+  "measurement": "CJK characters U+3400–U+9FFF; prose excludes fenced code blocks; quantity is not a quality verdict",
+  "chapters": [
+    {
+      "path": "books/00-foundations/01-environment-and-learning.md",
+      "chinese_characters": 2097,
+      "prose_chinese_characters": 2097
+    },
+    {
+      "path": "books/00-foundations/02-files-paths-and-encoding.md",
+      "chinese_characters": 1878,
+      "prose_chinese_characters": 1873
+    },
+    {
+      "path": "books/00-foundations/03-shell-pipes-and-text.md",
+      "chinese_characters": 1598,
+      "prose_chinese_characters": 1598
+    },
+    {
+      "path": "books/00-foundations/04-processes-permissions-environment.md",
+      "chinese_characters": 1781,
+      "prose_chinese_characters": 1781
+    },
+    {
+      "path": "books/00-foundations/05-network-ssh-http-json.md",
+      "chinese_characters": 1896,
+      "prose_chinese_characters": 1889
+    },
+    {
+      "path": "books/00-foundations/06-python-values-control-functions.md",
+      "chinese_characters": 1864,
+      "prose_chinese_characters": 1864
+    },
+    {
+      "path": "books/00-foundations/07-modules-objects-iterators.md",
+      "chinese_characters": 1948,
+      "prose_chinese_characters": 1948
+    },
+    {
+      "path": "books/00-foundations/08-files-exceptions-sqlite.md",
+      "chinese_characters": 1990,
+      "prose_chinese_characters": 1990
+    },
+    {
+      "path": "books/00-foundations/09-testing-debugging-and-quality.md",
+      "chinese_characters": 1929,
+      "prose_chinese_characters": 1929
+    },
+    {
+      "path": "books/00-foundations/10-cli-logging-and-interfaces.md",
+      "chinese_characters": 1728,
+      "prose_chinese_characters": 1728
+    },
+    {
+      "path": "books/00-foundations/11-concurrency-async-and-cancellation.md",
+      "chinese_characters": 1847,
+      "prose_chinese_characters": 1847
+    },
+    {
+      "path": "books/00-foundations/12-git-from-snapshots-to-contribution.md",
+      "chinese_characters": 2020,
+      "prose_chinese_characters": 2006
+    },
+    {
+      "path": "books/00-foundations/13-docker-images-containers-volumes.md",
+      "chinese_characters": 2122,
+      "prose_chinese_characters": 2122
+    },
+    {
+      "path": "books/00-foundations/14-math-numpy-and-numerics.md",
+      "chinese_characters": 2043,
+      "prose_chinese_characters": 2043
+    },
+    {
+      "path": "books/00-foundations/15-project-log-analysis-cli.md",
+      "chinese_characters": 2178,
+      "prose_chinese_characters": 2178
+    },
+    {
+      "path": "books/00-foundations/16-project-task-service.md",
+      "chinese_characters": 2514,
+      "prose_chinese_characters": 2514
+    },
+    {
+      "path": "books/01-agent-engineering/01-loop.md",
+      "chinese_characters": 2299,
+      "prose_chinese_characters": 2299
+    },
+    {
+      "path": "books/01-agent-engineering/02-protocols.md",
+      "chinese_characters": 2226,
+      "prose_chinese_characters": 2195
+    },
+    {
+      "path": "books/01-agent-engineering/03-tools.md",
+      "chinese_characters": 2173,
+      "prose_chinese_characters": 2173
+    },
+    {
+      "path": "books/01-agent-engineering/04-state-events.md",
+      "chinese_characters": 2399,
+      "prose_chinese_characters": 2399
+    },
+    {
+      "path": "books/01-agent-engineering/05-streaming.md",
+      "chinese_characters": 1986,
+      "prose_chinese_characters": 1986
+    },
+    {
+      "path": "books/01-agent-engineering/06-reliability.md",
+      "chinese_characters": 2235,
+      "prose_chinese_characters": 2235
+    },
+    {
+      "path": "books/01-agent-engineering/07-context.md",
+      "chinese_characters": 2170,
+      "prose_chinese_characters": 2170
+    },
+    {
+      "path": "books/01-agent-engineering/08-workspaces.md",
+      "chinese_characters": 2148,
+      "prose_chinese_characters": 2148
+    },
+    {
+      "path": "books/01-agent-engineering/09-concurrency.md",
+      "chinese_characters": 2071,
+      "prose_chinese_characters": 2071
+    },
+    {
+      "path": "books/01-agent-engineering/10-durability.md",
+      "chinese_characters": 2569,
+      "prose_chinese_characters": 2569
+    },
+    {
+      "path": "books/01-agent-engineering/11-workflows.md",
+      "chinese_characters": 2083,
+      "prose_chinese_characters": 2083
+    },
+    {
+      "path": "books/01-agent-engineering/12-multi-agent.md",
+      "chinese_characters": 2028,
+      "prose_chinese_characters": 2028
+    },
+    {
+      "path": "books/01-agent-engineering/13-evaluation.md",
+      "chinese_characters": 2156,
+      "prose_chinese_characters": 2156
+    },
+    {
+      "path": "books/01-agent-engineering/14-coding-agent.md",
+      "chinese_characters": 2141,
+      "prose_chinese_characters": 2141
+    },
+    {
+      "path": "books/01-agent-engineering/15-integrations.md",
+      "chinese_characters": 2224,
+      "prose_chinese_characters": 2224
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md",
+      "chinese_characters": 2480,
+      "prose_chinese_characters": 2480
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/02-chunking-and-identities.md",
+      "chinese_characters": 2192,
+      "prose_chinese_characters": 2192
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/03-bm25-from-counts.md",
+      "chinese_characters": 1928,
+      "prose_chinese_characters": 1928
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/04-vectors-and-indexes.md",
+      "chinese_characters": 3899,
+      "prose_chinese_characters": 3899
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/05-hybrid-rerank-evaluation.md",
+      "chinese_characters": 2073,
+      "prose_chinese_characters": 2073
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/06-rag-and-citations.md",
+      "chinese_characters": 2202,
+      "prose_chinese_characters": 2202
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/07-query-planning-and-multihop.md",
+      "chinese_characters": 1999,
+      "prose_chinese_characters": 1999
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/08-ingestion-access-lifecycle.md",
+      "chinese_characters": 2528,
+      "prose_chinese_characters": 2528
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/09-memory-lifecycle.md",
+      "chinese_characters": 2394,
+      "prose_chinese_characters": 2394
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/10-knowledge-graphs.md",
+      "chinese_characters": 1780,
+      "prose_chinese_characters": 1780
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/11-graph-rag-and-global-questions.md",
+      "chinese_characters": 2117,
+      "prose_chinese_characters": 2117
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/12-agentic-retrieval.md",
+      "chinese_characters": 2012,
+      "prose_chinese_characters": 2012
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/13-two-capstone-projects.md",
+      "chinese_characters": 2141,
+      "prose_chinese_characters": 2141
+    },
+    {
+      "path": "books/02-retrieval-memory-graphs/14-open-source-reading-and-frontiers.md",
+      "chinese_characters": 2646,
+      "prose_chinese_characters": 2646
+    },
+    {
+      "path": "books/03-model-architectures/01-tokens-tensors.md",
+      "chinese_characters": 2113,
+      "prose_chinese_characters": 2090
+    },
+    {
+      "path": "books/03-model-architectures/02-gradients-training.md",
+      "chinese_characters": 1869,
+      "prose_chinese_characters": 1822
+    },
+    {
+      "path": "books/03-model-architectures/03-attention.md",
+      "chinese_characters": 1816,
+      "prose_chinese_characters": 1816
+    },
+    {
+      "path": "books/03-model-architectures/04-original-transformer.md",
+      "chinese_characters": 1898,
+      "prose_chinese_characters": 1898
+    },
+    {
+      "path": "books/03-model-architectures/05-dense-decoder.md",
+      "chinese_characters": 1864,
+      "prose_chinese_characters": 1864
+    },
+    {
+      "path": "books/03-model-architectures/06-kv-gqa.md",
+      "chinese_characters": 1741,
+      "prose_chinese_characters": 1741
+    },
+    {
+      "path": "books/03-model-architectures/07-latent-attention.md",
+      "chinese_characters": 1704,
+      "prose_chinese_characters": 1704
+    },
+    {
+      "path": "books/03-model-architectures/08-moe.md",
+      "chinese_characters": 1727,
+      "prose_chinese_characters": 1727
+    },
+    {
+      "path": "books/03-model-architectures/09-sparse-attention.md",
+      "chinese_characters": 1912,
+      "prose_chinese_characters": 1912
+    },
+    {
+      "path": "books/03-model-architectures/10-linear-attention.md",
+      "chinese_characters": 1731,
+      "prose_chinese_characters": 1731
+    },
+    {
+      "path": "books/03-model-architectures/11-state-space.md",
+      "chinese_characters": 1765,
+      "prose_chinese_characters": 1765
+    },
+    {
+      "path": "books/03-model-architectures/12-hybrid-residuals.md",
+      "chinese_characters": 2175,
+      "prose_chinese_characters": 2175
+    },
+    {
+      "path": "books/03-model-architectures/13-quantization.md",
+      "chinese_characters": 1750,
+      "prose_chinese_characters": 1750
+    },
+    {
+      "path": "books/03-model-architectures/14-training-modalities.md",
+      "chinese_characters": 2029,
+      "prose_chinese_characters": 2029
+    },
+    {
+      "path": "books/03-model-architectures/15-tiny-language-model.md",
+      "chinese_characters": 1845,
+      "prose_chinese_characters": 1845
+    },
+    {
+      "path": "books/03-model-architectures/16-architecture-study.md",
+      "chinese_characters": 2141,
+      "prose_chinese_characters": 2141
+    },
+    {
+      "path": "books/04-inference-systems/01-request-lifecycle.md",
+      "chinese_characters": 2069,
+      "prose_chinese_characters": 2069
+    },
+    {
+      "path": "books/04-inference-systems/02-scheduling.md",
+      "chinese_characters": 2112,
+      "prose_chinese_characters": 2112
+    },
+    {
+      "path": "books/04-inference-systems/03-paged-kv.md",
+      "chinese_characters": 2045,
+      "prose_chinese_characters": 2045
+    },
+    {
+      "path": "books/04-inference-systems/04-prefix-cache.md",
+      "chinese_characters": 1908,
+      "prose_chinese_characters": 1908
+    },
+    {
+      "path": "books/04-inference-systems/05-preemption-cancellation.md",
+      "chinese_characters": 2025,
+      "prose_chinese_characters": 2025
+    },
+    {
+      "path": "books/04-inference-systems/06-runner-backends.md",
+      "chinese_characters": 1652,
+      "prose_chinese_characters": 1652
+    },
+    {
+      "path": "books/04-inference-systems/07-sampling-streaming.md",
+      "chinese_characters": 1667,
+      "prose_chinese_characters": 1667
+    },
+    {
+      "path": "books/04-inference-systems/08-measurement.md",
+      "chinese_characters": 1729,
+      "prose_chinese_characters": 1729
+    },
+    {
+      "path": "books/04-inference-systems/09-source-reading.md",
+      "chinese_characters": 1916,
+      "prose_chinese_characters": 1916
+    },
+    {
+      "path": "books/04-inference-systems/10-parallelism.md",
+      "chinese_characters": 1699,
+      "prose_chinese_characters": 1699
+    },
+    {
+      "path": "books/04-inference-systems/11-pd-disaggregation.md",
+      "chinese_characters": 1668,
+      "prose_chinese_characters": 1668
+    },
+    {
+      "path": "books/04-inference-systems/12-numerics-determinism.md",
+      "chinese_characters": 1839,
+      "prose_chinese_characters": 1839
+    },
+    {
+      "path": "books/04-inference-systems/13-capacity.md",
+      "chinese_characters": 1518,
+      "prose_chinese_characters": 1518
+    },
+    {
+      "path": "books/04-inference-systems/14-diagnostics.md",
+      "chinese_characters": 1731,
+      "prose_chinese_characters": 1731
+    },
+    {
+      "path": "books/04-inference-systems/15-hardware-labs.md",
+      "chinese_characters": 2078,
+      "prose_chinese_characters": 2055
+    },
+    {
+      "path": "books/04-inference-systems/16-capstones.md",
+      "chinese_characters": 2099,
+      "prose_chinese_characters": 2099
+    },
+    {
+      "path": "books/04-inference-systems/17-source-workbook.md",
+      "chinese_characters": 4365,
+      "prose_chinese_characters": 4365
+    },
+    {
+      "path": "books/04-inference-systems/18-state-workbook.md",
+      "chinese_characters": 4486,
+      "prose_chinese_characters": 4486
+    },
+    {
+      "path": "books/04-inference-systems/19-numeric-paged-kv.md",
+      "chinese_characters": 2823,
+      "prose_chinese_characters": 2823
+    },
+    {
+      "path": "books/05-kernels-hardware/01-addresses-layout.md",
+      "chinese_characters": 1570,
+      "prose_chinese_characters": 1570
+    },
+    {
+      "path": "books/05-kernels-hardware/02-cpp-memory.md",
+      "chinese_characters": 1743,
+      "prose_chinese_characters": 1743
+    },
+    {
+      "path": "books/05-kernels-hardware/03-cuda-execution.md",
+      "chinese_characters": 1410,
+      "prose_chinese_characters": 1410
+    },
+    {
+      "path": "books/05-kernels-hardware/04-memory-hierarchy.md",
+      "chinese_characters": 1332,
+      "prose_chinese_characters": 1332
+    },
+    {
+      "path": "books/05-kernels-hardware/05-reductions-normalization.md",
+      "chinese_characters": 1221,
+      "prose_chinese_characters": 1221
+    },
+    {
+      "path": "books/05-kernels-hardware/06-gemm.md",
+      "chinese_characters": 1318,
+      "prose_chinese_characters": 1318
+    },
+    {
+      "path": "books/05-kernels-hardware/07-online-attention.md",
+      "chinese_characters": 1486,
+      "prose_chinese_characters": 1486
+    },
+    {
+      "path": "books/05-kernels-hardware/08-triton-model.md",
+      "chinese_characters": 1267,
+      "prose_chinese_characters": 1248
+    },
+    {
+      "path": "books/05-kernels-hardware/09-triton-kernels.md",
+      "chinese_characters": 1388,
+      "prose_chinese_characters": 1388
+    },
+    {
+      "path": "books/05-kernels-hardware/10-custom-ops-autograd.md",
+      "chinese_characters": 1451,
+      "prose_chinese_characters": 1451
+    },
+    {
+      "path": "books/05-kernels-hardware/11-quantized-kernels.md",
+      "chinese_characters": 1338,
+      "prose_chinese_characters": 1338
+    },
+    {
+      "path": "books/05-kernels-hardware/12-moe-grouped-gemm.md",
+      "chinese_characters": 1271,
+      "prose_chinese_characters": 1271
+    },
+    {
+      "path": "books/05-kernels-hardware/13-streams-events-graphs.md",
+      "chinese_characters": 1416,
+      "prose_chinese_characters": 1416
+    },
+    {
+      "path": "books/05-kernels-hardware/14-performance-method.md",
+      "chinese_characters": 1385,
+      "prose_chinese_characters": 1385
+    },
+    {
+      "path": "books/05-kernels-hardware/15-compilation.md",
+      "chinese_characters": 1546,
+      "prose_chinese_characters": 1546
+    },
+    {
+      "path": "books/05-kernels-hardware/16-hopper-blackwell.md",
+      "chinese_characters": 1403,
+      "prose_chinese_characters": 1403
+    },
+    {
+      "path": "books/05-kernels-hardware/17-warp-persistent-megakernel.md",
+      "chinese_characters": 1558,
+      "prose_chinese_characters": 1558
+    },
+    {
+      "path": "books/05-kernels-hardware/18-communication-capstone.md",
+      "chinese_characters": 1443,
+      "prose_chinese_characters": 1443
+    }
+  ]
+}

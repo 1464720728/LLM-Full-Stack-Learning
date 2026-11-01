@@ -72,6 +72,9 @@ class Harness:
         self._save(state)
         return state
     def cancel(self,state):
+        # A late or repeated cancellation must not overwrite a recorded outcome.
+        if state.status not in {"ready", "tools"}:
+            return state
         return self._stop(state,"cancelled","requested by caller")
     def step(self,state):
         if state.status in {"finished","cancelled","limit","uncertain","error"}:

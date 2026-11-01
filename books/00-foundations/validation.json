@@ -173,5 +173,50 @@
   "hardware_used": "CPU only",
   "api_calls": 0,
   "content_characters": 106505,
-  "content_hanzi": 51076
+  "content_hanzi": 51076,
+  "depth_revision": {
+    "prose_cjk": 177092,
+    "main_chapters": 16,
+    "python_fenced_blocks": 222,
+    "python_fenced_blocks_compiled": 222,
+    "python_fenced_blocks_executed": 222,
+    "special_harnesses": [
+      "F02 block 1 executed as an actual file for __file__",
+      "F07 block 2 executed with its companion prices.py",
+      "F02 path/copy/hash/inventory functions called against temporary fixtures",
+      "F04 observer success/nonzero/timeout fixtures"
+    ],
+    "git_real_local_scenarios": [
+      "index vs working snapshot",
+      "unstage preserves edits",
+      "branch conflict and resolution",
+      "bare local push/fetch/fast-forward separation"
+    ],
+    "loopback_http_smoke": [
+      "health",
+      "Chinese title and UTF-8 Content-Length",
+      "create/retry/conflict/complete/list",
+      "query rejection",
+      "oversized body",
+      "media type rejection",
+      "duplicate Content-Length",
+      "Transfer-Encoding rejection",
+      "negative/incomplete Content-Length",
+      "restart persistence"
+    ],
+    "not_executed": [
+      "Windows native",
+      "WSL installation/configuration",
+      "SSH/tmux remote sessions",
+      "real Docker build/run",
+      "GPU",
+      "model APIs",
+      "HTTP slow-header/body-timeout endurance",
+      "production load or multi-process concurrency"
+    ],
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sqlite": "3.53.1",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39"
+  }
 }

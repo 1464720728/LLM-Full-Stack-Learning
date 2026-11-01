@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.course import ROOT, catalog, validate, prepare_command
 from tools.check_docs import check
 from tools.build_catalog import build
+from tools.check_depth import measure, write_report
 
 
 def verify():
@@ -29,7 +30,11 @@ def verify():
     if not report_path.exists():
         report_path.write_text("# 验证报告\n\n正在生成。\n",encoding="utf-8")
     stats=build()
+    depth=measure()
+    write_report(depth)
     structural=validate()+check()
+    structural += [f"chapter below expansion floor: {row['path']} ({row['prose_cjk']}/{row['minimum_prose_cjk']})"
+                   for row in depth["chapters"] if not row["length_met"]]
     log=io.StringIO()
     suite=unittest.defaultTestLoader.discover(str(ROOT/"tests"),top_level_dir=str(ROOT))
     result=unittest.TextTestRunner(stream=log,verbosity=2).run(suite)
@@ -59,25 +64,49 @@ def verify():
                     entry.update(status="failed",error=str(exc))
             outcomes.append(entry)
             print(entry["id"],entry["status"],flush=True)
+    project_outcomes=[]
+    for args in (("projects.evidence_workshop", "all"),
+                 ("projects.incremental_runtime",),
+                 ("projects.incremental_runtime", "--online")):
+        entry={"command":"python -m " + " ".join(args)}
+        try:
+            completed=subprocess.run([sys.executable,"-m",*args],cwd=ROOT,env=env,
+                                     text=True,capture_output=True,timeout=60)
+            entry.update(status="passed" if completed.returncode==0 else "failed",
+                         exit_code=completed.returncode)
+            if completed.returncode:
+                entry["error"]=(completed.stderr+completed.stdout)[-2000:]
+        except (OSError,subprocess.TimeoutExpired) as exc:
+            entry.update(status="failed",error=str(exc))
+        project_outcomes.append(entry)
+        print(entry["command"],entry["status"],flush=True)
     import numpy as np
-    optional={name:importlib.util.find_spec(name) is not None for name in ("torch","triton","faiss")}
+    optional={name:importlib.util.find_spec(name) is not None for name in ("torch","triton","faiss","mcp","langgraph","agents")}
     data={"checked_at_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
           "environment":{"python":platform.python_version(),"numpy":np.__version__,"os":platform.system(),"architecture":platform.machine(),"optional_dependencies":optional,"gpu_visibility":"disabled for this CPU validation"},
           "statistics":stats,"structural_errors":structural,
-          "tests":{"run":result.testsRun,"failures":len(result.failures),"errors":len(result.errors),"skipped":len(result.skipped),"successful":result.wasSuccessful()},
+          "chapter_expansion":{"targets":len(depth["chapters"]),"below_minimum":depth["below_minimum"],
+                               "prose_cjk":depth["total_prose_cjk"],"limitation":depth["limitation"]},
+          "tests":{"run":result.testsRun,"failures":len(result.failures),"errors":len(result.errors),"skipped":len(result.skipped),"successful":result.wasSuccessful(),
+                   "skip_details":[{"test":str(test),"reason":reason} for test,reason in result.skipped]},
           "lab_commands":outcomes,
+          "project_commands":project_outcomes,
           "not_claimed":["Windows-native execution","WSL2 execution","RTX 5070 Ti execution","H100/CUDA/Triton execution","multi-GPU NCCL execution","real model API calls","remote GitHub Actions execution"]}
     (ROOT/"docs"/"validation.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     local=ROOT/".course";local.mkdir(exist_ok=True)
     (local/"test-output.txt").write_text(log.getvalue(),encoding="utf-8")
     counts={kind:sum(x["status"]==kind for x in outcomes) for kind in ("passed","failed","not_executed")}
-    lines=["# 第一版验证报告","",f"验证时间（UTC）：{data['checked_at_utc']}。课程版本见 VERSION。",
+    lines=["# 课程验证报告","",f"验证时间（UTC）：{data['checked_at_utc']}。课程版本见 VERSION。",
            "","## 实际执行环境","",f"Python {platform.python_version()}，NumPy {np.__version__}，{platform.system()} {platform.machine()}。本次验证进程隐藏 CUDA 设备，只执行 CPU 路径。",
            "", "可选依赖安装状态：" + "，".join(f"{name}={'已安装' if installed else '未安装'}" for name,installed in optional.items()) + "。",
            "","## 实际结果","",f"- 自动测试：{result.testsRun} 项，失败 {len(result.failures)}，错误 {len(result.errors)}，跳过 {len(result.skipped)}。",
            f"- 注册实验去重命令：CPU／离线通过 {counts['passed']} 条，失败 {counts['failed']} 条，依赖 GPU／联网或缺少可选依赖而未执行 {counts['not_executed']} 条。",
+           f"- 新增跨卷项目命令：通过 {sum(x['status']=='passed' for x in project_outcomes)} 条，失败 {sum(x['status']=='failed' for x in project_outcomes)} 条。",
            f"- 课程路径／先修与本地 Markdown 链接／Python 语法问题：{len(structural)} 项。",
            f"- 教材规模：{stats['tracks']} 卷，{stats['chapters']} 个有稳定 ID 的单元，{stats['registered_labs']} 个注册实验入口。",
+           f"- 主章与综合教程深写篇幅检查：{len(depth['chapters'])} 篇中 {depth['below_minimum']} 篇低于约定下限；此检查不证明教学正确性。",
+           "", "测试跳过明细：" + ("；".join(f"`{test}`：{reason}" for test,reason in result.skipped) if result.skipped else "无") + "。",
+           "", "正文与示例的审读见 [教学审读记录](EDITORIAL_REVIEW.md) 及各卷 DEPTH_AUDIT；逐章篇幅口径见 [深写对照](DEPTH_REPORT.md)。注册实验执行与正文代码块执行采用不同口径，不能互相替代。A15 的真实 SDK 另在隔离环境完成离线集成验证，见该卷 DEPTH_AUDIT；本报告只记当前基础环境的执行状态。",
            "","测试覆盖机制包括状态机与恢复、流式分片、权限与文档版本、引用失效、模型等价性、梯度与数值稳定、分页与 COW、取消与抢占、布局与在线归一化，以及跨卷集成。测试数量不等于覆盖了全部生产故障。",
            "","## 没有宣称执行的部分","","Win11 原生／WSL2、本地 RTX 5070 Ti、H100、CUDA／Triton、NCCL 多卡以及真实模型 API 均未在本次构建环境执行。对应教学实现与操作步骤已提供；Python 语法检查不替代 GPU 编译或运行。真实硬件的误差与性能需要在指定环境按章节验收。",
            "","GitHub Actions 配置存在不代表其远端运行成功；远端状态以仓库 Actions 页面为准。本报告是本地执行证据。",
@@ -85,6 +114,9 @@ def verify():
            "","## 注册实验执行明细","","| 实验 | 状态 | 命令 |","|---|---|---|"]
     for entry in outcomes:
         lines.append(f"| {entry['id']} | {entry['status']} | `{entry['command']}` |")
+    lines += ["", "## 新增跨卷项目命令", "", "| 状态 | 命令 |", "|---|---|"]
+    for entry in project_outcomes:
+        lines.append(f"| {entry['status']} | `{entry['command']}` |")
     if structural:
         lines += ["","## 尚未修复的结构问题",""]+[f"- {error}" for error in structural]
     report_path.write_text("\n".join(lines)+"\n",encoding="utf-8")
@@ -93,6 +125,6 @@ def verify():
 
 if __name__=="__main__":
     result=verify()
-    failed=bool(result["structural_errors"]) or not result["tests"]["successful"] or any(x["status"]=="failed" for x in result["lab_commands"])
+    failed=bool(result["structural_errors"]) or not result["tests"]["successful"] or any(x["status"]=="failed" for x in result["lab_commands"]+result["project_commands"])
     print(json.dumps({"tests":result["tests"],"structural_errors":result["structural_errors"]},ensure_ascii=False,indent=2))
     raise SystemExit(failed)
