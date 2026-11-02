@@ -85,4 +85,6 @@ Win11 原生与 WSL 安装配置、远端 SSH/tmux、真实 Docker 构建/运行
 
 F02 实验与正文显式写入 UTF-8/LF，补充默认文本换行与原始字节的区别；F14 将错误独立假设的结果修正为九分之四。F02 的 9 个 Python 块、F14 的 24 个 Python 块按章顺序重新执行通过。新增回归直接执行 F02 原文，在本机默认写入及 Windows 换行模拟两种条件下验证九字符、十三字节。
 
-当前正文篇幅：F02 为 12,232 汉字，F14 为 12,020 汉字。前文的逐章统计保留为 1.1.0 记录；当前全量统计见根目录 docs/DEPTH_REPORT.md。
+当前正文篇幅：F02 为 12,370 汉字，F14 为 12,020 汉字。前文的逐章统计保留为 1.1.0 记录；当前全量统计见根目录 docs/DEPTH_REPORT.md。
+
+Windows 原生 CI 复验发现临时目录短名称与展开后长名称混用会使 relative_to 失败。paths.demo 现先 resolve 根目录，并增加相对临时根目录的回归；对应正文解释同步补齐。首轮失败证据见 [Actions 41440211195](https://github.com/1464720728/LLM-Full-Stack-Learning/actions/runs/41440211195)。

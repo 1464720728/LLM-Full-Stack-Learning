@@ -15,7 +15,7 @@
       "path": "books/00-foundations/02-files-paths-and-encoding.md",
       "exists": true,
       "baseline_prose_cjk": 1873,
-      "prose_cjk": 12232,
+      "prose_cjk": 12370,
       "minimum_prose_cjk": 12000,
       "length_met": true
     },
@@ -804,7 +804,7 @@
       "length_met": true
     }
   ],
-  "total_prose_cjk": 1229732,
+  "total_prose_cjk": 1229870,
   "below_minimum": 0,
   "duplicate_paragraphs_for_review": [],
   "limitation": "Length and exact repeated paragraphs are review signals, not evidence of pedagogical correctness or completeness."

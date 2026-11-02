@@ -4,12 +4,12 @@
 
 初版快照：`0f6a672e50715a724da3e4d57c474ec66c627758`。目标版本：1.1.1。
 
-统计 100 篇；当前合计 1,229,732 汉字；未达到本轮最低篇幅 0 篇。
+统计 100 篇；当前合计 1,229,870 汉字；未达到本轮最低篇幅 0 篇。
 
 | 章节 | 初版 | 当前 | 本轮下限 | 篇幅检查 |
 |---|---:|---:|---:|---|
 | [books/00-foundations/01-environment-and-learning.md](../books/00-foundations/01-environment-and-learning.md) | 2097 | 8477 | 8000 | 达到 |
-| [books/00-foundations/02-files-paths-and-encoding.md](../books/00-foundations/02-files-paths-and-encoding.md) | 1873 | 12232 | 12000 | 达到 |
+| [books/00-foundations/02-files-paths-and-encoding.md](../books/00-foundations/02-files-paths-and-encoding.md) | 1873 | 12370 | 12000 | 达到 |
 | [books/00-foundations/03-shell-pipes-and-text.md](../books/00-foundations/03-shell-pipes-and-text.md) | 1598 | 12026 | 12000 | 达到 |
 | [books/00-foundations/04-processes-permissions-environment.md](../books/00-foundations/04-processes-permissions-environment.md) | 1781 | 12047 | 12000 | 达到 |
 | [books/00-foundations/05-network-ssh-http-json.md](../books/00-foundations/05-network-ssh-http-json.md) | 1889 | 12029 | 12000 | 达到 |

@@ -52,6 +52,7 @@
 | 项目 | 修改及回归 |
 |---|---|
 | Windows 换行 | 六处写入显式 LF；实际文件字节、文本与摘要一致；CRLF 已有文件仍按原始字节处理 |
+| Windows 路径别名 | 原生 CI 检出短名称与长名称混用；统一 resolve 根目录，并验证相对临时根目录 |
 | F14 概率 | 错误独立假设的结果改为九分之四，正确条件概率仍为三分之一 |
 | A05 转义显示 | 恢复 CRLF、LF、CR 的反斜杠表示，原解析器示例继续通过 |
 | A15 命名空间 | 保留双下划线，拒绝碰撞组件；重复注册、单下划线、长度和主体授权均有回归 |
@@ -60,6 +61,8 @@
 | S07 StopFilter | 等待可能更早的匹配，正常结束重查尾部；286,755 组穷举及 119 组补充案例通过 |
 | serving SSE | 仅移除一个普通空格，跨全部字节切点保留数据缩进、制表符和尾部空白 |
 
-新增 20 项 unittest。tests/test_textbook_regressions.py 直接提取实际教材定义与标记示例，避免测试中的副本掩盖原文错误。九个修改章节共 163 个 Python 块按章顺序重新执行；A15 三项可选 SDK 调用在基础环境跳过，宿主目录及修订练习均执行通过。
+新增 21 项 unittest。tests/test_textbook_regressions.py 直接提取实际教材定义与标记示例，避免测试中的副本掩盖原文错误。九个修改章节共 163 个 Python 块按章顺序重新执行；A15 三项可选 SDK 调用在基础环境跳过，宿主目录及修订练习均执行通过。
 
 GitHub Actions 增加 Windows 原生 Python 3.10／3.12 检查，Linux 两个版本继续运行全仓检查；结果见 [Actions](https://github.com/1464720728/LLM-Full-Stack-Learning/actions)。本地完整发布验收由 [VALIDATION](VALIDATION.md) 和 validation.json 记录。
+
+Windows 首轮运行 [41440211195](https://github.com/1464720728/LLM-Full-Stack-Learning/actions/runs/41440211195) 中，新增换行、目录、RoPE 与停止过滤测试通过，路径实验因临时目录别名报错。该问题已追加修复，Windows 任务现同时执行三个 foundations 路径检查。

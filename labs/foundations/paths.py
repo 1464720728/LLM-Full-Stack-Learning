@@ -18,7 +18,7 @@ def contained_path(root: Path, relative: str) -> Path:
 
 def demo():
     with TemporaryDirectory() as d:
-        root = Path(d)
+        root = Path(d).resolve()
         target = contained_path(root, "notes/lesson.txt")
         target.parent.mkdir(parents=True)
         target.write_text("hello\n学习\n", encoding="utf-8", newline="\n")

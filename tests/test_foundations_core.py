@@ -5,6 +5,8 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
+from contextlib import nullcontext
+from unittest.mock import patch
 
 from labs.foundations import paths, permissions, process_runner, http_message, json_contract
 from labs.foundations import python_values, functions, objects, iterators, file_io, sqlite_lab
@@ -20,10 +22,18 @@ class FoundationsCoreTests(unittest.TestCase):
 
     def test_paths_reject_escape(self):
         with TemporaryDirectory() as d:
-            root = Path(d)
+            root = Path(d).resolve()
             with self.assertRaises(ValueError): paths.contained_path(root, '../escape')
             with self.assertRaises(ValueError): paths.contained_path(root, str(root.resolve()))
             self.assertEqual(paths.contained_path(root, 'a/../b'), root / 'b')
+
+    def test_paths_demo_normalizes_temporary_root(self):
+        with TemporaryDirectory(dir=Path.cwd()) as directory:
+            relative = Path(directory).relative_to(Path.cwd())
+            with patch.object(paths, 'TemporaryDirectory', return_value=nullcontext(str(relative))):
+                result = paths.demo()
+            self.assertEqual(Path(result['relative']), Path('notes') / 'lesson.txt')
+            self.assertEqual(result['bytes'], 13)
 
     def test_permissions(self):
         self.assertEqual(permissions.symbolic(0o640), 'rw-r-----')
