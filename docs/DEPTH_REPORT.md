@@ -2,14 +2,14 @@
 
 由 `python tools/check_depth.py --write-report` 生成。统计去掉 fenced code block 后的中文汉字，含标题、表格和习题答案。篇幅是审稿线索，不是质量证明；教学标准见 [DEPTH_STANDARD](DEPTH_STANDARD.md)。
 
-初版快照：`0f6a672e50715a724da3e4d57c474ec66c627758`。目标版本：1.1.0。
+初版快照：`0f6a672e50715a724da3e4d57c474ec66c627758`。目标版本：1.1.1。
 
-统计 100 篇；当前合计 1,228,216 汉字；未达到本轮最低篇幅 0 篇。
+统计 100 篇；当前合计 1,229,732 汉字；未达到本轮最低篇幅 0 篇。
 
 | 章节 | 初版 | 当前 | 本轮下限 | 篇幅检查 |
 |---|---:|---:|---:|---|
 | [books/00-foundations/01-environment-and-learning.md](../books/00-foundations/01-environment-and-learning.md) | 2097 | 8477 | 8000 | 达到 |
-| [books/00-foundations/02-files-paths-and-encoding.md](../books/00-foundations/02-files-paths-and-encoding.md) | 1873 | 12073 | 12000 | 达到 |
+| [books/00-foundations/02-files-paths-and-encoding.md](../books/00-foundations/02-files-paths-and-encoding.md) | 1873 | 12232 | 12000 | 达到 |
 | [books/00-foundations/03-shell-pipes-and-text.md](../books/00-foundations/03-shell-pipes-and-text.md) | 1598 | 12026 | 12000 | 达到 |
 | [books/00-foundations/04-processes-permissions-environment.md](../books/00-foundations/04-processes-permissions-environment.md) | 1781 | 12047 | 12000 | 达到 |
 | [books/00-foundations/05-network-ssh-http-json.md](../books/00-foundations/05-network-ssh-http-json.md) | 1889 | 12029 | 12000 | 达到 |
@@ -21,24 +21,24 @@
 | [books/00-foundations/11-concurrency-async-and-cancellation.md](../books/00-foundations/11-concurrency-async-and-cancellation.md) | 1847 | 12054 | 12000 | 达到 |
 | [books/00-foundations/12-git-from-snapshots-to-contribution.md](../books/00-foundations/12-git-from-snapshots-to-contribution.md) | 2006 | 12049 | 12000 | 达到 |
 | [books/00-foundations/13-docker-images-containers-volumes.md](../books/00-foundations/13-docker-images-containers-volumes.md) | 2122 | 12022 | 12000 | 达到 |
-| [books/00-foundations/14-math-numpy-and-numerics.md](../books/00-foundations/14-math-numpy-and-numerics.md) | 2043 | 12019 | 12000 | 达到 |
+| [books/00-foundations/14-math-numpy-and-numerics.md](../books/00-foundations/14-math-numpy-and-numerics.md) | 2043 | 12020 | 12000 | 达到 |
 | [books/00-foundations/15-project-log-analysis-cli.md](../books/00-foundations/15-project-log-analysis-cli.md) | 2178 | 8025 | 8000 | 达到 |
 | [books/00-foundations/16-project-task-service.md](../books/00-foundations/16-project-task-service.md) | 2514 | 8011 | 8000 | 达到 |
 | [books/01-agent-engineering/01-loop.md](../books/01-agent-engineering/01-loop.md) | 2299 | 10756 | 10000 | 达到 |
 | [books/01-agent-engineering/02-protocols.md](../books/01-agent-engineering/02-protocols.md) | 2195 | 10086 | 10000 | 达到 |
 | [books/01-agent-engineering/03-tools.md](../books/01-agent-engineering/03-tools.md) | 2173 | 14327 | 14000 | 达到 |
 | [books/01-agent-engineering/04-state-events.md](../books/01-agent-engineering/04-state-events.md) | 2399 | 14075 | 14000 | 达到 |
-| [books/01-agent-engineering/05-streaming.md](../books/01-agent-engineering/05-streaming.md) | 1986 | 14030 | 14000 | 达到 |
+| [books/01-agent-engineering/05-streaming.md](../books/01-agent-engineering/05-streaming.md) | 1986 | 14028 | 14000 | 达到 |
 | [books/01-agent-engineering/06-reliability.md](../books/01-agent-engineering/06-reliability.md) | 2235 | 14024 | 14000 | 达到 |
 | [books/01-agent-engineering/07-context.md](../books/01-agent-engineering/07-context.md) | 2170 | 14182 | 14000 | 达到 |
-| [books/01-agent-engineering/08-workspaces.md](../books/01-agent-engineering/08-workspaces.md) | 2148 | 10011 | 10000 | 达到 |
+| [books/01-agent-engineering/08-workspaces.md](../books/01-agent-engineering/08-workspaces.md) | 2148 | 10175 | 10000 | 达到 |
 | [books/01-agent-engineering/09-concurrency.md](../books/01-agent-engineering/09-concurrency.md) | 2071 | 10025 | 10000 | 达到 |
 | [books/01-agent-engineering/10-durability.md](../books/01-agent-engineering/10-durability.md) | 2569 | 14090 | 14000 | 达到 |
 | [books/01-agent-engineering/11-workflows.md](../books/01-agent-engineering/11-workflows.md) | 2083 | 14074 | 14000 | 达到 |
 | [books/01-agent-engineering/12-multi-agent.md](../books/01-agent-engineering/12-multi-agent.md) | 2028 | 10005 | 10000 | 达到 |
 | [books/01-agent-engineering/13-evaluation.md](../books/01-agent-engineering/13-evaluation.md) | 2156 | 14004 | 14000 | 达到 |
-| [books/01-agent-engineering/14-coding-agent.md](../books/01-agent-engineering/14-coding-agent.md) | 2141 | 10004 | 10000 | 达到 |
-| [books/01-agent-engineering/15-integrations.md](../books/01-agent-engineering/15-integrations.md) | 2224 | 15100 | 14000 | 达到 |
+| [books/01-agent-engineering/14-coding-agent.md](../books/01-agent-engineering/14-coding-agent.md) | 2141 | 10121 | 10000 | 达到 |
+| [books/01-agent-engineering/15-integrations.md](../books/01-agent-engineering/15-integrations.md) | 2224 | 15287 | 14000 | 达到 |
 | [books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md](../books/02-retrieval-memory-graphs/01-evidence-and-retrieval.md) | 2480 | 10019 | 10000 | 达到 |
 | [books/02-retrieval-memory-graphs/02-chunking-and-identities.md](../books/02-retrieval-memory-graphs/02-chunking-and-identities.md) | 2192 | 10023 | 10000 | 达到 |
 | [books/02-retrieval-memory-graphs/03-bm25-from-counts.md](../books/02-retrieval-memory-graphs/03-bm25-from-counts.md) | 1928 | 14008 | 14000 | 达到 |
@@ -59,8 +59,8 @@
 | [books/03-model-architectures/04-original-transformer.md](../books/03-model-architectures/04-original-transformer.md) | 1898 | 14080 | 14000 | 达到 |
 | [books/03-model-architectures/05-dense-decoder.md](../books/03-model-architectures/05-dense-decoder.md) | 1864 | 14003 | 14000 | 达到 |
 | [books/03-model-architectures/06-kv-gqa.md](../books/03-model-architectures/06-kv-gqa.md) | 1741 | 14041 | 14000 | 达到 |
-| [books/03-model-architectures/07-latent-attention.md](../books/03-model-architectures/07-latent-attention.md) | 1704 | 10011 | 10000 | 达到 |
-| [books/03-model-architectures/08-moe.md](../books/03-model-architectures/08-moe.md) | 1727 | 14016 | 14000 | 达到 |
+| [books/03-model-architectures/07-latent-attention.md](../books/03-model-architectures/07-latent-attention.md) | 1704 | 10264 | 10000 | 达到 |
+| [books/03-model-architectures/08-moe.md](../books/03-model-architectures/08-moe.md) | 1727 | 14021 | 14000 | 达到 |
 | [books/03-model-architectures/09-sparse-attention.md](../books/03-model-architectures/09-sparse-attention.md) | 1912 | 10025 | 10000 | 达到 |
 | [books/03-model-architectures/10-linear-attention.md](../books/03-model-architectures/10-linear-attention.md) | 1731 | 14010 | 14000 | 达到 |
 | [books/03-model-architectures/11-state-space.md](../books/03-model-architectures/11-state-space.md) | 1765 | 14028 | 14000 | 达到 |
@@ -75,7 +75,7 @@
 | [books/04-inference-systems/04-prefix-cache.md](../books/04-inference-systems/04-prefix-cache.md) | 1908 | 13027 | 13000 | 达到 |
 | [books/04-inference-systems/05-preemption-cancellation.md](../books/04-inference-systems/05-preemption-cancellation.md) | 2025 | 13036 | 13000 | 达到 |
 | [books/04-inference-systems/06-runner-backends.md](../books/04-inference-systems/06-runner-backends.md) | 1652 | 13028 | 13000 | 达到 |
-| [books/04-inference-systems/07-sampling-streaming.md](../books/04-inference-systems/07-sampling-streaming.md) | 1667 | 9205 | 9000 | 达到 |
+| [books/04-inference-systems/07-sampling-streaming.md](../books/04-inference-systems/07-sampling-streaming.md) | 1667 | 9837 | 9000 | 达到 |
 | [books/04-inference-systems/08-measurement.md](../books/04-inference-systems/08-measurement.md) | 1729 | 9117 | 9000 | 达到 |
 | [books/04-inference-systems/09-source-reading.md](../books/04-inference-systems/09-source-reading.md) | 1916 | 13129 | 13000 | 达到 |
 | [books/04-inference-systems/10-parallelism.md](../books/04-inference-systems/10-parallelism.md) | 1699 | 13008 | 13000 | 达到 |

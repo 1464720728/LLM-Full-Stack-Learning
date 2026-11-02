@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "baseline_commit": "0f6a672e50715a724da3e4d57c474ec66c627758",
   "scope": "all",
   "chapters": [
@@ -15,7 +15,7 @@
       "path": "books/00-foundations/02-files-paths-and-encoding.md",
       "exists": true,
       "baseline_prose_cjk": 1873,
-      "prose_cjk": 12073,
+      "prose_cjk": 12232,
       "minimum_prose_cjk": 12000,
       "length_met": true
     },
@@ -111,7 +111,7 @@
       "path": "books/00-foundations/14-math-numpy-and-numerics.md",
       "exists": true,
       "baseline_prose_cjk": 2043,
-      "prose_cjk": 12019,
+      "prose_cjk": 12020,
       "minimum_prose_cjk": 12000,
       "length_met": true
     },
@@ -167,7 +167,7 @@
       "path": "books/01-agent-engineering/05-streaming.md",
       "exists": true,
       "baseline_prose_cjk": 1986,
-      "prose_cjk": 14030,
+      "prose_cjk": 14028,
       "minimum_prose_cjk": 14000,
       "length_met": true
     },
@@ -191,7 +191,7 @@
       "path": "books/01-agent-engineering/08-workspaces.md",
       "exists": true,
       "baseline_prose_cjk": 2148,
-      "prose_cjk": 10011,
+      "prose_cjk": 10175,
       "minimum_prose_cjk": 10000,
       "length_met": true
     },
@@ -239,7 +239,7 @@
       "path": "books/01-agent-engineering/14-coding-agent.md",
       "exists": true,
       "baseline_prose_cjk": 2141,
-      "prose_cjk": 10004,
+      "prose_cjk": 10121,
       "minimum_prose_cjk": 10000,
       "length_met": true
     },
@@ -247,7 +247,7 @@
       "path": "books/01-agent-engineering/15-integrations.md",
       "exists": true,
       "baseline_prose_cjk": 2224,
-      "prose_cjk": 15100,
+      "prose_cjk": 15287,
       "minimum_prose_cjk": 14000,
       "length_met": true
     },
@@ -415,7 +415,7 @@
       "path": "books/03-model-architectures/07-latent-attention.md",
       "exists": true,
       "baseline_prose_cjk": 1704,
-      "prose_cjk": 10011,
+      "prose_cjk": 10264,
       "minimum_prose_cjk": 10000,
       "length_met": true
     },
@@ -423,7 +423,7 @@
       "path": "books/03-model-architectures/08-moe.md",
       "exists": true,
       "baseline_prose_cjk": 1727,
-      "prose_cjk": 14016,
+      "prose_cjk": 14021,
       "minimum_prose_cjk": 14000,
       "length_met": true
     },
@@ -543,7 +543,7 @@
       "path": "books/04-inference-systems/07-sampling-streaming.md",
       "exists": true,
       "baseline_prose_cjk": 1667,
-      "prose_cjk": 9205,
+      "prose_cjk": 9837,
       "minimum_prose_cjk": 9000,
       "length_met": true
     },
@@ -804,7 +804,7 @@
       "length_met": true
     }
   ],
-  "total_prose_cjk": 1228216,
+  "total_prose_cjk": 1229732,
   "below_minimum": 0,
   "duplicate_paragraphs_for_review": [],
   "limitation": "Length and exact repeated paragraphs are review signals, not evidence of pedagogical correctness or completeness."

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-01T11:34:44.138930+00:00",
+  "checked_at_utc": "2026-11-02T11:44:05.343463+00:00",
   "environment": {
     "python": "3.12.14",
     "numpy": "2.3.5",
@@ -20,7 +20,7 @@
     "chapters": 113,
     "registered_labs": 209,
     "book_markdown_files": 136,
-    "book_chinese_characters": 1294422,
+    "book_chinese_characters": 1296748,
     "lab_code_files": 112,
     "lab_code_lines": 7647
   },
@@ -28,11 +28,11 @@
   "chapter_expansion": {
     "targets": 100,
     "below_minimum": 0,
-    "prose_cjk": 1228216,
+    "prose_cjk": 1229732,
     "limitation": "Length and exact repeated paragraphs are review signals, not evidence of pedagogical correctness or completeness."
   },
   "tests": {
-    "run": 408,
+    "run": 428,
     "failures": 0,
     "errors": 0,
     "skipped": 4,
