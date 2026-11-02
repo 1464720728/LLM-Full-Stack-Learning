@@ -167,6 +167,7 @@ stat 查询大小、时间、权限等元数据。它反映查询那一刻的状
 ## 第八课：逐行追踪课程路径实验
 
 ```python
+# course-example: F02-lf-counts
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -174,7 +175,7 @@ with TemporaryDirectory() as directory:
     root = Path(directory)
     target = root / "notes" / "lesson.txt"
     target.parent.mkdir(parents=True)
-    target.write_text("hello\n学习\n", encoding="utf-8")
+    target.write_text("hello\n学习\n", encoding="utf-8", newline="\n")
     text = target.read_text(encoding="utf-8")
     raw = target.read_bytes()
     print(len(text), len(raw), text.splitlines())
@@ -183,6 +184,8 @@ with TemporaryDirectory() as directory:
 TemporaryDirectory 创建供本次实验使用的临时目录，with 结构在离开块时负责相应清理。F08 会展开上下文管理器语义；此处先观察它如何把实验生命周期限制在一个明确范围内。root 是路径描述，target 通过组合得到目标位置，此时 lesson.txt 还不存在。
 
 mkdir 创建 notes 目录。write_text 把字符串按 UTF-8 编码并写入文件。read_text 进行反向解码，返回 str；read_bytes 不解码，返回 bytes。最后打印的三个结果分别从字符、字节和文本行三个视角观察同一份内容。你应当在运行前算出九、十三与两行，而不是运行后才把结果抄进答案。
+
+这里还显式指定了 `newline="\n"`，让 Windows 和 Linux 都写出 LF 换行。`encoding` 决定字符如何编码成字节，`newline` 决定文本写出时是否转换换行，两者分别控制不同步骤。若省略 newline，Windows 默认把两个 LF 各自写成 CRLF，磁盘长度就从十三增加到十五字节；默认 read_text 又把 CRLF 读回 LF，所以读到的字符数仍是九。由此可见，文本读起来相同，不代表文件字节相同；需要核对文件长度、摘要或逐字节复制时，应检查 read_bytes 的结果。本例固定写入 LF，因此十三字节的预期在两个平台上一致。
 
 离开 with 后，临时目录被清理，所以你不能把其中路径长期保存并期待下次仍能读取。临时目录适合隔离测试与短期中间数据，正式学习成果则应写到你明确管理的持久目录。文件路径是位置，不是内容备份；仅记录一个已经清理的路径无法恢复数据。
 

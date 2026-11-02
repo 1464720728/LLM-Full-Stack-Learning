@@ -11,6 +11,7 @@
 Python 的 Path 对象帮助组合和检查路径。`root / relative` 表示路径拼接，不是打开文件；`resolve()` 尝试规范化并解析符号链接；`open()` 才实际访问内容。把这三个动作分开看，才能理解为什么“检查过路径安全”与“随后打开的就是同一个文件”之间仍可能存在时间窗口。
 
 ```python
+# course-example: A08-lf-read
 from pathlib import Path
 import tempfile
 from labs.agents.tools import Workspace
@@ -18,7 +19,7 @@ from labs.agents.tools import Workspace
 with tempfile.TemporaryDirectory() as folder:
     root = Path(folder)
     (root / "notes").mkdir()
-    (root / "notes" / "hello.txt").write_text("你好\n", encoding="utf-8")
+    (root / "notes" / "hello.txt").write_text("你好\n", encoding="utf-8", newline="\n")
     workspace = Workspace(root)
     result = workspace.read("notes/hello.txt")
     assert result["text"] == "你好\n"
@@ -26,6 +27,8 @@ with tempfile.TemporaryDirectory() as folder:
 ```
 
 TemporaryDirectory 在进入 with 时创建目录，退出时清理本次实验文件。这个清理范围由标准库对象管理，不使用广泛删除命令。`mkdir` 创建子目录，`write_text` 明确编码，`Workspace(root)` 绑定根目录。返回值同时包含文本和 SHA-256 摘要，后者用来检测后续修改前内容是否变化，不是用来证明内容可信。
+
+示例使用 `newline="\n"` 创建 UTF-8/LF 文件，避免 Windows 默认写成 CRLF。Workspace.read 先读原始字节再解码，保留文件实际换行，因此本例读到的文本精确等于 `"你好\n"`。若读取已有 CRLF 文件，结果应保留 `"\r\n"`，摘要也应由那些实际字节计算；不能先统一换行再声称拿到了原文件版本。
 
 文件名与文件内容都可能包含不可信输入。一个看似普通的仓库可以有奇怪名称、符号链接、巨大文件或测试脚本副作用。不能因为来源是 Git 仓库，就认为所有操作都安全。读取文本和执行代码是不同权限级别；本章先练读写受控文件，再明确执行边界。
 
@@ -223,15 +226,18 @@ with tempfile.TemporaryDirectory() as folder:
 练习五，重复匹配必须拒绝。答案先用两处相同文本触发失败，再用唯一完整行成功。这里的替换是字面字符串，不是正则表达式，点号和括号没有特殊含义，调用方不需要为正则转义。
 
 ```python
+# course-example: A08-lf-replace
 with tempfile.TemporaryDirectory() as folder:
     root = Path(folder)
-    (root / "a.txt").write_text("first=0\nsecond=0\n", encoding="utf-8")
+    (root / "a.txt").write_text("first=0\nsecond=0\n", encoding="utf-8", newline="\n")
     workspace = Workspace(root)
     observed = workspace.read("a.txt")
     expect_error(ContractError, lambda: workspace.replace("a.txt", "=0", "=1", observed["sha256"]))
     workspace.replace("a.txt", "first=0", "first=1", observed["sha256"])
     assert workspace.read("a.txt")["text"] == "first=1\nsecond=0\n"
 ```
+
+这里显式写入 LF，使末尾的逐字符断言在 Windows 和 Linux 上一致。替换操作只改动命中的文本，周围换行继续保留；若输入本来是 CRLF，替换不含换行的片段后仍应是 CRLF。文件版本校验始终使用原始字节摘要。
 
 练习六，删除与空匹配的区别。答案 new 为空可以删除唯一片段，old 为空必须拒绝。删除后的摘要仍应对应实际剩余 bytes，而不是旧文件摘要。
 

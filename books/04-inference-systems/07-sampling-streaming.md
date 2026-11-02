@@ -165,20 +165,27 @@ class StopFilter:
         self.tail += text
         matches = [self.tail.find(s) for s in self.stops]
         matches = [i for i in matches if i >= 0]
-        if matches:
+        safe = max(0, len(self.tail) - self.hold)
+        if matches and min(matches) <= safe:
             cut = min(matches)
             visible = self.tail[:cut]
             self.tail = ""
             self.stopped = True
             return visible
-        safe = max(0, len(self.tail) - self.hold)
         visible, self.tail = self.tail[:safe], self.tail[safe:]
         return visible
 
     def finish(self):
         if self.stopped:
             return ""
-        visible, self.tail = self.tail, ""
+        matches = [self.tail.find(s) for s in self.stops]
+        matches = [i for i in matches if i >= 0]
+        if matches:
+            visible = self.tail[:min(matches)]
+            self.stopped = True
+        else:
+            visible = self.tail
+        self.tail = ""
         return visible
 
 def run(parts, stops):
@@ -191,22 +198,29 @@ assert run(["a", "b", "c"], ["END"]) == ("abc", False)
 assert run(["xx", "STOP", "yy"], ["END", "STOP"]) == ("xx", True)
 assert run(["x", "E", "N"], ["END"]) == ("xEN", False)
 assert run(["", "学", "习!"], ["!"]) == ("学习", True)
+assert run(["abcd"], ["abcd", "bc"]) == ("", True)
+assert run(["abc", "d"], ["abcd", "bc"]) == ("", True)
+assert run(["abc"], ["abcd", "bc"]) == ("a", True)
 print("cross-fragment stop filtering checked")
 ```
 
-feed 先把新文本加入 tail，再搜索完整 stop。若存在多个匹配，选择最早的起始索引，因为从流式用户视角，最早的停止边界之后都不应该再返回。若两个 stop 在同一位置且一个是另一个前缀，本实现一旦短 stop 完整出现就停止，不等待未来确认更长的候选；由于二者起点相同，返回正文边界相同。
+feed 先把新文本加入 tail，搜索完整 stop，再计算 safe。发现完整匹配不一定能立即停止：它前面可能还有一个尚未完整到达的更长 stop。只有最早完整匹配的起点不晚于 safe 时，才确认停止并返回它之前的正文；否则先输出 safe 之前的确定前缀，保留剩余候选。若两个 stop 同起点，选择其中任何一个都不改变正文边界，但仍要先排除更早起点的候选。此实现采用保守等待，不保证停止确认延迟最小。
 
-没有命中时，safe 为当前长度减 hold，最小为零。为什么最多保留 L减一就够？任何跨越当前结尾的长度不超过 L 的 stop，其已经出现的前缀最多长 L减一；更早的字符不可能成为未来跨边界匹配的一部分。这个推理依赖 stop 列表固定，运行中若突然增加更长 stop，之前已经发出的文本无法追回，因此配置必须在请求开始前确定。
+设最长 stop 长度为 L，当前 tail 长度为 n，则 hold 等于 L减一，safe 等于 n减L加一与零的较大值。任何还需要未来字符才能完成的匹配，其起点最早为 n减L加一，因此 safe 之前可以安全输出。已有完整匹配的起点小于或等于 safe 时，未来不可能出现起点更早的匹配；即使未来出现同起点的长 stop，正文截止位置也相同，所以条件使用小于或等于。未确认停止时输出安全前缀后，最多保留 L减一字符。这个推理依赖 stop 列表固定，运行中若突然增加更长 stop，之前已经发出的文本无法追回，因此配置必须在请求开始前确定。
 
-finish 只在输入正常结束时调用，把没有形成完整 stop 的尾部放行。连接异常或请求取消时是否交付尾部，要由服务契约决定，不能自动当作正常完成。本程序的 finish 没有网络语义，所以调用者必须区分正常结束与错误退出。它也没有自动生成 finish reason，只返回过滤结果和 stopped 标志，便于上层明确组合状态。
+手动追踪重叠例子：stop 为 abcd 与 bc，最长长度四。收到 abc 时，safe 为零，虽然 bc 已从索引一完整出现，但索引零的 abcd 还可能完成，因此先不输出。随后收到 d，最早匹配变成索引零的 abcd，停止后正文为空。若输入在 abc 处正常结束，未来不会再补齐 abcd，finish 应选择已经完整的 bc，返回 a 并把 stopped 设为真。这两种结束方式正是状态机需要区分的情形。
 
-该实现每次搜索所有 stop，适合短 stop 列表与小规模教学。若 stop 很多或文本很长，可以使用前缀函数、自动机或多模式匹配降低重复扫描成本。但优化前必须保留以上边界测试，尤其是跨三片段、长度一 stop、无命中尾部和空片段。算法更快不能以改变可见输出语义为代价。
+finish 只在输入正常结束时调用，此时先重新检查尾部：若存在完整 stop，就返回最早匹配之前的内容并设置 stopped；若没有，才放行全部尾部。尾部可能保存了已经完整但尚未确认的候选，不能无条件输出。连接异常或请求取消时是否交付尾部，要由服务契约决定，不能自动当作正常完成。本程序的 finish 没有网络语义，所以调用者必须区分正常结束与错误退出。它也没有自动生成 finish reason，只返回过滤结果和 stopped 标志，便于上层明确组合状态。
+
+该实现每次搜索所有 stop，适合短 stop 列表与小规模教学。若 stop 很多或文本很长，可以使用前缀函数、自动机或多模式匹配降低重复扫描成本。但优化前必须保留以上边界测试，尤其是跨三片段、重叠 stop、同起点长短前缀、长度一 stop、正常结束时的完整候选、无命中尾部和空片段。算法更快不能以改变可见输出语义为代价。
 
 ## 8. 第八课：增量 UTF-8 与 SSE 解码的两层缓冲
 
 Python 的 str 是文本，bytes 是字节。一个中文字符编码后可能有多个字节，网络读取可以只给前一两个字节。如果每个 chunk 都独立调用 decode，半个字符会被当成非法序列；使用 errors="ignore" 虽然不报错，却会永久丢字。正确方法是增量 decoder 保留不完整字节，等下一块补齐。
 
 UTF-8 解码成功后，还没有得到完整 SSE 事件。SSE 以空行分隔事件，一条 data 可以跨多个 data 行，事件本身又可以跨多个网络 chunk。因此有两个不同的缓冲：编码器内部保存未完成字符的字节，SSEDecoder.buffer 保存已经解码但还没有形成完整事件的文本。把这两个状态混成一个普通字符串，很容易在边界处丢失信息。
+
+解析 data 字段时，冒号后至多移除一个普通空格 U+0020，其余字符属于数据。`data:x` 与 `data: x` 都产生 x，`data:  x` 则产生带一个前导空格的 `" x"`。代码使用 removeprefix 移除至多一个空格；lstrip 会删除所有前导空格，造成缩进丢失。制表符和尾部空格也应保留，多行 data 按原有内容用换行连接。这与 A05 的逐行解析规则相同。
 
 本地 [streaming.py](../../labs/serving/streaming.py) 是明确范围的 SSE 子集参考：处理 UTF-8、LF/CRLF、空行分隔、data 行合并和未完成事件缓冲上限。它不实现完整浏览器 EventSource 的重连、last-event-id、retry 字段等全部语义，也不把任何字符串自动当 JSON。收到 data 后是否解析 JSON、是否把某个完成标记特殊处理，属于上层协议。
 
@@ -331,13 +345,13 @@ print(asyncio.run(demo()))
 
 **练习六，区分统计单位。** 收到四个 SSE 事件，其中两个有正文，一个只有角色，一个是 usage。不能据此得出生成两个 token；最多能说观察到两个正文事件。若 usage 提供 completion_tokens=7，可以记录服务报告输出 token 七个，但仍没有七个逐 token 时间。答案应使用片段延迟而非伪造 ITL。
 
-**练习七，停止尾部长度。** stop 列表为 END 与 STOP，最长长度四，所以无命中时最多保留三个字符。输入 abcE 后可发送 a、保留 bcE；后续输入 ND 时形成完整 END，返回 stop 前的 bc，总正文为 abc。这个延迟是保守策略带来的，正确但不一定最小；更精细自动机可以只保留真正可能匹配的后缀。
+**练习七，停止尾部长度。** stop 列表为 END 与 STOP，最长长度四，所以未确认停止时最多保留三个字符。输入 abcE 后可发送 a、保留 bcE；后续输入 ND 时形成完整 END，匹配起点二等于 safe 二，可以停止并返回 bc，总正文为 abc。再把 stop 改成 abcd 与 bc：输入 abc 时保留整个尾部，不立即接受 bc；随后输入 d 时返回空正文并停止，若此时直接正常结束则由 finish 返回 a 并停止。这个延迟是保守策略带来的，正确但不一定最小；更精细自动机可以只保留真正可能匹配的后缀。
 
 **练习八，正常结束与取消。** 输入 xEN，stop 为 END，正常结束应返回 xEN，因为没有完整 stop。若客户端取消，是否再尝试发送 EN 不由 StopFilter 决定，应由连接与取消契约决定。完整答案要说明不能把所有 finally 都调用 finish 并写 socket，否则取消后可能继续发送或覆盖原始错误。
 
 **练习九，逐字节 SSE。** 对含中文且使用 CRLF 的 wire 逐字节调用 feed，最后 final=True，应与一次性输入得到相同事件。参考程序已给出完整答案。若改成每字节 decode，中文中间字节会失败；若改成每 chunk split 空行，跨 chunk 的空行分隔会丢失。两个错误属于不同层，必须分别保存状态。
 
-**练习十，多行 data。** 一个事件含 data: first 与 data: second，答案是一个字符串 `first\nsecond`，不是两个独立事件。事件边界是空行而不是每个 data 行。注释 keepalive 不产生 data。上层 JSON parser 若不能接受多行数据，应报告协议内容不符合其预期，而不擅自把两行拆成两个 JSON 事件。
+**练习十，多行 data。** 一个事件含 data: first 与 data: second，答案是一个字符串 `first\nsecond`，不是两个独立事件。若第二行改为冒号后有两个空格的 `data:  second`，答案应为 `"first\n second"`，保留一个数据空格。事件边界是空行而不是每个 data 行。注释 keepalive 不产生 data。上层 JSON parser 若不能接受多行数据，应报告协议内容不符合其预期，而不擅自把两行拆成两个 JSON 事件。
 
 **练习十一，未完成事件。** 输入 `data: x` 然后 final=True，本实现报截断事件；输入无效 UTF-8 则由增量 decoder 报编码错误。两者错误类型与原因不同。完整答案还应说明本课程采用严格尾部策略，不宣称与所有 EventSource 客户端的 EOF 处理完全相同。
 
@@ -360,6 +374,37 @@ assert offline_stop(["aSTOPbEND"], ["END", "STOP"]) == "a"
 print("offline stop oracle checked")
 ```
 
+继续用独立 oracle 验证重叠输入的全部非空分片组合，再插入空片段。每次 feed 后都检查累计输出仍是最终正文的前缀，这能发现“已经发错、后来才发现 stop”的错误；最后同时检查正文和停止标志。完整参考如下，依赖第七课的 StopFilter 与本题的 offline_stop。
+
+```python
+# course-example: S07-overlapping-stops
+def all_partitions(text):
+    if not text:
+        yield [""]
+        return
+    for mask in range(1 << (len(text)-1)):
+        cuts=[0]+[i for i in range(1,len(text)) if mask & (1 << (i-1))]+[len(text)]
+        yield [text[a:b] for a,b in zip(cuts,cuts[1:])]
+
+for text,stops in (("abcd",["abcd","bc"]), ("abc",["abcd","bc"]),
+                   ("xabcdy",["abcd","bc"]), ("xa",["a","abcd"]),
+                   ("学习结束以后",["学习结束","习结"]), ("",["!"])):
+    expected=offline_stop([text],stops)
+    for parts in all_partitions(text):
+        stream=StopFilter(stops)
+        visible=""
+        for part in [""]+[piece for p in parts for piece in (p,"")]:
+            visible+=stream.feed(part)
+            assert expected.startswith(visible)
+            assert len(stream.tail)<=max(map(len,stops))-1
+        visible+=stream.finish()
+        assert visible==expected
+        assert stream.stopped==any(stop in text for stop in stops)
+        assert stream.finish()==""
+        if stream.stopped:
+            assert stream.feed("ignored")==""
+```
+
 **练习十五，后端空 logits。** 应在概率构造时拒绝，并让请求进入 error。不能把空列表解释为 EOS，因为 EOS 是词表中有定义的 token，而空 logits 表示模型/接口没有给出可采样分布。若模型确实不需要生成，例如 max_new_tokens 为零，应在调度前正常结束，根本不调用采样。
 
 **练习十六，协议完成不等于业务成功。** SSE 流正常结束可能带有模型错误或工具参数不完整；HTTP 连接断开也可能发生在服务已生成全部 token 之后。报告应分别记录网络完成、应用 finish reason、输出长度和错误。不能只用 HTTP 200 判断整次生成成功，因为错误可能在响应头发出后才出现在流中。
@@ -368,7 +413,7 @@ print("offline stop oracle checked")
 
 第一阶段保留 sampling.py 作为参考，独立实现一个同契约采样器。先通过手算例子、平局、mask、非法输入与温度零不消费 RNG，再增加随机频率检验。频率检验只能说明大量样本近似分布，不能替代精确边界测试；样本数量有限时自然有波动，验收不应要求每个候选出现次数恰好等于理论概率乘样本数。
 
-第二阶段把 StopFilter 与离线 oracle 结合。对固定短文本枚举每一个二段切分点，再随机生成多段切分，比较最后可见正文。额外记录每次 feed 已发出的内容，断言它始终是最终正文的前缀，不能先发错再靠最后拼接“抵消”。这个前缀性质才是流式停止正确性的重要部分。
+第二阶段把 StopFilter 与离线 oracle 结合。对固定短文本枚举全部分片组合，覆盖重叠 stop、同起点长短前缀、空片段和正常 EOF，再比较最终正文与停止标志。额外记录每次 feed 已发出的内容，断言它始终是最终正文的前缀，不能先发错再靠最后拼接“抵消”。练习十四给出了完整参考；进一步可在二字符字母表上穷举短文本和短 stop 集合，检查尾部长度与停止后忽略输入。这个前缀性质才是流式停止正确性的重要部分。
 
 第三阶段组合增量 UTF-8、SSEDecoder、JSON 解析和正文提取。每层只处理自己的契约，并保留分层错误：编码错误、事件截断、JSON 错误、字段缺失、应用错误事件。不要用一个宽泛 except 把所有错误变成空片段，否则你会把真实故障当成模型没有输出。合成 fixture 足以覆盖这些路径，无需调用外部 API。
 

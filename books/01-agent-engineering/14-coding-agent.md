@@ -11,6 +11,7 @@
 不要一开始就让模型“优化整个项目”。范围越模糊，越容易引入无关重构、依赖升级或接口变化。一个好的任务说明给出当前行为、期望行为、已知复现和约束；若信息不足，Agent 先通过只读工具补齐。编码能力包含准确缩小问题，而不是一次生成最多代码。
 
 ```python
+# course-example: A14-tax-source
 buggy_source = "def total(price, rate):\n    return price * (1 - rate)\n"
 namespace = {}
 exec(buggy_source, namespace)
@@ -67,6 +68,7 @@ with tempfile.TemporaryDirectory() as folder:
 Workspace.read 返回 path、text 和 sha256。模型或开发者应基于实际原文提出替换，而不是凭记忆生成整个文件。expected_sha256 在提交前再次核对，发现文件已变就拒绝。old 必须恰好出现一次，避免修改错误位置。A08 已完整解释这些机制，本章将它们接入 Agent 循环。
 
 ```python
+# course-example: A14-lf-hash
 import hashlib
 import json
 from labs.agents.tools import Workspace
@@ -76,7 +78,7 @@ from labs.agents.store import Store
 
 with tempfile.TemporaryDirectory() as folder:
     root = Path(folder)
-    (root / "price.py").write_text(buggy_source,encoding="utf-8")
+    (root / "price.py").write_text(buggy_source,encoding="utf-8",newline="\n")
     workspace = Workspace(root)
     observed = workspace.read("price.py")
     assert observed["sha256"] == hashlib.sha256(buggy_source.encode()).hexdigest()
@@ -84,6 +86,8 @@ with tempfile.TemporaryDirectory() as folder:
     workspace.replace(**{ "relative":edit["path"], "old":edit["old"], "new":edit["new"], "expected_sha256":edit["expected_sha256"] })
     assert "1 + rate" in workspace.read("price.py")["text"]
 ```
+
+本例通过 `newline="\n"` 固定写出 LF，所以文件字节与 buggy_source 的 UTF-8 编码一致，才能直接比较两个摘要。若读取用户已有文件，应使用 Workspace.read 返回的实际摘要，不能根据一份经过换行转换的字符串猜测磁盘版本。下文 coding_project 同样固定初始化源码的换行，让脚本夹具预计算的摘要在 Windows 和 Linux 上一致；测试文件的换行不参与这个摘要合同。
 
 最小补丁不是永远只改一个字符，而是只改变解决已确认问题所需范围。若接口设计确实有缺陷，可能需要多个文件与测试；但每处改动都应有理由和验证。无关格式化、重命名和依赖升级会增加审查负担，也让失败归因困难。先修问题，再根据明确任务决定是否重构。
 

@@ -15,7 +15,7 @@ class SSEDecoder:
         result = []
         while "\n\n" in self.buffer:
             block, self.buffer = self.buffer.split("\n\n", 1)
-            values = [line[5:].lstrip(" ") for line in block.split("\n") if line.startswith("data:")]
+            values = [line[5:].removeprefix(" ") for line in block.split("\n") if line.startswith("data:")]
             if values:
                 result.append("\n".join(values))
         if len(self.buffer.encode("utf-8")) > self.max_buffer_bytes:

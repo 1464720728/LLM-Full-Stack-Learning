@@ -218,6 +218,23 @@ class StreamContextTests(unittest.TestCase):
         with self.assertRaises(ContractError):select_context([{'role':'tool','tool_call_id':'c','content':'3'}],1000)
 
 class WorkspaceAndGraphTests(unittest.TestCase):
+    def test_crlf_read_hash_and_replace_preserve_file_bytes(self):
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/'a.txt'
+            raw='名字=旧\r\nother=0\r\n'.encode('utf-8')
+            path.write_bytes(raw)
+            workspace=Workspace(d)
+            observed=workspace.read('a.txt')
+            self.assertEqual(observed['text'],raw.decode('utf-8'))
+            self.assertEqual(observed['sha256'],hashlib.sha256(raw).hexdigest())
+            normalized_hash=hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest()
+            with self.assertRaises(ContractError):
+                workspace.replace('a.txt','旧','新',normalized_hash)
+            self.assertEqual(path.read_bytes(),raw)
+            result=workspace.replace('a.txt','旧','新',observed['sha256'])
+            expected='名字=新\r\nother=0\r\n'.encode('utf-8')
+            self.assertEqual(path.read_bytes(),expected)
+            self.assertEqual(result['sha256'],hashlib.sha256(expected).hexdigest())
     def test_path_traversal(self):
         with tempfile.TemporaryDirectory() as d:
             with self.assertRaises(ContractError):Workspace(d).read('../outside')

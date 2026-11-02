@@ -13,8 +13,10 @@ from labs.foundations import text_pipeline, tensors, numerics
 
 class FoundationsCoreTests(unittest.TestCase):
     def test_paths_counts_unicode_bytes(self):
-        self.assertEqual(paths.demo()['characters'], 9)
-        self.assertEqual(paths.demo()['bytes'], 13)
+        result = paths.demo()
+        self.assertEqual(result['characters'], 9)
+        self.assertEqual(result['bytes'], 13)
+        self.assertEqual(result['lines'], ['hello', '学习'])
 
     def test_paths_reject_escape(self):
         with TemporaryDirectory() as d:

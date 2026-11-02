@@ -149,7 +149,7 @@ assert len(ids.get("run-a", "call-a")["attempts"]) == 2
 
 外部服务端返回工具清单，宿主不能原样把所有内容交给模型。首先需要明确服务身份；两个服务都叫 `search` 时，模型可见名称必须无歧义。其次需要限制工具类型和 schema 子集；若当前宿主不支持图片结果、长任务或某种 schema 关键字，应在接入时拒绝或选择专用适配器。最后需要把权限放在宿主可信配置中，不能让服务端描述中的“此工具已获管理员批准”成为授权凭据。
 
-下面的目录只接收我们控制的纯函数 fixture，因此本地保存 `Tool` 对象；真实网络目录应保存远程定义以及服务身份，再由单独客户端调用。`server` 使用受限字符不是为了“神奇安全”，而是避免命名拼接发生歧义。`version` 参与宿主目录快照，升级时由可信配置显式替换。授权集合由应用提供，与模型参数分离。
+下面的目录只接收我们控制的纯函数 fixture，因此本地保存 `Tool` 对象；真实网络目录应保存远程定义以及服务身份，再由单独客户端调用。服务名和工具名使用受限字符，并保留双下划线 `__` 作为两者之间的分隔串，组件自身不得包含双下划线。否则 `alpha__beta` 服务的 `search` 与 `alpha` 服务的 `beta__search` 会得到相同公开名，第二个合法身份无法注册。该限制是本章宿主目录的约定，不是所有远程工具的通用命名规则。`version` 参与宿主目录快照，升级时由可信配置显式替换。授权集合由应用提供，与模型参数分离。
 
 ```python
 import re
@@ -160,7 +160,9 @@ class HostCatalog:
         self.entries = {}
     def add(self, server, version, tool, allowed_subjects):
         for value in (server, tool.name):
-            if type(value) is not str or not re.fullmatch(r"[a-z][a-z0-9_]{0,31}", value):
+            if (type(value) is not str
+                    or not re.fullmatch(r"[a-z][a-z0-9_]{0,31}", value)
+                    or "__" in value):
                 raise ValueError("invalid catalog name")
         if type(version) is not str or not version:
             raise ValueError("catalog version required")
@@ -635,15 +637,37 @@ boolean_id = request_message(True, "tools/list")
 assert rpc.request(boolean_id)["error"]["code"] == -32600
 ```
 
-练习三，同名工具来自不同服务时都能注册，同一服务重复注册必须拒绝。完整答案如下。不同服务形成不同公开名称，但解析后仍保留原工具名称，发送到对应服务时使用原名。命名空间只能防止歧义，不证明服务可信；服务身份仍应由宿主配置绑定，而不是由模型提供任意 URL。
+练习三，同名工具来自不同服务时都能注册，同一服务重复注册必须拒绝；组件含保留分隔串时，应在名称校验阶段拒绝，已有目录保持不变。完整答案如下。不同服务形成不同公开名称，但解析后仍保留原工具名称，发送到对应服务时使用原名。命名空间只能防止歧义，不证明服务可信；服务身份仍应由宿主配置绑定，而不是由模型提供任意 URL。
 
 ```python
+# course-example: A15-catalog-names
 namespaced = HostCatalog()
 n1 = namespaced.add("alpha", "v1", add_tool, {"learner"})
 n2 = namespaced.add("beta", "v1", add_tool, {"learner"})
 assert n1 != n2
 expect_exception(ValueError, lambda: namespaced.add("alpha", "v2", add_tool, {"learner"}))
+
+search_tool = Tool("search", "Pure search fixture", object_schema({}), lambda args: [])
+search_a = namespaced.add("source_a", "v1", search_tool, {"learner"})
+search_b = namespaced.add("source_b", "v1", search_tool, {"learner"})
+assert search_a != search_b
+bad_tool = Tool("beta__search", "Invalid catalog component", object_schema({}), lambda args: [])
+snapshot = dict(namespaced.entries)
+for server, tool in (("alpha__beta", search_tool), ("alpha", bad_tool)):
+    try:
+        namespaced.add(server, "v1", tool, {"learner"})
+    except ValueError as exc:
+        assert str(exc) == "invalid catalog name"
+    else:
+        raise AssertionError("reserved delimiter accepted")
+assert namespaced.entries == snapshot
+
+single_underscore = namespaced.add("a_", "v1", search_tool, {"learner"})
+assert single_underscore == "a___search"
+assert namespaced.resolve(single_underscore, "learner")[0] == "a_"
 ```
+
+最后一个例子保留合法单下划线。公开名到身份的恢复通过 entries 映射完成，不依靠对字符串执行 split。原来的重复检查能够防止覆盖，但不能让两个碰撞身份同时存在；因此修复需要明确组件命名规则，而不是删除重复检查。
 
 练习四，未经授权的调用不得进入传输函数。答案用列表记录传输是否被调用，再用陌生主体尝试。仅仅最后返回拒绝不够，因为如果拒绝之前已经调用服务，敏感参数可能已经泄漏，副作用也可能已经发生。正确检查顺序应通过这种可观察测试固定下来。
 

@@ -21,7 +21,7 @@ def demo():
         root = Path(d)
         target = contained_path(root, "notes/lesson.txt")
         target.parent.mkdir(parents=True)
-        target.write_text("hello\n学习\n", encoding="utf-8")
+        target.write_text("hello\n学习\n", encoding="utf-8", newline="\n")
         return {"relative": str(target.relative_to(root)),
                 "characters": len(target.read_text(encoding="utf-8")),
                 "bytes": len(target.read_bytes()),

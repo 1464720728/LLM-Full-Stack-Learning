@@ -6,6 +6,7 @@ from labs.serving.engine import Engine, Request
 from labs.serving.sampling import probabilities
 from labs.serving.analysis import Capacity, percentile, ring_allreduce, symmetric_quantize
 from labs.serving.streaming import SSEDecoder
+from labs.agents.streaming import sse_events
 
 
 class PageTests(unittest.TestCase):
@@ -125,5 +126,25 @@ class NumericalTests(unittest.TestCase):
             self.assertEqual(events,['{"text":"你好"}','[DONE]'])
     def test_sse_truncation(self):
         with self.assertRaises(ValueError):SSEDecoder().feed(b'data: x',True)
+
+    def test_sse_preserves_data_whitespace_at_every_byte_cut(self):
+        for eol in ('\n','\r\n'):
+            for prefix,leading in (('',''),(' ',''),('  ',' '),('   ','  ')):
+                wire=('data:'+prefix+'学习 \t'+eol+'data:\t尾 '+eol+'data:'+eol+eol).encode('utf-8')
+                expected=[leading+'学习 \t\n\t尾 \n']
+                cuts=[[wire[:cut],wire[cut:]] for cut in range(len(wire)+1)]
+                cuts.append([bytes([byte]) for byte in wire])
+                for chunks in cuts:
+                    with self.subTest(eol=eol,prefix=prefix,lengths=[len(c) for c in chunks]):
+                        decoder=SSEDecoder()
+                        events=[event for chunk in chunks for event in decoder.feed(chunk)]
+                        events+=decoder.feed(b'',final=True)
+                        self.assertEqual(events,expected)
+                        self.assertEqual(list(sse_events(chunks)),expected)
+
+    def test_sse_empty_data_event_and_comment_only_frame(self):
+        wire=b': keepalive\n\ndata:\n\ndata: \n\n'
+        self.assertEqual(SSEDecoder().feed(wire,final=True),['',''])
+        self.assertEqual(list(sse_events([wire])),['',''])
 
 if __name__=='__main__':unittest.main()

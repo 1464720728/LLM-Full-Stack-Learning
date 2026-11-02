@@ -33,7 +33,7 @@ def ticket_project(root):
 def coding_project(root):
     root=Path(root)
     buggy='def total(price, rate):\n    return price * (1 - rate)\n'
-    (root/'price.py').write_text(buggy,encoding='utf-8')
+    (root/'price.py').write_text(buggy,encoding='utf-8',newline='\n')
     (root/'test_price.py').write_text('import unittest\nfrom price import total\n\nclass PriceTests(unittest.TestCase):\n    def test_tax(self):\n        self.assertAlmostEqual(total(100,0.2),120)\n    def test_zero(self):\n        self.assertEqual(total(100,0),100)\n',encoding='utf-8')
     before=run_trusted_fixture_tests(root)
     workspace=Workspace(root)
