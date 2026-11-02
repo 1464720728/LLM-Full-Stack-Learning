@@ -452,7 +452,7 @@ assert np.linalg.matrix_rank(rank1)==1
 
 ### 练习十：逐步缓存验证
 
-第九课是完整参考答案。扩展时把输入长度改为一、三、七，位置起点分别为零和十，完整与逐步路径都使用同一起点。验收要求比较全部头和全部位置，检查 C 与位置键的时间长度一致。若只改变逐步路径的位置起点而完整路径不变，失败是预期结果，因为你比较了不同位置定义。
+第九课给出了基本参考答案，十三点二继续验证输入长度一、三、七和位置起点零、十。验收要求比较全部头和全部位置，检查 C 与位置键的时间长度一致。本章使用固定频率 RoPE，若逐步路径从头开始统一平移所有查询与键的位置起点，即使完整路径保留原起点，输出仍应在浮点容差内一致，因为相对位置未变。要构造失败用例，可以保留已有缓存键的位置，却错误重置后续查询与新键的位置，使它们与历史键的相对位置发生变化。
 
 ### 练习十一：低秩状态对模型权重版本的依赖
 
@@ -531,30 +531,48 @@ for parameter,expected in zip(parameters,analytic):
 
 ### 十三点二　位置起点练习的完整代码答案
 
-第十题要求同时改变完整与逐步路径的位置起点。下面给出直接可运行的循环。完整路径所有位置使用 origin 加本地索引；逐步路径在第 t 步使用 origin 加 t。旧位置键只保存一次，后续不重新旋转。这个例子还说明，cache 长度与位置起点虽然常常相同，却是不同概念：长度从零开始计数，逻辑位置可能由外部前缀或指定偏移决定。
+第十题同时验证路径等价性和位置原点的作用。完整路径所有位置使用 origin 加本地索引；逐步路径在第 t 步使用 origin 加 t。旧位置键只保存一次，后续不重新旋转。cache 长度与位置起点是不同概念：长度从零开始计数，逻辑位置可能由外部前缀或指定偏移决定。下面把完整与逐步路径包装成函数，再分别验证同原点、统一平移和错误重置三种情况。
+
+固定频率旋转满足 $R(a)^{\mathsf T}R(b)=R(b-a)$，所以 $(R(s+a)q)^{\mathsf T}(R(t+a)k)=q^{\mathsf T}R(t-s)k$。所有查询和键同时增加相同偏移 a 时，位置点积保持不变；本例的内容分支、value 和因果可见集合也没有改变。因此完整路径从零开始、逐步路径从十开始仍应一致。若历史键保留原来的旋转位置，后续新查询和新键却重置为零，它们与历史的相对位置就改变了，这是有效的错误对照。
 
 ```python
+# course-example: M07-position-origin
+def full_position_output(inputs,origin):
+    cc,qqc,qqr,kkr=project_all(inputs,origin)
+    return decoupled_attention(qqc,qqr,cc,kkr,uk_step,uv_step,
+        np.tril(np.ones((len(inputs),len(inputs)),dtype=bool)),True)[0]
+
+def step_position_output(inputs,positions):
+    old_c=np.empty((0,R))
+    old_kr=np.empty((0,DR))
+    collected=[]
+    assert len(positions)==len(inputs)
+    for t,position in enumerate(positions):
+        nc,nqc,nqr,nkr=project_all(inputs[t:t+1],position)
+        old_c=np.concatenate([old_c,nc])
+        old_kr=np.concatenate([old_kr,nkr])
+        assert len(old_c)==len(old_kr)==t+1
+        out,_=decoupled_attention(nqc,nqr,old_c,old_kr,
+                                  uk_step,uv_step,None,True)
+        collected.append(out)
+    return np.concatenate(collected,axis=1)
+
+position_rng=np.random.default_rng(20261102)
 for test_length in (1,3,7):
-    test_x=rng.normal(size=(test_length,D))
+    test_x=position_rng.normal(size=(test_length,D))
     for origin in (0,10):
-        cc,qqc,qqr,kkr=project_all(test_x,origin)
-        target,_=decoupled_attention(qqc,qqr,cc,kkr,uk_step,uv_step,
-            np.tril(np.ones((test_length,test_length),dtype=bool)),True)
-        old_c=np.empty((0,R))
-        old_kr=np.empty((0,DR))
-        collected=[]
-        for t in range(test_length):
-            nc,nqc,nqr,nkr=project_all(test_x[t:t+1],origin+t)
-            old_c=np.concatenate([old_c,nc])
-            old_kr=np.concatenate([old_kr,nkr])
-            out,_=decoupled_attention(nqc,nqr,old_c,old_kr,
-                                      uk_step,uv_step,None,True)
-            collected.append(out)
-        np.testing.assert_allclose(np.concatenate(collected,axis=1),
-                                   target,atol=1e-10,rtol=1e-10)
+        target=full_position_output(test_x,origin)
+        stepped=step_position_output(test_x,range(origin,origin+test_length))
+        np.testing.assert_allclose(stepped,target,atol=1e-10,rtol=1e-10)
+    zero_origin=full_position_output(test_x,0)
+    shifted=step_position_output(test_x,range(10,10+test_length))
+    np.testing.assert_allclose(shifted,zero_origin,atol=1e-10,rtol=1e-10)
+    reset_positions=step_position_output(test_x,[0]*test_length)
+    if test_length>1:
+        assert np.max(np.abs(reset_positions-zero_origin))>1e-3
 ```
 
-若某模型另外使用绝对位置 embedding，共同平移可能改变模型函数，即使 RoPE 部分的相对点积保持不变。当前测试只要求同一 origin 下两条执行路径相等，没有宣称不同 origin 的完整模型输出一定相同。测试结论必须限定到实际比较的命题，不能从一个通过的断言扩展出未验证的性质。
+长度一的注意力只有一个可见键，softmax 权重恒为一，所以不能要求它的错误位置对照产生输出差异。长度三、七使用固定的非零位置输入和有区别的 value，才能观察相对位置错误如何改变读取。这里的阈值用于这个固定夹具，不是所有输入都必然产生同样大的差异。若某模型另外使用绝对位置 embedding 或位置相关频率缩放，共同平移可能改变模型函数；本节验证的是当前固定频率 RoPE 教学模型，不把结论推广到所有位置机制。
 
 ### 十三点三　数值误差与条件数：等价重排为什么仍可能有差异
 
